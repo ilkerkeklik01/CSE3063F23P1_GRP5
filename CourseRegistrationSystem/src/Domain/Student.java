@@ -1,4 +1,4 @@
 package Domain;
 
-public class Student {
+public class Student{
 }
