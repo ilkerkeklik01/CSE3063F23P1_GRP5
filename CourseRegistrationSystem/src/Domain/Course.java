@@ -22,6 +22,23 @@ public class Course {
         this.prerequisitesIds = prerequisitesIds;
     }
 
+    public static Course getCourseByCourseCode(String courseCode){
+        ArrayList<Course> all =(ArrayList<Course>) Department.getAllCourses();
+
+        Course course=null;
+        for(Course each :all){
+            if(each.getCourseCode().equals(courseCode)){
+                course=each;
+                break;
+            }
+        }
+        if(course==null){
+            System.out.println(courseCode+" is not found");
+
+        }
+        return course;
+    }
+
     public String getCourseName() {
         return courseName;
     }

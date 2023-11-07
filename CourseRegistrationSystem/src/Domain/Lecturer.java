@@ -12,6 +12,21 @@ public class Lecturer extends Staff{
         super(FName, LName, birthdate, staffNo);
         setCourses(courseIds);
     }
+    public static Lecturer getLecturerByStaffNo(String StaffNo){
+        ArrayList<Lecturer> all =(ArrayList<Lecturer>) Department.getAllLecturers();
+
+        Lecturer lecturer=null;
+        for(Lecturer each :all){
+            if(each.getStaffNo().equals(StaffNo)){
+                lecturer=each;
+                break;
+            }
+        }
+        if(lecturer==null){
+            System.out.println(StaffNo+" is not found");
+        }
+        return lecturer;
+    }
 
     public Collection<String> getCourseIds() {
         return courseIds;
