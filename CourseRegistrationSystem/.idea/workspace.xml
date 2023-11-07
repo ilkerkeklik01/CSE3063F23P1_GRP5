@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="c02703ea-8ff5-4cf6-a2eb-c2ce8e2eef5e" name="Changes" comment="" />
+    <list default="true" id="c02703ea-8ff5-4cf6-a2eb-c2ce8e2eef5e" name="Changes" comment="The initial structure is implemented.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Advisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Advisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Person.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,9 +23,17 @@
       </list>
     </option>
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 8
-}]]></component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
   <component name="ProjectId" id="2XoYhjCu8ajnziEy3ordi55WlvN" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -27,6 +44,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "core-functions-and-registration",
+    "last_opened_file_path": "C:/Users/ilker/IdeaProjects/CourseRegistrationSystemDemo",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -35,6 +54,20 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RunManager">
+    <configuration name="CourseRegistrationSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CourseRegistrationSystem" />
+      <module name="CourseRegistrationSystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CourseRegistrationSystem" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -44,10 +77,26 @@
       <option name="presentableId" value="Default" />
       <updated>1699297041285</updated>
       <workItem from="1699297042378" duration="542000" />
+      <workItem from="1699298708193" duration="130000" />
+      <workItem from="1699359203902" duration="1108000" />
+      <workItem from="1699369415811" duration="451000" />
     </task>
+    <task id="LOCAL-00001" summary="The initial structure is implemented.">
+      <option name="closed" value="true" />
+      <created>1699298819750</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1699298819750</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="The initial structure is implemented." />
+    <option name="LAST_COMMIT_MESSAGE" value="The initial structure is implemented." />
   </component>
 </project>
