@@ -1,4 +1,7 @@
 package Domain;
 
-public class RegistrationStatus {
+public enum RegistrationStatus {
+    Rejected,
+    Confirmed,
+    Active
 }
