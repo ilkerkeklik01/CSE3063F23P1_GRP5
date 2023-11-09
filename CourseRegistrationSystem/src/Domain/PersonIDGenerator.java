@@ -20,7 +20,7 @@ public class PersonIDGenerator extends IDGenerator {
         List<String> alreadyUsedIDs = new ArrayList<>();
 
         for (Person person : allPersons) {
-            alreadyUsedIDs.add(person.getPersonID());
+            alreadyUsedIDs.add(person.getPersonId());
         }
         
         return alreadyUsedIDs; 

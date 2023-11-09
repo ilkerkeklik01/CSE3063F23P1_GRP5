@@ -9,21 +9,23 @@ public class Department {
     private static Collection<Person> allPeople = new ArrayList<Person>();
     private static Collection<Course> allCourses = new ArrayList<Course>();
     private static Collection<Registration> allRegistrations = new ArrayList<Registration>();
-
+    private static Collection<Staff> allStaffs = new ArrayList<Staff>();
     private static Collection<Student> allStudents = new ArrayList<Student>();
     private static Collection<Lecturer> allLecturers = new ArrayList<Lecturer>();
     private static Collection<Advisor> allAdvisors = new ArrayList<Advisor>();
 
     static
     {
-        Advisor advisor = new Advisor("Ilker","Keklik", null,"1",new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
+        IDGenerator idGenerator = new IDGenerator();
+
+        Advisor advisor = new Advisor("Ilker","Keklik", null, idGenerator.generateNewID(IDType.StaffID),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
         addAnObject(advisor);
-        Advisor advisor2 = new Advisor("Burkay","Keklik", null,"2",new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
+        Advisor advisor2 = new Advisor("Burkay","Keklik", null,idGenerator.generateNewID(IDType.StaffID),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
         addAnObject(advisor2);
 
-        Student student = new Student("Kerim","Hasan",null,"1",new ArrayList<String>(),"1",new ArrayList<String>());
+        Student student = new Student("Kerim","Hasan",null,idGenerator.generateNewID(IDType.StudentID),new ArrayList<String>(),advisor.getStaffNo(),new ArrayList<String>());
         addAnObject(student);
-        Student student2 = new Student("Yusuf","Duman",null,"2",new ArrayList<String>(),"1",new ArrayList<String>());
+        Student student2 = new Student("Yusuf","Duman",null,idGenerator.generateNewID(IDType.StudentID),new ArrayList<String>(),advisor.getStaffNo(),new ArrayList<String>());
         addAnObject(student2);
 
         Course course = new Course("Database","CSE3020",new ArrayList<String>(),"",new ArrayList<String>(),new ArrayList<String>());
@@ -37,6 +39,14 @@ public class Department {
         System.out.println("After proceed:"+student.getCourseCodes());
     }
     public Department() {
+    }
+
+    public static Collection<Staff> getAllStaffs() {
+        return allStaffs;
+    }
+
+    public static void setAllStaffs(Collection<Staff> allStaffs) {
+        Department.allStaffs = allStaffs;
     }
 
     public static Collection<Registration> getAllRegistrations() {
@@ -111,6 +121,9 @@ public class Department {
         }
         if(object instanceof Registration){
             allRegistrations.add((Registration) object);
+        }
+        if(object instanceof Staff){
+            allStaffs.add((Staff) object);
         }
 
         if(!instanceCheck){

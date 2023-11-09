@@ -1,12 +1,11 @@
 package Domain;
 
 import java.util.Date;
-import java.util.UUID;
 
 
 public abstract class Person {
 
-    //private UUID id = UUID.randomUUID();
+    private String personId;
     private String fName;
     private String lName;
     private Date birthdate;
@@ -19,6 +18,14 @@ public abstract class Person {
 
     public Person(){
 
+    }
+
+    public String getPersonId() {
+        return personId;
+    }
+
+    public void setPersonId(String personId) {
+        this.personId = personId;
     }
 
     public String getFName() {
