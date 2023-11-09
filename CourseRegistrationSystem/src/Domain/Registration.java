@@ -17,6 +17,23 @@ public class Registration {
         this.status = status;
     }
 
+    public static Registration getRegistrationByRegistrationNo(String registrationNo){
+        ArrayList<Registration> all =(ArrayList<Registration>) Department.getAllRegistrations();
+
+        Registration registration=null;
+        for(Registration each :all){
+            if(each.getRegistrationNo().equals(registrationNo)){
+                registration=each;
+                break;
+            }
+        }
+        if(registration==null){
+            System.out.println(registrationNo+" is not found");
+
+        }
+        return registration;
+    }
+
     public String getRegistrationNo() {
         return registrationNo;
     }

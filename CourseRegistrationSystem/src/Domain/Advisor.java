@@ -18,7 +18,58 @@ public class Advisor extends Lecturer {
         setRegistrationNumbers(registrationNumbers);
     }
 
+    public static Advisor getAdvisorByStaffNo(String StaffNo){
+        ArrayList<Advisor> all =(ArrayList<Advisor>) Department.getAllAdvisors();
 
+        Advisor advisor=null;
+        for(Advisor each :all){
+            if(each.getStaffNo().equals(StaffNo)){
+                advisor=each;
+                break;
+            }
+        }
+        if(advisor==null){
+            System.out.println(StaffNo+" is not found");
+        }
+        return advisor;
+    }
+    public Collection<Registration> getActiveRegistrations(){
+        ArrayList<Registration> registrations = new ArrayList<>();
+        ArrayList<Registration> allRegistrations = (ArrayList<Registration>) Department.getAllRegistrations();
+
+        for(Registration each : allRegistrations){
+            if(each.getStatus()==RegistrationStatus.Active&&each.getAdvisorNo().equals(this.getStaffNo())){
+                registrations.add(each);
+            }
+        }
+        return registrations;
+    }
+    private Registration isActiveRegistration(String registrationNo){
+        ArrayList<Registration> activeRegistrations = (ArrayList<Registration>) getActiveRegistrations();
+
+        for(Registration each : activeRegistrations){
+            if(each.getRegistrationNo().equals(registrationNo)){
+                return each;
+            }
+        }
+        return null;
+    }
+    public void proceedTheRegistration(String registrationNo,RegistrationStatus status){
+        Registration registration = isActiveRegistration(registrationNo);
+        if(registration==null){
+            System.out.println(registrationNo+ " is not an active registration or is not a valid registration");
+            return;
+        }
+        registration.setStatus(status);
+        if(status == RegistrationStatus.Confirmed){
+            Student student = Student.getStudentByStudentNo(registration.getStudentNo());
+            student.getCourseCodes().add(registration.getCourseCode());
+            Course course = Course.getCourseByCourseCode(registration.getCourseCode());
+            course.getStudentNumbers().add(student.getStudentNo());
+        }else{
+            System.out.println("Registration is not confirmed");
+        }
+    }
 
 
     public Collection<String> getStudentNumbers() {
