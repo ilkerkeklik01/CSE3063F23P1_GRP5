@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<classpath>
-    <!-- other classpathentry elements... -->
-    <classpathentry kind="lib" path="lib/jackson-core-2.15.0.jar"/>
-    <classpathentry kind="lib" path="lib/jackson-databind-2.15.0.jar"/>
-    <classpathentry kind="lib" path="lib/jackson-annotations-2.15.0.jar"/>
-</classpath>
