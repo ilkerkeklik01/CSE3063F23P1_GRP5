@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
-public class Advisor extends Lecturer {
+public class Advisor extends Lecturer  {
 
 
 
@@ -18,24 +18,10 @@ public class Advisor extends Lecturer {
         setRegistrationNumbers(registrationNumbers);
     }
 
-    public static Advisor getAdvisorByStaffNo(String StaffNo){
-        ArrayList<Advisor> all =(ArrayList<Advisor>) Department.getAllAdvisors();
 
-        Advisor advisor=null;
-        for(Advisor each :all){
-            if(each.getStaffNo().equals(StaffNo)){
-                advisor=each;
-                break;
-            }
-        }
-        if(advisor==null){
-            System.out.println(StaffNo+" is not found");
-        }
-        return advisor;
-    }
     public Collection<Registration> getActiveRegistrations(){
         ArrayList<Registration> registrations = new ArrayList<>();
-        ArrayList<Registration> allRegistrations = (ArrayList<Registration>) Department.getAllRegistrations();
+        ArrayList<Registration> allRegistrations = (ArrayList<Registration>) Department.getInstance().getAllRegistrations();
 
         for(Registration each : allRegistrations){
             if(each.getStatus()==RegistrationStatus.Active&&each.getAdvisorNo().equals(this.getStaffNo())){
@@ -62,9 +48,9 @@ public class Advisor extends Lecturer {
         }
         registration.setStatus(status);
         if(status == RegistrationStatus.Confirmed){
-            Student student = Student.getStudentByStudentNo(registration.getStudentNo());
+            Student student = Department.getInstance().getStudentByStudentNo(registration.getStudentNo());
             student.getCourseCodes().add(registration.getCourseCode());
-            Course course = Course.getCourseByCourseCode(registration.getCourseCode());
+            Course course = Department.getInstance().getCourseByCourseCode(registration.getCourseCode());
             course.getStudentNumbers().add(student.getStudentNo());
         }else{
             System.out.println("Registration is not confirmed");

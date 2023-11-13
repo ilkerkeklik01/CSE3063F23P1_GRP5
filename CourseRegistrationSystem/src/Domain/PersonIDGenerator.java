@@ -16,7 +16,7 @@ public class PersonIDGenerator extends IDGenerator {
 
     private List<String> GetUsedIDsByOtherPeople(){
 
-        Collection<Person> allPersons = Department.getAllPeople();
+        Collection<Person> allPersons = Department.getInstance().getAllPeople();
         List<String> alreadyUsedIDs = new ArrayList<>();
 
         for (Person person : allPersons) {
