@@ -1,16 +1,12 @@
 package Domain;
 class CourseSection{
-
     private String courseCode;
-    private int courseSchedule;
-    private int examCount;
-    private int credit;
-
-    public CourseSection(String courseCode, int courseSchedule, int credit, int examCount){
+    private String courseSectionNo;
+    private String[] days;
+    public CourseSection(String courseCode, String courseSectionNo, String[] days){
         this.courseCode = courseCode;
-        this.credit = credit;
-        this.courseSchedule = courseSchedule;
-        this.examCount = examCount;
+        this.courseSectionNo = courseSectionNo;
+        this.days = days;
     }
 
     public String getcourseCode() {
@@ -21,27 +17,11 @@ class CourseSection{
         this.courseCode = courseCode;
     }
 
-    public int getCredit() {
-        return credit;
+    public String getCourseSectionNo() {
+        return courseCode;
     }
 
-    public void setCredit(int credit) {
-        this.credit = credit;
-    }
-
-    public int getCourseSchedule() {
-        return courseSchedule;
-    }
-
-    public void setCourseSchedule(int courseSchedule) {
-        this.courseSchedule = courseSchedule;
-    }
-
-    public int getExamCount() {
-        return examCount;
-    }
-
-    public void setExamCount(int examCount) {
-        this.examCount = examCount;
+    public void setCourseSectionNo(String courseSectionNo) {
+        this.courseSectionNo = courseSectionNo;
     }
 }
