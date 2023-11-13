@@ -1,34 +1,68 @@
 import Domain.*;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class CourseRegistrationSystem {
     public static void main(String[] args) {
+        Department department = Department.getInstance();
 
-        System.out.println("\nGet all people\n");
-        for(Person person : Department.getAllPeople()){
-            System.out.println(person.getClass().getName()+" "+person.getFName()+" "+person.getLName());
-        }
-        System.out.println("\nGet all Students\n");
-        for(Student student : Department.getAllStudents()){
-            System.out.println(student.getClass().getName()+" "+student.getFName()+" "+student.getLName());
-        }
-        System.out.println("\nGet all Advisors\n");
-        for(Advisor advisor : Department.getAllAdvisors()){
-            System.out.println(advisor.getClass().getName()+" "+advisor.getFName()+" "+advisor.getLName());
-        }
-        System.out.println("\nGet all Courses\n");
-        for(Course course : Department.getAllCourses()){
-            System.out.println(course.getClass().getName()+" "+course.getCourseCode()+" "+course.getCourseName());
-        }
-        System.out.println("\nGet all Registrations\n");
-        for(Registration registration : Department.getAllRegistrations()){
-            System.out.println(registration);
-        }
+
+        testMethod(department);
+        //getEverything(department);
+
 
         System.out.println();
 
         displayConsoleUI();
+    }
+
+    public static void getEverything(Department department){
+        System.out.println("\nGet all people\n");
+        for(Person person : department.getAllPeople()){
+            System.out.println(person.getClass().getName()+" "+person.getFName()+" "+person.getLName());
+        }
+        System.out.println("\nGet all Students\n");
+        for(Student student : department.getAllStudents()){
+            System.out.println(student.getClass().getName()+" "+student.getFName()+" "+student.getLName());
+        }
+        System.out.println("\nGet all Advisors\n");
+        for(Advisor advisor : department.getAllAdvisors()){
+            System.out.println(advisor.getClass().getName()+" "+advisor.getFName()+" "+advisor.getLName());
+        }
+        System.out.println("\nGet all Courses\n");
+        for(Course course : department.getAllCourses()){
+            System.out.println(course.getClass().getName()+" "+course.getCourseCode()+" "+course.getCourseName());
+        }
+        System.out.println("\nGet all Registrations\n");
+        for(Registration registration : department.getAllRegistrations()){
+            System.out.println(registration);
+        }
+    }
+    public static void testMethod(Department department1){
+
+            IDGenerator idGenerator = new IDGenerator();
+            Advisor advisor = new Advisor("Ilker","Keklik", null, idGenerator.generateNewID(IDType.StaffID),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
+            department1.addAnObject(advisor);
+            Advisor advisor2 = new Advisor("Burkay","Keklik", null,idGenerator.generateNewID(IDType.StaffID),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
+            department1.addAnObject(advisor2);
+
+            Student student = new Student("Kerim","Hasan",null,idGenerator.generateNewID(IDType.StudentID),new ArrayList<String>(),advisor.getStaffNo(),new ArrayList<String>());
+            department1.addAnObject(student);
+            Student student2 = new Student("Yusuf","Duman",null,idGenerator.generateNewID(IDType.StudentID),new ArrayList<String>(),advisor.getStaffNo(),new ArrayList<String>());
+            department1.addAnObject(student2);
+
+            Course course = new Course("Database","CSE3020",new ArrayList<String>(),"",new ArrayList<String>(),new ArrayList<String>());
+            department1.addAnObject(course);
+            Course course2 = new Course("OOPP","CSE3070",new ArrayList<String>(),"",new ArrayList<String>(),new ArrayList<String>());
+            department1.addAnObject(course2);
+
+            student.registerToNewCourse("CSE3070","1");
+            //System.out.println("Before proceed:"+student.getCourseCodes());
+            //advisor.proceedTheRegistration("1",RegistrationStatus.Confirmed);
+            //System.out.println("After proceed:"+student.getCourseCodes());
+            //System.out.println("After2 proceed:"+student2.getCourseCodes());
+            System.out.println(advisor.getActiveRegistrations());
     }
 
     public static void displayConsoleUI(){

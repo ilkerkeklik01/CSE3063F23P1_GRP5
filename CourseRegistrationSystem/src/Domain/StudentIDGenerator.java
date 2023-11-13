@@ -16,7 +16,7 @@ public class StudentIDGenerator extends IDGenerator {
 
     private List<String> getUsedIDsByOtherStudents(){
 
-      Collection<Student> allStudents = Department.getAllStudents();
+      Collection<Student> allStudents = Department.getInstance().getAllStudents();
         List<String> alreadyUsedIDs = new ArrayList<>();
 
         for (Student student : allStudents) {

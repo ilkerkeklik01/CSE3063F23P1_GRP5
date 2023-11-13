@@ -1,103 +1,114 @@
 package Domain;
 
-import java.time.LocalDate;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Collection;
 
 public class Department {
-    private static Collection<Person> allPeople = new ArrayList<Person>();
-    private static Collection<Course> allCourses = new ArrayList<Course>();
-    private static Collection<Registration> allRegistrations = new ArrayList<Registration>();
-    private static Collection<Staff> allStaffs = new ArrayList<Staff>();
-    private static Collection<Student> allStudents = new ArrayList<Student>();
-    private static Collection<Lecturer> allLecturers = new ArrayList<Lecturer>();
-    private static Collection<Advisor> allAdvisors = new ArrayList<Advisor>();
+    private Collection<Person> allPeople = new ArrayList<Person>();
+    private Collection<Course> allCourses = new ArrayList<Course>();
+    private Collection<Registration> allRegistrations = new ArrayList<Registration>();
+    private Collection<Staff> allStaffs = new ArrayList<Staff>();
+    private Collection<Student> allStudents = new ArrayList<Student>();
+    private Collection<Lecturer> allLecturers = new ArrayList<Lecturer>();
+    private Collection<Advisor> allAdvisors = new ArrayList<Advisor>();
 
-    static
-    {
-        IDGenerator idGenerator = new IDGenerator();
+    private static Department department = null;
 
-        Advisor advisor = new Advisor("Ilker","Keklik", null, idGenerator.generateNewID(IDType.StaffID),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
-        addAnObject(advisor);
-        Advisor advisor2 = new Advisor("Burkay","Keklik", null,idGenerator.generateNewID(IDType.StaffID),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
-        addAnObject(advisor2);
 
-        Student student = new Student("Kerim","Hasan",null,idGenerator.generateNewID(IDType.StudentID),new ArrayList<String>(),advisor.getStaffNo(),new ArrayList<String>());
-        addAnObject(student);
-        Student student2 = new Student("Yusuf","Duman",null,idGenerator.generateNewID(IDType.StudentID),new ArrayList<String>(),advisor.getStaffNo(),new ArrayList<String>());
-        addAnObject(student2);
-
-        Course course = new Course("Database","CSE3020",new ArrayList<String>(),"",new ArrayList<String>(),new ArrayList<String>());
-        addAnObject(course);
-        Course course2 = new Course("OOPP","CSE3070",new ArrayList<String>(),"",new ArrayList<String>(),new ArrayList<String>());
-        addAnObject(course2);
-
-        student.registerToNewCourse("CSE3070","1");
-        System.out.println("Before proceed:"+student.getCourseCodes());
-        advisor.proceedTheRegistration("1",RegistrationStatus.Confirmed);
-        System.out.println("After proceed:"+student.getCourseCodes());
-    }
-    public Department() {
+    private Department() {
     }
 
-    public static Collection<Staff> getAllStaffs() {
-        return allStaffs;
+
+    public Advisor getAdvisorByStaffNo(String StaffNo){
+        ArrayList<Advisor> all =(ArrayList<Advisor>)getAllAdvisors();
+
+        Advisor advisor=null;
+        for(Advisor each :all){
+            if(each.getStaffNo().equals(StaffNo)){
+                advisor=each;
+                break;
+            }
+        }
+        if(advisor==null){
+            System.out.println(StaffNo+" is not found");
+        }
+        return advisor;
+    }
+    public Course getCourseByCourseCode(String courseCode){
+        ArrayList<Course> all =(ArrayList<Course>)getAllCourses();
+
+        Course course=null;
+        for(Course each :all){
+            if(each.getCourseCode().equals(courseCode)){
+                course=each;
+                break;
+            }
+        }
+        if(course==null){
+            System.out.println(courseCode+" is not found");
+
+        }
+        return course;
+    }
+    public Lecturer getLecturerByStaffNo(String StaffNo){
+        ArrayList<Lecturer> all =(ArrayList<Lecturer>)getAllLecturers();
+
+        Lecturer lecturer=null;
+        for(Lecturer each :all){
+            if(each.getStaffNo().equals(StaffNo)){
+                lecturer=each;
+                break;
+            }
+        }
+        if(lecturer==null){
+            System.out.println(StaffNo+" is not found");
+        }
+        return lecturer;
+    }
+    public Registration getRegistrationByRegistrationNo(String registrationNo){
+        ArrayList<Registration> all =(ArrayList<Registration>)getAllRegistrations();
+
+        Registration registration=null;
+        for(Registration each :all){
+            if(each.getRegistrationNo().equals(registrationNo)){
+                registration=each;
+                break;
+            }
+        }
+        if(registration==null){
+            System.out.println(registrationNo+" is not found");
+
+        }
+        return registration;
+    }
+    public Student getStudentByStudentNo(String studentNo){
+        ArrayList<Student> all =(ArrayList<Student>)getAllStudents();
+
+        Student student=null;
+        for(Student each :all){
+            if(each.getStudentNo().equals(studentNo)){
+                student=each;
+                break;
+            }
+        }
+        if(student==null){
+            System.out.println(studentNo+" is not found");
+        }
+        return student;
     }
 
-    public static void setAllStaffs(Collection<Staff> allStaffs) {
-        Department.allStaffs = allStaffs;
+
+    public static Department getInstance(){
+        if(department==null){
+            department = new Department();
+        }
+        return department;
     }
 
-    public static Collection<Registration> getAllRegistrations() {
-        return allRegistrations;
-    }
 
-    public static void setAllRegistrations(Collection<Registration> allRegistrations) {
-        Department.allRegistrations = allRegistrations;
-    }
+    public void addAnObject(Object object){
 
-    public static Collection<Person> getAllPeople() {
-        return allPeople;
-    }
 
-    public static void setAllPeople(Collection<Person> allPeople) {
-        Department.allPeople = allPeople;
-    }
-
-    public static Collection<Course> getAllCourses() {
-        return allCourses;
-    }
-
-    public static void setAllCourses(Collection<Course> allCourses) {
-        Department.allCourses = allCourses;
-    }
-
-    public static Collection<Student> getAllStudents() {
-        return allStudents;
-    }
-
-    public static void setAllStudents(Collection<Student> allStudents) {
-        Department.allStudents = allStudents;
-    }
-
-    public static Collection<Lecturer> getAllLecturers() {
-        return allLecturers;
-    }
-
-    public static void setAllLecturers(Collection<Lecturer> allLecturers) {
-        Department.allLecturers = allLecturers;
-    }
-
-    public static Collection<Advisor> getAllAdvisors() {
-        return allAdvisors;
-    }
-
-    public static void setAllAdvisors(Collection<Advisor> allAdvisors) {
-        Department.allAdvisors = allAdvisors;
-    }
-
-    public static void addAnObject(Object object){
         boolean instanceCheck = false;
         if(object instanceof Person){
             allPeople.add((Person)object);
@@ -129,8 +140,61 @@ public class Department {
         if(!instanceCheck){
             System.out.println(object.getClass().getTypeName()+"Could not added");
         }
-
     }
 
+    public Collection<Person> getAllPeople() {
+        return allPeople;
+    }
 
+    public void setAllPeople(Collection<Person> allPeople) {
+        this.allPeople = allPeople;
+    }
+
+    public Collection<Course> getAllCourses() {
+        return allCourses;
+    }
+
+    public void setAllCourses(Collection<Course> allCourses) {
+        this.allCourses = allCourses;
+    }
+
+    public Collection<Registration> getAllRegistrations() {
+        return allRegistrations;
+    }
+
+    public void setAllRegistrations(Collection<Registration> allRegistrations) {
+        this.allRegistrations = allRegistrations;
+    }
+
+    public Collection<Staff> getAllStaffs() {
+        return allStaffs;
+    }
+
+    public void setAllStaffs(Collection<Staff> allStaffs) {
+        this.allStaffs = allStaffs;
+    }
+
+    public Collection<Student> getAllStudents() {
+        return allStudents;
+    }
+
+    public void setAllStudents(Collection<Student> allStudents) {
+        this.allStudents = allStudents;
+    }
+
+    public Collection<Lecturer> getAllLecturers() {
+        return allLecturers;
+    }
+
+    public void setAllLecturers(Collection<Lecturer> allLecturers) {
+        this.allLecturers = allLecturers;
+    }
+
+    public Collection<Advisor> getAllAdvisors() {
+        return allAdvisors;
+    }
+
+    public void setAllAdvisors(Collection<Advisor> allAdvisors) {
+        this.allAdvisors = allAdvisors;
+    }
 }
