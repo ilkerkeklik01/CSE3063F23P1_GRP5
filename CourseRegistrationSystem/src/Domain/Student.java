@@ -9,7 +9,7 @@ public class Student extends Person {
     private Collection<String> courseCodes;
     private String advisorNo;
     private Collection<String> registrationNumbers;
-    private final Transcript transcript;
+    private Transcript transcript;
 
 
     public Student(String FName, String LName, Date birthdate, String studentNo, Collection<String> courseCodes, String advisorNo,Collection<String> registrationNumbers) {
@@ -29,6 +29,14 @@ public class Student extends Person {
             return;
         }
 
+          if(!this.transcript.getPassedCourseCodes().containsAll(course.getPrerequisitesIds())){
+            System.out.println("You have to pass the prerequisites of the course: "+courseCode);
+            return;
+          }
+        
+
+
+        
         Registration registration = new Registration(newRegistrationNo,this.getStudentNo(),this.getAdvisorNo(),courseCode,RegistrationStatus.Active);
         this.getRegistrationNumbers().add(registration.getRegistrationNo());
         Advisor advisor = Department.getInstance().getAdvisorByStaffNo(getAdvisorNo());
@@ -36,6 +44,10 @@ public class Student extends Person {
         Department.getInstance().getAllRegistrations().add(registration);
     }
 
+    public Transcript getTranscript() {
+        return transcript;
+    }
+    
 
     public Collection<String> getRegistrationNumbers() {
         return registrationNumbers;
