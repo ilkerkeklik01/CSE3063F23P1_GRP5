@@ -3,7 +3,7 @@ package Domain;
 import java.util.Date;
 
 
-public abstract class Person {
+public abstract class Person implements Searchable{
 
     private String personId;
     private String fName;

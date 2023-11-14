@@ -1,9 +1,8 @@
 package Domain;
 
-import java.util.ArrayList;
 import java.util.Date;
 
-public abstract class Staff extends Person{
+public abstract class Staff extends Person {
 
     private String staffNo;
 

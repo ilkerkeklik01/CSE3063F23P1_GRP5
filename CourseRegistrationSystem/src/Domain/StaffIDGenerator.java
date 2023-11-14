@@ -16,7 +16,7 @@ public class StaffIDGenerator extends IDGenerator {
 
     private List<String> getUsedIDsByOtherStaffs(){
 
-        Collection<Staff> allStaff =  Department.getAllStaffs();
+        Collection<Staff> allStaff =  Department.getInstance().getAllStaffs();
         List<String> alreadyUsedIDs = new ArrayList<>();
 
         for (Staff staff : allStaff) {
