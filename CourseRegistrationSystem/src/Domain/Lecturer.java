@@ -21,5 +21,8 @@ public class Lecturer extends Staff {
         this.courseIds = courseIds;
     }
 
-
+    @Override
+    public String toString() {
+        return "Lecturer{} " + super.toString();
+    }
 }

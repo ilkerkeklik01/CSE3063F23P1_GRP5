@@ -93,6 +93,9 @@ public class IDGenerator {
             case PersonID:
                 idGenerator = new PersonIDGenerator();
                 break;
+            case RegistrationID:
+                idGenerator = new RegistrationIDGenerator();
+                break;
             default:
                 throw new IllegalArgumentException("Invalid ID type");
         }
