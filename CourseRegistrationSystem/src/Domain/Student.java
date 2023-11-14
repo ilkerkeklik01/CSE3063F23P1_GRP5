@@ -29,6 +29,14 @@ public class Student extends Person {
             return;
         }
 
+          if(!this.transcript.getPassedCourseCodes().containsAll(course.getPrerequisitesIds())){
+            System.out.println("You have to pass the prerequisites of the course: "+courseCode);
+            return;
+          }
+        
+
+
+        
         Registration registration = new Registration(newRegistrationNo,this.getStudentNo(),this.getAdvisorNo(),courseCode,RegistrationStatus.Active);
         this.getRegistrationNumbers().add(registration.getRegistrationNo());
         Advisor advisor = Department.getInstance().getAdvisorByStaffNo(getAdvisorNo());

@@ -101,7 +101,6 @@ public class IDGenerator {
         }
         
         String generatedID = idGenerator.generateID();
-        System.out.println(idType + " Generated ID: " + generatedID);
         return generatedID;        
     }
 

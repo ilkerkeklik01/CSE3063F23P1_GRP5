@@ -48,6 +48,16 @@ public class Transcript {
             }
         }
     }
+    public ArrayList<String> getPassedCourseCodes() {
+        ArrayList<String> arr = new ArrayList<>();
+        for (Grade grade : grades) {
+            if (grade.isPassed()) {
+                arr.add(grade.getCourse().getCourseCode());
+            }
+        }
+        return arr;
+    }
+
     public void printFailedCourses() {
         for (Grade grade : grades) {
             if (!grade.isPassed()) {
