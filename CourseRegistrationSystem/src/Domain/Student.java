@@ -9,6 +9,7 @@ public class Student extends Person {
     private Collection<String> courseCodes;
     private String advisorNo;
     private Collection<String> registrationNumbers;
+    private final Transcript transcript;
 
 
     public Student(String FName, String LName, Date birthdate, String studentNo, Collection<String> courseCodes, String advisorNo,Collection<String> registrationNumbers) {
@@ -18,6 +19,7 @@ public class Student extends Person {
         setAdvisorNo(advisorNo);
         setRegistrationNumbers(registrationNumbers);
         Department.getInstance().getAdvisorByStaffNo(advisorNo).getStudentNumbers().add(studentNo);
+        this.transcript = new Transcript();
     }
 
     public void registerToNewCourse(String courseCode,String newRegistrationNo){
