@@ -57,7 +57,7 @@ public class CourseRegistrationSystem {
             Course course2 = new Course("OOPP","CSE3070",new ArrayList<String>(),"",new ArrayList<String>(),new ArrayList<String>());
             department1.addAnObject(course2);
 
-            student.registerToNewCourse("CSE3070","1");
+            student.registerToNewCourse("CSE3070",idGenerator.generateNewID(IDType.RegistrationID));
             //System.out.println("Before proceed:"+student.getCourseCodes());
             //advisor.proceedTheRegistration("1",RegistrationStatus.Confirmed);
             //System.out.println("After proceed:"+student.getCourseCodes());
