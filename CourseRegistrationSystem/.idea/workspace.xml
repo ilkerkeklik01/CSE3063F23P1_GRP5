@@ -6,9 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="c02703ea-8ff5-4cf6-a2eb-c2ce8e2eef5e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/Department.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Department.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CourseRegistrationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CourseRegistrationSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Advisor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Advisor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Course.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Course.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Lecturer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Lecturer.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Domain/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Domain/PersonIDGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/PersonIDGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Staff.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Staff.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Student.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +26,21 @@
       </list>
     </option>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="json_test" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="GithubProjectSettings">
+    <option name="branchProtectionPatterns">
+      <list>
+        <option value="main" />
+      </list>
+    </option>
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 8
 }</component>
@@ -30,20 +49,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "ID-uniqueness-feature",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "onboarding.tips.debug.path": "C:/Users/ilker/IdeaProjects/CourseRegistrationSystem/src/Main.java",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/ilker/IdeaProjects/CourseRegistrationSystem/src/Main.java&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="CourseRegistrationSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="CourseRegistrationSystem" />
@@ -67,10 +86,22 @@
       <option name="presentableId" value="Default" />
       <updated>1699297041285</updated>
       <workItem from="1699297042378" duration="542000" />
+      <workItem from="1699956626735" duration="6254000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

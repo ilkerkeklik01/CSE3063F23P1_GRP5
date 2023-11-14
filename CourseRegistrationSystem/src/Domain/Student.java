@@ -17,6 +17,7 @@ public class Student extends Person {
         setCourseCodes(courseCodes);
         setAdvisorNo(advisorNo);
         setRegistrationNumbers(registrationNumbers);
+        Department.getInstance().getAdvisorByStaffNo(advisorNo).getStudentNumbers().add(studentNo);
     }
 
     public void registerToNewCourse(String courseCode,String newRegistrationNo){
@@ -66,4 +67,13 @@ public class Student extends Person {
         this.advisorNo = advisorNo;
     }
 
+    @Override
+    public String toString() {
+        return "Student{" +
+                "studentNo='" + studentNo + '\'' +
+                ", courseCodes=" + courseCodes +
+                ", advisorNo='" + advisorNo + '\'' +
+                ", registrationNumbers=" + registrationNumbers +
+                "} " + super.toString();
+    }
 }

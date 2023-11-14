@@ -69,4 +69,12 @@ public class Course implements Searchable{
     public void setPrerequisitesIds(Collection<String> prerequisitesIds) {
         this.prerequisitesIds = prerequisitesIds;
     }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseName='" + courseName + '\'' +
+                ", courseCode='" + courseCode + '\'' +
+                '}';
+    }
 }
