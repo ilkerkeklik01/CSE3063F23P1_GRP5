@@ -52,6 +52,13 @@ public abstract class Person implements Searchable{
         birthdate = birthdate;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "personId='" + personId + '\'' +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                ", birthdate=" + birthdate +
+                '}';
+    }
 }

@@ -19,5 +19,10 @@ public abstract class Staff extends Person {
         this.staffNo = staffNo;
     }
 
-
+    @Override
+    public String toString() {
+        return "Staff{" +
+                "staffNo='" + staffNo + '\'' +
+                "} " + super.toString();
+    }
 }
