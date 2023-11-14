@@ -10,6 +10,7 @@ public class Course implements Searchable{
     private String courseSectionNo;
     private Collection<String> studentNumbers;
     private Collection<String> prerequisitesIds;
+    private int credit;
 
 
     public Course(String courseName, String courseCode, Collection<String> lecturersNumbers, String courseSectionNo, Collection<String> studentNumbers, Collection<String> prerequisitesIds) {
@@ -22,7 +23,13 @@ public class Course implements Searchable{
     }
 
 
+    public int getCredit() {
+        return credit;
+    }
 
+    public void setCredit(int credit) {
+        this.credit = credit;
+    }
     public String getCourseName() {
         return courseName;
     }
