@@ -3,7 +3,7 @@ package Domain;
 import java.util.Date;
 
 
-public abstract class Person {
+public abstract class Person implements Searchable{
 
     private String personId;
     private String fName;
@@ -52,6 +52,13 @@ public abstract class Person {
         birthdate = birthdate;
     }
 
-
-
+    @Override
+    public String toString() {
+        return "Person{" +
+                "personId='" + personId + '\'' +
+                ", fName='" + fName + '\'' +
+                ", lName='" + lName + '\'' +
+                ", birthdate=" + birthdate +
+                '}';
+    }
 }

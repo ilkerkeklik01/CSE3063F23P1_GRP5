@@ -1,9 +1,8 @@
 package Domain;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
-public class Course {
+public class Course implements Searchable{
 
     private String courseName;
     private String courseCode;
@@ -11,6 +10,7 @@ public class Course {
     private String courseSectionNo;
     private Collection<String> studentNumbers;
     private Collection<String> prerequisitesIds;
+    private int credit;
 
 
     public Course(String courseName, String courseCode, Collection<String> lecturersNumbers, String courseSectionNo, Collection<String> studentNumbers, Collection<String> prerequisitesIds) {
@@ -22,23 +22,14 @@ public class Course {
         this.prerequisitesIds = prerequisitesIds;
     }
 
-    public static Course getCourseByCourseCode(String courseCode){
-        ArrayList<Course> all =(ArrayList<Course>) Department.getAllCourses();
 
-        Course course=null;
-        for(Course each :all){
-            if(each.getCourseCode().equals(courseCode)){
-                course=each;
-                break;
-            }
-        }
-        if(course==null){
-            System.out.println(courseCode+" is not found");
-
-        }
-        return course;
+    public int getCredit() {
+        return credit;
     }
 
+    public void setCredit(int credit) {
+        this.credit = credit;
+    }
     public String getCourseName() {
         return courseName;
     }
@@ -84,5 +75,13 @@ public class Course {
 
     public void setPrerequisitesIds(Collection<String> prerequisitesIds) {
         this.prerequisitesIds = prerequisitesIds;
+    }
+
+    @Override
+    public String toString() {
+        return "Course{" +
+                "courseName='" + courseName + '\'' +
+                ", courseCode='" + courseCode + '\'' +
+                '}';
     }
 }

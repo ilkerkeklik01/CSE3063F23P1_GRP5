@@ -1,10 +1,9 @@
 package Domain;
 
-import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
-public class Lecturer extends Staff{
+public class Lecturer extends Staff {
 
     private Collection<String> courseIds;
 
@@ -12,21 +11,7 @@ public class Lecturer extends Staff{
         super(FName, LName, birthdate, staffNo);
         setCourses(courseIds);
     }
-    public static Lecturer getLecturerByStaffNo(String StaffNo){
-        ArrayList<Lecturer> all =(ArrayList<Lecturer>) Department.getAllLecturers();
 
-        Lecturer lecturer=null;
-        for(Lecturer each :all){
-            if(each.getStaffNo().equals(StaffNo)){
-                lecturer=each;
-                break;
-            }
-        }
-        if(lecturer==null){
-            System.out.println(StaffNo+" is not found");
-        }
-        return lecturer;
-    }
 
     public Collection<String> getCourseIds() {
         return courseIds;
@@ -36,5 +21,8 @@ public class Lecturer extends Staff{
         this.courseIds = courseIds;
     }
 
-
+    @Override
+    public String toString() {
+        return "Lecturer{} " + super.toString();
+    }
 }

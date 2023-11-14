@@ -1,9 +1,8 @@
 package Domain;
 
-import java.util.ArrayList;
 import java.util.Date;
 
-public abstract class Staff extends Person{
+public abstract class Staff extends Person {
 
     private String staffNo;
 
@@ -20,5 +19,10 @@ public abstract class Staff extends Person{
         this.staffNo = staffNo;
     }
 
-
+    @Override
+    public String toString() {
+        return "Staff{" +
+                "staffNo='" + staffNo + '\'' +
+                "} " + super.toString();
+    }
 }
