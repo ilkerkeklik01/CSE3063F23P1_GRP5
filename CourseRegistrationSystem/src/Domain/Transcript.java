@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Transcript {
-    private final List<Grade> grades;
+    private List<Grade> grades;
     private int completedCredits;
 
     public Transcript() {
@@ -23,7 +23,8 @@ public class Transcript {
 
 
 
-    public void addGrade(Course course, int numericGrade) {
+    public void addGrade(String courseCode, int numericGrade) {
+        Course course = Department.getInstance().getCourseByCourseCode(courseCode);
         Grade newGrade = new Grade(course, numericGrade);
         grades.add(newGrade);
         updateTotalCredits();
@@ -35,24 +36,23 @@ public class Transcript {
 
     public void printTakenCoursesStatus() {
         System.out.println("Completed Credits: " + getCompletedCredits() + "\n");
-        System.out.println("Taken Courses :");
+        System.out.println("Taken Courses" + "\n");
         printPassedCourses();
-        System.out.println();
         printFailedCourses();
     }
     public void printPassedCourses() {
-        System.out.println("Passed Courses:");
         for (Grade grade : grades) {
             if (grade.isPassed()) {
-                System.out.println(grade.getCourse().getCourseName() + " " + grade.getCourse().getCourseCode() + grade.getCourse().getCredit());
+                System.out.println(grade.getCourse().getCourseName() + " " + grade.getCourse().getCourseCode() + " " 
+                + grade.getCourse().getCredit() + " credits" + " " + grade.getLetterGrade());
             }
         }
     }
     public void printFailedCourses() {
-        System.out.println("Failed Courses:");
         for (Grade grade : grades) {
             if (!grade.isPassed()) {
-                System.out.println(grade.getCourse().getCourseName() + " " + grade.getCourse().getCourseCode() + grade.getCourse().getCredit());
+                System.out.println(grade.getCourse().getCourseName() + " " + grade.getCourse().getCourseCode() + " " 
+                + grade.getCourse().getCredit() + " credits" + " " + grade.getLetterGrade());
             }
         }
     }

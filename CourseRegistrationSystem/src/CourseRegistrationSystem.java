@@ -52,10 +52,13 @@ public class CourseRegistrationSystem {
             Student student2 = new Student("Yusuf","Duman",null,idGenerator.generateNewID(IDType.StudentID),new ArrayList<String>(),advisor.getStaffNo(),new ArrayList<String>());
             department1.addAnObject(student2);
 
-            Course course = new Course("Database","CSE3020",new ArrayList<String>(),"",new ArrayList<String>(),new ArrayList<String>());
+            Course course = new Course("Database","CSE3020",new ArrayList<String>(),"",new ArrayList<String>(),new ArrayList<String>(),6);
             department1.addAnObject(course);
-            Course course2 = new Course("OOPP","CSE3070",new ArrayList<String>(),"",new ArrayList<String>(),new ArrayList<String>());
+            Course course2 = new Course("OOPP","CSE3070",new ArrayList<String>(),"",new ArrayList<String>(),new ArrayList<String>(), 5);
             department1.addAnObject(course2);
+            student.getTranscript().addGrade("CSE3070", 90);
+            System.out.println();
+            student.getTranscript().printTakenCoursesStatus();
 
             student.registerToNewCourse("CSE3070",idGenerator.generateNewID(IDType.RegistrationID));
             //System.out.println("Before proceed:"+student.getCourseCodes());

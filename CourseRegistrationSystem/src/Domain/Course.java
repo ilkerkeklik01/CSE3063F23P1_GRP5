@@ -13,7 +13,8 @@ public class Course implements Searchable{
     private int credit;
 
 
-    public Course(String courseName, String courseCode, Collection<String> lecturersNumbers, String courseSectionNo, Collection<String> studentNumbers, Collection<String> prerequisitesIds) {
+    public Course(String courseName, String courseCode, Collection<String> lecturersNumbers, String courseSectionNo, Collection<String> studentNumbers, Collection<String> prerequisitesIds, int credit) {
+        this.credit = credit;
         this.courseName = courseName;
         this.courseCode = courseCode;
         this.lecturersNumbers = lecturersNumbers;
