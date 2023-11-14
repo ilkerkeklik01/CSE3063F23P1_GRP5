@@ -24,4 +24,12 @@ class CourseSection{
     public void setCourseSectionNo(String courseSectionNo) {
         this.courseSectionNo = courseSectionNo;
     }
+
+    public String[] getDays(){
+        return days;
+    }
+
+    public void setDays(String[] days) {
+        this.days = days;
+    }
 }
