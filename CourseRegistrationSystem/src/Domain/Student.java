@@ -3,6 +3,9 @@ package Domain;
 import java.util.Collection;
 import java.util.Date;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Student extends Person {
 
     private String studentNo;
@@ -21,6 +24,8 @@ public class Student extends Person {
         Department.getInstance().getAdvisorByStaffNo(advisorNo).getStudentNumbers().add(studentNo);
         this.transcript = new Transcript();
     }
+
+    public Student(){};
 
     public void registerToNewCourse(String courseCode,String newRegistrationNo){
         Course course = Department.getInstance().getCourseByCourseCode(courseCode);

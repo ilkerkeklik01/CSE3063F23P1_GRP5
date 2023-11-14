@@ -2,19 +2,29 @@ import Domain.*;
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import Data.*;
 
 public class CourseRegistrationSystem {
     public static void main(String[] args) {
         Department department = Department.getInstance();
 
+        DataManager dataManager = new DataManager();
 
-        testMethod(department);
+
+        dataManager.loadData();
+
+        //testMethod(department);
         //getEverything(department);
+
 
 
         System.out.println();
 
         displayConsoleUI(department);
+
+        dataManager.saveData();
+
+
     }
 
     public static void getEverything(Department department){
@@ -75,6 +85,8 @@ public class CourseRegistrationSystem {
     }
 
     private static void displayConsoleUI(Department department){
+
+        DataManager dataManager = new DataManager();
         short choice = -1;
 
         while(choice!=0){
@@ -84,12 +96,13 @@ public class CourseRegistrationSystem {
             System.out.println("Press 4 to add a Course");
             System.out.println("Press 5 to login as a student");
             System.out.println("Press 6 to login as an advisor");
-            System.out.println("Press 7 to login as a lecturer");
+            //System.out.println("Press 7 to login as a lecturer");
             System.out.println("Press 0 to exit!");
             Scanner input = new Scanner(System.in);
             choice = input.nextShort();
             switch (choice){
                 case 0:
+                    dataManager.saveData();
                     System.exit(0);
                     break;
                 case 1://add a Student
@@ -106,9 +119,9 @@ public class CourseRegistrationSystem {
                 case 6://login as an advisor
                     loginAsAnAdvisor(department);
                     break;
-                case 7://login as a lecturer
-                    loginAsLecturer(department);
-                    break;
+                //case 7://login as a lecturer
+                //    loginAsLecturer(department);
+                //    break;
                 default://default case
                     break;
             }

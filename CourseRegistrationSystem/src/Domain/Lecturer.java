@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Lecturer extends Staff {
 
     private Collection<String> courseIds;
@@ -11,6 +14,10 @@ public class Lecturer extends Staff {
     public Lecturer(String FName, String LName, Date birthdate, String staffNo, Collection<String> courseIds) {
         super(FName, LName, birthdate, staffNo);
         setCourses(courseIds);
+    }
+
+    public Lecturer(){
+        super();
     }
 
 
@@ -26,6 +33,7 @@ public class Lecturer extends Staff {
         courseIds.add(courseId);
     }
 
+    @JsonIgnore
     public ArrayList<Course> getCourses(){
         ArrayList<Course> courses = new ArrayList<>();
         ArrayList<Course> allCourses = (ArrayList<Course>) Department.getInstance().getAllCourses();

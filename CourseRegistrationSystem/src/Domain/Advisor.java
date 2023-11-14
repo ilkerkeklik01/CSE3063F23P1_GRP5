@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+ @JsonIgnoreProperties(ignoreUnknown = true)
 public class Advisor extends Lecturer  {
 
 
@@ -17,6 +20,10 @@ public class Advisor extends Lecturer  {
         setStudentNumbers(studentNumbers);
         setRegistrationNumbers(registrationNumbers);
     }
+
+    public Advisor(){
+        super();
+    };
 
 
     public Collection<Registration> getActiveRegistrations(){
