@@ -43,9 +43,15 @@ public class CourseRegistrationSystem {
 
             IDGenerator idGenerator = new IDGenerator();
             Advisor advisor = new Advisor("Ilker","Keklik", null, idGenerator.generateNewID(IDType.StaffID),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
-            department1.addAnObject(advisor);
+
+            advisor.addTeachingCourse("CSE3020");
+            advisor.addTeachingCourse("CSE3070");
+
+        department1.addAnObject(advisor);
             Advisor advisor2 = new Advisor("Burkay","Keklik", null,idGenerator.generateNewID(IDType.StaffID),new ArrayList<String>(),new ArrayList<String>(),new ArrayList<String>());
             department1.addAnObject(advisor2);
+
+            advisor2.addTeachingCourse("CSE3070");
 
             Student student = new Student("Kerim","Hasan",null,idGenerator.generateNewID(IDType.StudentID),new ArrayList<String>(),advisor.getStaffNo(),new ArrayList<String>());
             department1.addAnObject(student);
@@ -78,6 +84,7 @@ public class CourseRegistrationSystem {
             System.out.println("Press 4 to add a Course");
             System.out.println("Press 5 to login as a student");
             System.out.println("Press 6 to login as an advisor");
+            System.out.println("Press 7 to login as a lecturer");
             System.out.println("Press 0 to exit!");
             Scanner input = new Scanner(System.in);
             choice = input.nextShort();
@@ -98,6 +105,9 @@ public class CourseRegistrationSystem {
                     break;
                 case 6://login as an advisor
                     loginAsAnAdvisor(department);
+                    break;
+                case 7://login as a lecturer
+                    loginAsLecturer(department);
                     break;
                 default://default case
                     break;
@@ -135,7 +145,8 @@ public class CourseRegistrationSystem {
         while(choice!=0){
             System.out.println("0 to exit");
             System.out.println("1 to list courses taken");
-            System.out.println("4 to register to new course");
+            System.out.println("2 to print transcript");
+            System.out.println("3 to register to new course");
             Scanner input2 = new Scanner(System.in);
             choice = input2.nextShort();
             switch (choice){
@@ -147,17 +158,14 @@ public class CourseRegistrationSystem {
                     }
                     break;
                 case 2://display transcript
+                    student.getTranscript().printTakenCoursesStatus();
                     break;
-                case 3://
-                    break;
-                case 4://new course registration
+                case 3://new course registration
                     System.out.println("Enter the course code");
                     Scanner scanner = new Scanner(System.in);
                     String courseCode = scanner.next();
                     //Warning generate course registration id is missing
-                    student.registerToNewCourse(courseCode,new IDGenerator().generateNewID(IDType.StaffID));
-                    break;
-                case 5://
+                    student.registerToNewCourse(courseCode,new IDGenerator().generateNewID(IDType.RegistrationID));
                     break;
                 default://default case
                     break;
@@ -198,6 +206,8 @@ public class CourseRegistrationSystem {
             System.out.println("1 to list active registrations");
             System.out.println("2 to list students you advise");
             System.out.println("3 to proceed a registration");
+            System.out.println("4 to list teaching courses");
+            System.out.println("5 to grade ");
             System.out.println("");
             Scanner input2 = new Scanner(System.in);
             choice = input2.nextShort();
@@ -232,12 +242,174 @@ public class CourseRegistrationSystem {
                     }
                     advisor.proceedTheRegistration(registrationNo,status);
                     break;
+                case 4:
+                    listCoursesForLecturer(department, advisor);
                 default://default case
                     break;
             }
 
         }//While loop end
     }//Login as an advisor end
+
+    private static void loginAsLecturer(Department department){
+        short var = -1;
+        boolean flag = false;
+        Lecturer lecturer=null;
+
+        while(var!=0&&!flag){
+            System.out.println("1 to enter lecturer staff number");
+            System.out.println("0 to cancel");
+            Scanner input = new Scanner(System.in);
+            var = input.nextShort();
+            switch (var){
+                case 0: return;
+                case 1:
+                    Scanner input2 = new Scanner(System.in);
+                    String enteredNo = input2.next();
+                    lecturer = department.getLecturerByStaffNo(enteredNo);
+                    if(lecturer == null) {
+                        System.out.println("Lecturer cannot found!");
+                        break;
+                    }
+                    flag = true;
+                    break;
+                default: break;
+            }
+        }
+
+        short choice = -1;
+        while(choice!=0){
+            System.out.println("0 to exit");
+            System.out.println("1 to list teaching courses");
+            System.out.println("2 to list students you advise");
+            System.out.println("3 to proceed a registration");
+            System.out.println("");
+            Scanner input2 = new Scanner(System.in);
+            choice = input2.nextShort();
+            switch (choice){
+                case 0:
+                    break;
+                case 1://get active registrations
+                    listCoursesForLecturer(department, lecturer);
+                    break;
+                case 2://list students you advise
+                   //for(String code : advisor.getStudentNumbers()){
+                   //    System.out.println(department.getStudentByStudentNo(code));
+                   //}
+                    break;
+                case 3://proceed a registration
+                    Scanner input = new Scanner(System.in);
+                    String registrationNo,registrationStatusStr;
+                    System.out.println("Enter registration no.");
+                    registrationNo = input.next();
+                    System.out.println("Enter status(Active-Rejected-Confirmed)");
+                    registrationStatusStr = input.next();
+                    RegistrationStatus status = null;
+                    if(registrationStatusStr.equalsIgnoreCase("Confirmed")){
+                        status = RegistrationStatus.Confirmed;
+                    }else if(registrationStatusStr.equalsIgnoreCase("Active")){
+                        status=RegistrationStatus.Active;
+                    } else if (registrationStatusStr.equalsIgnoreCase("Rejected")) {
+                        status = RegistrationStatus.Rejected;
+                    }else{
+                        System.out.println("Invalid registration status!");
+                        break;
+                    }
+                    //advisor.proceedTheRegistration(registrationNo,status);
+                    break;
+                default://default case
+                    break;
+            }
+
+        }//While loop end
+    }
+
+
+
+    private static void listCoursesForLecturer(Department department, Lecturer lecturer){
+
+        short choice = -1;
+
+        while(choice !=0){
+            System.out.println(lecturer.getCourses());
+            System.out.println("\n1 to get action with spesific course");
+            System.out.println("0 to go back");
+            Scanner input2 = new Scanner(System.in);
+            choice = input2.nextShort();
+
+            switch (choice){
+                case 1:
+                    System.out.println("Enter course code");
+                    String courseCode = input2.next();
+                    Course course = department.getCourseByCourseCode(courseCode);
+                    showCourseOptions(course);
+                    break;
+                case 0:
+                    break;
+
+
+            }
+        }
+
+
+    }
+
+    private static void showCourseOptions(Course course){
+        if(course == null){
+            System.out.println("Course does not found");
+            return;
+        }
+
+        short choice = -1;
+
+        while(choice !=0){
+            System.out.println(course.getCourseCode() + "--" + course.getCourseName());
+            System.out.println("\n1 to list students");
+            System.out.println("2 to grade a student");
+            System.out.println("0 to go back");
+            Scanner input2 = new Scanner(System.in);
+            choice = input2.nextShort();
+
+            switch (choice){
+                case 1:
+                    System.out.println(course.getStudents());
+                    break;
+                case 2:
+                    System.out.println("Enter the student number to grade student for course:" + course.getCourseCode() );
+                    String studentNumber = input2.next();
+                    Student student = Department.getInstance().getStudentByStudentNo(studentNumber);
+                    if(student == null){
+                        break;
+                    }
+                    gradeStudent(student,course);
+                    showCourseOptions(course);
+                    break;
+                case 0:
+                    choice = 0;
+                    break;
+
+            }
+        }
+    }
+
+    private static void gradeStudent(Student student,Course course){
+
+        System.out.println("Enter a grade for student between 0 and 100");
+        Scanner input = new Scanner(System.in);
+        float grade = input.nextFloat();
+        System.out.println();
+        if(grade < 0 && grade > 100){
+            System.out.println("Invalid grade !!");
+            return;
+        }
+
+        student.getTranscript().addGrade(course.getCourseCode(),grade);
+
+        System.out.println("Student graded.");
+
+
+
+    }
 
 
 }

@@ -23,8 +23,16 @@ public class Transcript {
 
 
 
-    public void addGrade(String courseCode, int numericGrade) {
+    public void addGrade(String courseCode, float numericGrade) {
         Course course = Department.getInstance().getCourseByCourseCode(courseCode);
+
+
+        for (Grade grade : grades){
+            if(grade.getCourse().getCourseCode() == courseCode){
+                grade.setNumericGrade(numericGrade);
+                return;
+            }
+        }
         Grade newGrade = new Grade(course, numericGrade);
         grades.add(newGrade);
         updateTotalCredits();

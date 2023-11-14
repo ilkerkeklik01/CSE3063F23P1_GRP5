@@ -1,5 +1,6 @@
 package Domain;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
 public class Course implements Searchable{
@@ -64,6 +65,18 @@ public class Course implements Searchable{
 
     public Collection<String> getStudentNumbers() {
         return studentNumbers;
+    }
+
+    public Collection<Student> getStudents(){
+        ArrayList<Student> students = new ArrayList<>();
+        ArrayList<Student> allStudents = (ArrayList<Student>) Department.getInstance().getAllStudents();
+
+        for(Student student : allStudents){
+            if(this.getStudentNumbers().contains(student.getStudentNo())){
+                students.add(student);
+            }
+        }
+        return students;
     }
 
     public void setStudentNumbers(Collection<String> studentNumbers) {

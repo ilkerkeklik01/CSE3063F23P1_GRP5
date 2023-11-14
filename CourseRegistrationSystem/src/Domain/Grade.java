@@ -63,6 +63,7 @@ public class Grade {
     public void setPassed(boolean passed) {
         isPassed = passed;
     }
+    public void setNumericGrade(float numericGrade){this.numGrade = numericGrade;}
 
 
 }

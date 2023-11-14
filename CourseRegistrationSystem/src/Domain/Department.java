@@ -92,7 +92,7 @@ public class Department {
             }
         }
         if(student==null){
-            System.out.println(studentNo+" is not found");
+            System.out.println("Student with studentNo " + studentNo + " is not found");
         }
         return student;
     }
