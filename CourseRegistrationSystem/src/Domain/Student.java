@@ -1,7 +1,10 @@
 package Domain;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -37,6 +40,12 @@ public class Student extends Person {
           if(!this.transcript.getPassedCourseCodes().containsAll(course.getPrerequisitesIds())){
             System.out.println("You have to pass the prerequisites of the course: "+courseCode);
             return;
+          }
+
+          if(studentHas5OrMoreCourses()){
+              System.out.println("You can not take more than 5 courses.\nEither you selected more than 5 courses or the number of active registrations and your courses count is more than 5.");
+              return;
+
           }
         
 
@@ -84,6 +93,18 @@ public class Student extends Person {
 
     public void setAdvisorNo(String advisorNo) {
         this.advisorNo = advisorNo;
+    }
+
+    public List<Registration> getRegistrations(){
+        List<Registration> registrations;
+        return  Department.getInstance().getAllRegistrations().stream().filter(r -> r.getStudentNo() == this.getStudentNo()).collect(Collectors.toList());
+    }
+
+    private boolean studentHas5OrMoreCourses(){
+        if (this.courseCodes.size() + getRegistrations().stream().filter(r -> r.getStatus() == RegistrationStatus.Active).collect(Collectors.toList()).size() >= 5){
+            return true;
+        }
+        return false;
     }
 
     @Override
