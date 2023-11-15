@@ -103,6 +103,7 @@ public class Course implements Searchable{
         return "Course{" +
                 "courseName='" + courseName + '\'' +
                 ", courseCode='" + courseCode + '\'' +
+                ", prerequisiteCourseCodes='" + prerequisitesIds +'\'' +
                 '}';
     }
 }

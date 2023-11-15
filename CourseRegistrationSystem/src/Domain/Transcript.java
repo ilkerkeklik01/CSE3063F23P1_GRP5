@@ -2,6 +2,7 @@ package Domain;
 
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
@@ -18,6 +19,15 @@ public class Transcript {
 
     public int getCompletedCredits() {
         return completedCredits;
+    }
+
+    public ArrayList<Course> getCompletedCourses() {
+        ArrayList<Course> completedCourses = new ArrayList<>();
+        for(Grade grade : grades){
+            completedCourses.add(grade.getCourse());
+        }
+
+        return completedCourses;
     }
 
     private void setCompletedCredits(int completedCredits) {
@@ -46,6 +56,9 @@ public class Transcript {
     public List<Grade> getGrades() {
         return grades;
     }
+
+
+
 
     public void printTakenCoursesStatus() {
         System.out.println("Completed Credits: " + getCompletedCredits() + "\n");

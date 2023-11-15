@@ -126,8 +126,7 @@ public class DataManager {
         Department department = Department.getInstance();
         Transcript transcript = student.getTranscript();
         for (GradeDto gradeDto : transcriptDto.grades){
-            Course course = department.getCourseByCourseCode(gradeDto.courseCode);
-            Grade grade = new Grade(course, gradeDto.numGrade);
+            transcript.addGrade(gradeDto.courseCode, gradeDto.numGrade);
         }
     }
 
