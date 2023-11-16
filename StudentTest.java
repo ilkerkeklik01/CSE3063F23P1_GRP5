@@ -12,23 +12,23 @@ class StudentTest {
     @Test
     void testRegisterToNewCourse() {
 
-        Student student = new Student(DOLDUR);
+        Student student = new Student();
 
-        Course course = new Course(DOLDUR);
+        Course course = new Course();
 
-        course.setPrerequisitesIds(Arrays.asList(yukarda course a girdiğiniz kodu girin));
+        course.setPrerequisitesIds(Arrays.asList());
 
-        Department.getInstance().getAllCourses().add(DOLDUR, course);
+        Department.getInstance().getAllCourses().add();
 
-        Advisor advisor = new Advisor(DOLDUR);
-        Department.getInstance().getAllAdvisors().add( DOLDUR ,advisor);
+        Advisor advisor = new Advisor();
+        Department.getInstance().getAllAdvisors().add();
 
-        student.registerToNewCourse(DOLDUR);
+        student.registerToNewCourse();
 
-        assertTrue(student.getRegistrationNumbers().contains(DOLDUR));
+        assertTrue(student.getRegistrationNumbers().contains());
 
-        assertTrue(advisor.getRegistrationNumbers().contains(DOLDUR));
+        assertTrue(advisor.getRegistrationNumbers().contains());
         
-        assertTrue(Department.getInstance().getAllRegistrations().stream().anyMatch(registration -> registration.getRegistrationNo().equals(DOLDUR)));
+        assertTrue(Department.getInstance().getAllRegistrations().stream().anyMatch(registration -> registration.getRegistrationNo().equals()));
     }
 }
