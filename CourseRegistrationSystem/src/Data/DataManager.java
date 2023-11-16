@@ -46,7 +46,7 @@ public class DataManager {
          try {
              Department department = Department.getInstance();
 
-             //  Department.setAllCourseSections(objectMapper.readValue(new File(COURSE_SECTION_JSON_FILE), new TypeReference<Collection<CourseSection>>() {}));
+            //  Department.setAllCourseSections(objectMapper.readValue(new File(COURSE_SECTION_JSON_FILE), new TypeReference<Collection<CourseSection>>() {}));
             department.setAllAdvisors(objectMapper.readValue(new File(ADVISORS_JSON_FILE), new TypeReference<Collection<Advisor>>() {}));
             department.setAllCourses(objectMapper.readValue(new File(COURSES_JSON_FILE), new TypeReference<Collection<Course>>() {}));
             department.setAllRegistrations(objectMapper.readValue(new File(REGISTRATIONS_JSON_FILE), new TypeReference<Collection<Registration>>() {}));

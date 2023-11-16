@@ -60,13 +60,9 @@ public class CourseRegistrationSystem {
         short choice = -1;
 
         while (choice != 0) {
-            System.out.println("Press 1 to add a Student");
-            System.out.println("Press 2 to add an Advisor");
-            System.out.println("Press 3 to add a Lecturer");
-            System.out.println("Press 4 to add a Course");
-            System.out.println("Press 5 to login as a student");
-            System.out.println("Press 6 to login as an advisor");
-            //System.out.println("Press 7 to login as a lecturer");
+
+            System.out.println("Press 1 to login as a student");
+            System.out.println("Press 2 to login as an advisor");
             System.out.println("Press 0 to exit!");
             Scanner input = new Scanner(System.in);
             choice = input.nextShort();
@@ -75,23 +71,12 @@ public class CourseRegistrationSystem {
                     dataManager.saveData();
                     System.exit(0);
                     break;
-                case 1://add a Student
-                    break;
-                case 2://add an Advisor
-                    break;
-                case 3://add a Lecturer
-                    break;
-                case 4://add a Course
-                    break;
-                case 5://login as a student
+                case 1://login as a student
                     loginAsAStudent(department);
                     break;
-                case 6://login as an advisor
+                case 2://login as an advisor
                     loginAsAnAdvisor(department);
                     break;
-                //case 7://login as a lecturer
-                //    loginAsLecturer(department);
-                //    break;
                 default://default case
                     break;
             }
