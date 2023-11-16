@@ -1,7 +1,11 @@
 package Domain;
 
+import java.util.ArrayList;
 import java.util.Collection;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Course implements Searchable{
 
     private String courseName;
@@ -22,6 +26,9 @@ public class Course implements Searchable{
         this.studentNumbers = studentNumbers;
         this.prerequisitesIds = prerequisitesIds;
     }
+
+    public Course(){};
+
 
 
     public int getCredit() {
@@ -66,6 +73,19 @@ public class Course implements Searchable{
         return studentNumbers;
     }
 
+    @JsonIgnore
+    public Collection<Student> getStudents(){
+        ArrayList<Student> students = new ArrayList<>();
+        ArrayList<Student> allStudents = (ArrayList<Student>) Department.getInstance().getAllStudents();
+
+        for(Student student : allStudents){
+            if(this.getStudentNumbers().contains(student.getStudentNo())){
+                students.add(student);
+            }
+        }
+        return students;
+    }
+
     public void setStudentNumbers(Collection<String> studentNumbers) {
         this.studentNumbers = studentNumbers;
     }
@@ -83,6 +103,7 @@ public class Course implements Searchable{
         return "Course{" +
                 "courseName='" + courseName + '\'' +
                 ", courseCode='" + courseCode + '\'' +
+                ", prerequisiteCourseCodes='" + prerequisitesIds +'\'' +
                 '}';
     }
 }

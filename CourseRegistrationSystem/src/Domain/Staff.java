@@ -1,7 +1,8 @@
 package Domain;
 
 import java.util.Date;
-
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public abstract class Staff extends Person {
 
     private String staffNo;
@@ -10,6 +11,8 @@ public abstract class Staff extends Person {
         super(FName, LName, birthdate);
         setStaffNo(staffNo);
     }
+
+    public Staff(){}
 
     public String getStaffNo() {
         return staffNo;

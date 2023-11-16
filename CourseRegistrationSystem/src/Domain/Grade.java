@@ -1,4 +1,8 @@
 package Domain;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Grade {
     private  Course course;
     private  float numGrade;
@@ -41,7 +45,7 @@ public class Grade {
         }
     }
 
-
+    @JsonIgnore
     public Course getCourse() {
         return course;
     }
@@ -63,6 +67,7 @@ public class Grade {
     public void setPassed(boolean passed) {
         isPassed = passed;
     }
+    public void setNumericGrade(float numericGrade){this.numGrade = numericGrade;}
 
 
 }

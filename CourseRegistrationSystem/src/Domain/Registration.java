@@ -1,5 +1,8 @@
 package Domain;
 
+
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Registration implements Searchable{
 
     private String registrationNo;
@@ -15,6 +18,8 @@ public class Registration implements Searchable{
         this.courseCode = courseCode;
         this.status = status;
     }
+
+    public Registration(){}
 
 
 
