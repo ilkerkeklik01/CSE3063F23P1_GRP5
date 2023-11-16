@@ -11,19 +11,19 @@ class TranscriptTest {
     @Test
     void testAddGradeAndUpdateTotalCredits() {
 
-        Course course = new Course(DOLDUR);
+        Course course = new Course();
 
-        Department.getInstance().getAllCourses().add(KURS KODU, course);
+        Department.getInstance().getAllCourses().add();
 
         Transcript transcript = new Transcript();
 
-        transcript.addGrade(KURS KODU, 85);
+        transcript.addGrade();
 
         List<Grade> grades = transcript.getGrades();
 
         assertEquals(3, transcript.getCompletedCredits());
 
-        transcript.addGrade(KURS KODU, 45);
+        transcript.addGrade();
 
         assertEquals(3, transcript.getCompletedCredits());
     }
@@ -33,16 +33,16 @@ class TranscriptTest {
 
         Transcript transcript = new Transcript();
 
-        transcript.addGrade(KURS KODU, 85);
+        transcript.addGrade();
 
-        transcript.addGrade(KURS KODU, 45);
+        transcript.addGrade();
 
-        // Buraya okuması için inputları birşey lazım
+        // Need something to read the inputs
 
         transcript.printTakenCoursesStatus();
 
-        //Sıradaki öğrenci için sistemin kendini geriye atması lazım bir şekilde resetlemek lazım
+        // Need something for system to reset itself for the next student
 
-        // Verilen output istenen output a uyuyor mu ona bakılması lazım
+        // Need something to compare expected vs given output
     }
 }
