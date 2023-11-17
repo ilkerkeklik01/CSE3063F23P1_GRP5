@@ -17,7 +17,7 @@ public class Grade {
     public Grade(){
 
     }
-    private void LetterGradeCalculation() {
+    private void letterGradeCalculation() {
         if (numGrade >= 88) {
             isPassed = true;
             letterGrade = "AA";
@@ -67,7 +67,10 @@ public class Grade {
     public void setPassed(boolean passed) {
         isPassed = passed;
     }
-    public void setNumericGrade(float numericGrade){this.numGrade = numericGrade;}
+    public void setNumericGrade(float numericGrade){
+        this.numGrade = numericGrade;
+        letterGradeCalculation();
+    }
 
 
 }
