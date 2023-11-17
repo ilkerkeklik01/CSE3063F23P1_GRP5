@@ -30,29 +30,6 @@ public class CourseRegistrationSystem {
 
     }
 
-    public static void getEverything(Department department) {
-        System.out.println("\nGet all people\n");
-        for (Person person : department.getAllPeople()) {
-            System.out.println(person.getClass().getName() + " " + person.getFName() + " " + person.getLName());
-        }
-        System.out.println("\nGet all Students\n");
-        for (Student student : department.getAllStudents()) {
-            System.out.println(student.getClass().getName() + " " + student.getFName() + " " + student.getLName());
-        }
-        System.out.println("\nGet all Advisors\n");
-        for (Advisor advisor : department.getAllAdvisors()) {
-            System.out.println(advisor.getClass().getName() + " " + advisor.getFName() + " " + advisor.getLName());
-        }
-        System.out.println("\nGet all Courses\n");
-        for (Course course : department.getAllCourses()) {
-            System.out.println(course.getClass().getName() + " " + course.getCourseCode() + " " + course.getCourseName());
-        }
-        System.out.println("\nGet all Registrations\n");
-        for (Registration registration : department.getAllRegistrations()) {
-            System.out.println(registration);
-        }
-    }
-
 
     private static void displayConsoleUI(Department department) {
 
@@ -64,8 +41,13 @@ public class CourseRegistrationSystem {
             System.out.println("Press 1 to login as a student");
             System.out.println("Press 2 to login as an advisor");
             System.out.println("Press 0 to exit!");
-            Scanner input = new Scanner(System.in);
-            choice = input.nextShort();
+
+            try{
+                Scanner input = new Scanner(System.in);
+                choice = input.nextShort();
+            }catch (Exception e){
+                System.out.println(e);
+            }
             switch (choice) {
                 case 0:
                     dataManager.saveData();
@@ -91,14 +73,25 @@ public class CourseRegistrationSystem {
         while (var != 0 && !flag) {
             System.out.println("1 to enter student number");
             System.out.println("0 to cancel");
-            Scanner input = new Scanner(System.in);
-            var = input.nextShort();
+            try{
+                Scanner input = new Scanner(System.in);
+                var = input.nextShort();
+            }catch (Exception e){
+                System.out.println(e);
+            }
+
             switch (var) {
                 case 0:
                     return;
                 case 1:
-                    Scanner input2 = new Scanner(System.in);
-                    String enteredNo = input2.next();
+                    String enteredNo = null;
+                    try{
+                        Scanner input2 = new Scanner(System.in);
+                        enteredNo = input2.next();
+                    }catch (Exception e){
+                        System.out.println(e);
+                        break;
+                    }
                     student = department.getStudentByStudentNo(enteredNo);
                     if (student == null) {
                         System.out.println("Student cannot found!");
@@ -118,8 +111,12 @@ public class CourseRegistrationSystem {
             System.out.println("2 to print transcript");
             System.out.println("3 to register to new course");
             System.out.println("4 to to see available courses");
-            Scanner input2 = new Scanner(System.in);
-            choice = input2.nextShort();
+            try{
+                Scanner input2 = new Scanner(System.in);
+                choice = input2.nextShort();
+            }catch (Exception e){
+                System.out.println(e);
+            }
             switch (choice) {
                 case 0:
                     break;
@@ -133,9 +130,14 @@ public class CourseRegistrationSystem {
                     break;
                 case 3://new course registration
                     System.out.println("Enter the course code");
-                    Scanner scanner = new Scanner(System.in);
-                    String courseCode = scanner.next();
-                    //Warning generate course registration id is missing
+                    String courseCode = null;
+                    try{
+                        Scanner scanner = new Scanner(System.in);
+                        courseCode = scanner.next();
+                    }catch (Exception e){
+                        System.out.println(e);
+                        break;
+                    }
                     student.registerToNewCourse(courseCode, new IDGenerator().generateNewID(IDType.RegistrationID));
                     break;
                 case 4:
@@ -156,14 +158,26 @@ public class CourseRegistrationSystem {
         while (var != 0 && !flag) {
             System.out.println("1 to enter advisor staff number");
             System.out.println("0 to cancel");
-            Scanner input = new Scanner(System.in);
-            var = input.nextShort();
+
+            try{
+                Scanner input = new Scanner(System.in);
+                var = input.nextShort();
+            }catch (Exception e){
+                System.out.println(e);
+            }
+
             switch (var) {
                 case 0:
                     return;
                 case 1:
-                    Scanner input2 = new Scanner(System.in);
-                    String enteredNo = input2.next();
+                    String enteredNo = null;
+                    try{
+                        Scanner input2 = new Scanner(System.in);
+                        enteredNo = input2.next();
+                    }catch (Exception e){
+                        System.out.println(e);
+                        break;
+                    }
                     advisor = department.getAdvisorByStaffNo(enteredNo);
                     if (advisor == null) {
                         System.out.println("Advisor cannot found!");
@@ -185,8 +199,13 @@ public class CourseRegistrationSystem {
             System.out.println("4 to list teaching courses");
             System.out.println("5 to grade ");
             System.out.println("");
-            Scanner input2 = new Scanner(System.in);
-            choice = input2.nextShort();
+            try{
+                Scanner input2 = new Scanner(System.in);
+                choice = input2.nextShort();
+            }catch (Exception e){
+                System.out.println(e);
+            }
+
             switch (choice) {
                 case 0:
                     break;
@@ -199,12 +218,17 @@ public class CourseRegistrationSystem {
                     }
                     break;
                 case 3://proceed a registration
-                    Scanner input = new Scanner(System.in);
                     String registrationNo, registrationStatusStr;
-                    System.out.println("Enter registration no.");
-                    registrationNo = input.next();
-                    System.out.println("Enter status(Active-Rejected-Confirmed)");
-                    registrationStatusStr = input.next();
+                    try{
+                        Scanner input = new Scanner(System.in);
+                        System.out.println("Enter registration no.");
+                        registrationNo = input.next();
+                        System.out.println("Enter status(Active-Rejected-Confirmed)");
+                        registrationStatusStr = input.next();
+                    }catch (Exception e){
+                        System.out.println(e);
+                        break;
+                    }
                     RegistrationStatus status = null;
                     if (registrationStatusStr.equalsIgnoreCase("Confirmed")) {
                         status = RegistrationStatus.Confirmed;
@@ -227,6 +251,7 @@ public class CourseRegistrationSystem {
         }//While loop end
     }//Login as an advisor end
 
+/*
     private static void loginAsLecturer(Department department) {
         short var = -1;
         boolean flag = false;
@@ -300,7 +325,7 @@ public class CourseRegistrationSystem {
             }
 
         }//While loop end
-    }
+    }*/
 
 
     private static void listCoursesForLecturer(Department department, Lecturer lecturer) {
@@ -311,13 +336,24 @@ public class CourseRegistrationSystem {
             System.out.println(lecturer.getCourses());
             System.out.println("\n1 to get action with spesific course");
             System.out.println("0 to go back");
-            Scanner input2 = new Scanner(System.in);
-            choice = input2.nextShort();
-
+            Scanner input2 = null;
+            try{
+                input2 = new Scanner(System.in);
+                choice = input2.nextShort();
+            }catch (Exception e){
+                System.out.println(e);
+            }
             switch (choice) {
                 case 1:
                     System.out.println("Enter course code");
-                    String courseCode = input2.next();
+                    String courseCode = null;
+                    try{
+                        courseCode = input2.next();
+                    }catch (Exception e){
+                        System.out.println(e);
+                        break;
+                    }
+
                     Course course = department.getCourseByCourseCode(courseCode);
                     showCourseOptions(course);
                     break;
@@ -344,8 +380,13 @@ public class CourseRegistrationSystem {
             System.out.println("\n1 to list students");
             System.out.println("2 to grade a student");
             System.out.println("0 to go back");
-            Scanner input2 = new Scanner(System.in);
-            choice = input2.nextShort();
+            Scanner input2 = null;
+            try{
+                input2 = new Scanner(System.in);
+                choice = input2.nextShort();
+            }catch (Exception e){
+                System.out.println(e);
+            }
 
             switch (choice) {
                 case 1:
@@ -353,7 +394,14 @@ public class CourseRegistrationSystem {
                     break;
                 case 2:
                     System.out.println("Enter the student number to grade student for course:" + course.getCourseCode());
-                    String studentNumber = input2.next();
+                    String studentNumber = null;
+                    try{
+                        studentNumber = input2.next();
+                    }catch (Exception e){
+                        System.out.println(e);
+                        break;
+                    }
+
                     Student student = Department.getInstance().getStudentByStudentNo(studentNumber);
                     if (student == null) {
                         break;
@@ -372,8 +420,14 @@ public class CourseRegistrationSystem {
     private static void gradeStudent(Student student, Course course) {
 
         System.out.println("Enter a grade for student between 0 and 100");
-        Scanner input = new Scanner(System.in);
-        float grade = input.nextFloat();
+        float grade = 0;
+        try{
+            Scanner input = new Scanner(System.in);
+            grade = input.nextFloat();
+        }catch (Exception e){
+            System.out.println(e);
+            return;
+        }
         System.out.println();
         if (grade < 0 && grade > 100) {
             System.out.println("Invalid grade !!");
@@ -401,7 +455,30 @@ public class CourseRegistrationSystem {
         }
     }
 
-
+/*
+    public static void getEverything(Department department) {
+        System.out.println("\nGet all people\n");
+        for (Person person : department.getAllPeople()) {
+            System.out.println(person.getClass().getName() + " " + person.getFName() + " " + person.getLName());
+        }
+        System.out.println("\nGet all Students\n");
+        for (Student student : department.getAllStudents()) {
+            System.out.println(student.getClass().getName() + " " + student.getFName() + " " + student.getLName());
+        }
+        System.out.println("\nGet all Advisors\n");
+        for (Advisor advisor : department.getAllAdvisors()) {
+            System.out.println(advisor.getClass().getName() + " " + advisor.getFName() + " " + advisor.getLName());
+        }
+        System.out.println("\nGet all Courses\n");
+        for (Course course : department.getAllCourses()) {
+            System.out.println(course.getClass().getName() + " " + course.getCourseCode() + " " + course.getCourseName());
+        }
+        System.out.println("\nGet all Registrations\n");
+        for (Registration registration : department.getAllRegistrations()) {
+            System.out.println(registration);
+        }
+    }
+    */
 /*public static void testMethod(Department department1){
 
         //COURSES
