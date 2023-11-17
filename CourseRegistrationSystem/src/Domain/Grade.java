@@ -12,7 +12,7 @@ public class Grade {
     public Grade(Course course, float numericGrade) {
         this.course = course;
         this.numGrade = numericGrade;
-        LetterGradeCalculation();
+        letterGradeCalculation();
     }
     public Grade(){
 
