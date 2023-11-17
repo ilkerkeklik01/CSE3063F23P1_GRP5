@@ -11,7 +11,9 @@ public class Lecturer extends Staff {
 
     private Collection<String> courseIds;
 
-    public Lecturer(String FName, String LName, Date birthdate, String staffNo, Collection<String> courseIds) {
+    private Collection<Course> courses;
+
+    public Lecturer(String FName, String LName, Date birthdate, String staffNo) {
         super(FName, LName, birthdate, staffNo);
         setCourses(courseIds);
     }
@@ -44,6 +46,10 @@ public class Lecturer extends Staff {
             }
         }
         return courses;
+    }
+
+    public void setCourses(ArrayList<Course> courses){
+        this.courses = courses;
     }
 
     @Override

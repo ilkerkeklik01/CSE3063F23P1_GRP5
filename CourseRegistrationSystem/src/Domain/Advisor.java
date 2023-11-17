@@ -15,8 +15,12 @@ public class Advisor extends Lecturer  {
     private Collection<String> registrationNumbers;
 
 
-    public Advisor(String FName, String LName, Date birthdate, String staffNo, Collection<String> courseIds, Collection<String> studentNumbers, Collection<String> registrationNumbers) {
-        super(FName, LName, birthdate, staffNo, courseIds);
+    private Collection<Student> students = new ArrayList<>();
+    private Collection<Registration> registrations = new ArrayList<>();
+
+
+    public Advisor(String FName, String LName, Date birthdate, String staffNo) {
+        super(FName, LName, birthdate, staffNo);
         setStudentNumbers(studentNumbers);
         setRegistrationNumbers(registrationNumbers);
     }
@@ -75,6 +79,14 @@ public class Advisor extends Lecturer  {
 
     public Collection<String> getRegistrationNumbers() {
         return registrationNumbers;
+    }
+
+    public void setStudents(ArrayList<Student> students){
+        this.students = students;
+    }
+
+    public void setRegistrations(ArrayList<Registration> registrations){
+        this.registrations = registrations;
     }
 
     public void setRegistrationNumbers(Collection<String> registrationNumbers) {

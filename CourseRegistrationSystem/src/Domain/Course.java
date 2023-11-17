@@ -16,6 +16,11 @@ public class Course implements Searchable{
     private Collection<String> prerequisitesIds;
     private int credit;
 
+    private CourseSection courseSection;
+    private ArrayList<Lecturer> lecturers = new ArrayList<>();
+    private ArrayList<Student> students = new ArrayList<>();
+
+
 
     public Course(String courseName, String courseCode, Collection<String> lecturersNumbers, String courseSectionNo, Collection<String> studentNumbers, Collection<String> prerequisitesIds, int credit) {
         this.credit = credit;
@@ -29,6 +34,12 @@ public class Course implements Searchable{
 
     public Course(){};
 
+    public Course(String courseName, String courseCode, Collection<String> prerequisitesIds, int credit) {
+        this.courseCode = courseCode;
+        this.courseName = courseName;
+        this.prerequisitesIds = prerequisitesIds;
+        this.credit = credit;
+    }
 
 
     public int getCredit() {
@@ -98,6 +109,12 @@ public class Course implements Searchable{
         this.prerequisitesIds = prerequisitesIds;
     }
 
+    public void setLecturers(ArrayList<Lecturer> lecturers){
+        this.lecturers = lecturers;
+    }
+    public void setStudents(ArrayList<Student> students){
+        this.students = students;
+    }
     @Override
     public String toString() {
         return "Course{" +

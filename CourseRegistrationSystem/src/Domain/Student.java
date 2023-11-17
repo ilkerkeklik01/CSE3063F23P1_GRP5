@@ -17,6 +17,9 @@ public class Student extends Person {
     private Collection<String> registrationNumbers;
     private Transcript transcript;
 
+    private ArrayList<Course> courses = new ArrayList<>();
+
+    private ArrayList<Registration> registrations = new ArrayList<>();
 
     public Student(String FName, String LName, Date birthdate, String studentNo, Collection<String> courseCodes, String advisorNo,Collection<String> registrationNumbers) {
         super(FName, LName, birthdate);
@@ -29,6 +32,12 @@ public class Student extends Person {
     }
 
     public Student(){};
+
+    public Student(String fName, String lName, Date birthdate, String studentNo, String advisorNo) {
+            super(fName,lName, birthdate);
+            this.studentNo = studentNo;
+            this.advisorNo = advisorNo;
+    }
 
     public void registerToNewCourse(String courseCode,String newRegistrationNo){
         Course course = Department.getInstance().getCourseByCourseCode(courseCode);
@@ -105,6 +114,16 @@ public class Student extends Person {
             return true;
         }
         return false;
+    }
+
+    public void setCourses(ArrayList<Course> courses){
+        this.courses = courses;
+    }
+    public void setRegistrations(ArrayList<Registration> registrations){
+        this.registrations = registrations;
+    }
+    public void setTranscript(ArrayList<Registration> registrations){
+        this.registrations = registrations;
     }
 
     @Override

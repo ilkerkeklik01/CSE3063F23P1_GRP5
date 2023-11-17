@@ -11,14 +11,22 @@ public class Registration implements Searchable{
     private String courseCode;
     private RegistrationStatus status;
 
-    public Registration(String registrationNo, String studentNo, String advisorNo, String courseCode, RegistrationStatus status) {
+    private Student student;
+    private Course course;
+    private Advisor advisor;
+
+    public Registration(String registrationNo, RegistrationStatus status) {
         this.registrationNo = registrationNo;
-        this.studentNo = studentNo;
-        this.advisorNo = advisorNo;
-        this.courseCode = courseCode;
         this.status = status;
     }
 
+    public Registration(String registrationNo, String studentNo, String advisorNo,String courseCode, RegistrationStatus status) {
+        this.studentNo = studentNo;
+        this.advisorNo = advisorNo;
+        this.registrationNo = registrationNo;
+        this.status = status;
+        this.courseCode = courseCode;
+    }
     public Registration(){}
 
 
@@ -61,6 +69,16 @@ public class Registration implements Searchable{
 
     public void setStatus(RegistrationStatus status) {
         this.status = status;
+    }
+
+    public void setAdvisor(Advisor advisor){
+        this.advisor = advisor;
+    }
+    public void setStudent(Student student){
+        this.student = student;
+    }
+    public void setCourse(Course course){
+        this.course = course;
     }
 
     @Override
