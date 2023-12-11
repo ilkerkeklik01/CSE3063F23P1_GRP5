@@ -103,8 +103,7 @@ public class LoginHelper {
                     if (student == null) {
                         break;
                     }
-                    gradeStudent(student, course);
-                    showCourseOptions(course);
+                    tryToGradeStudent(course, student);
                     break;
                 case 0:
                     choice = 0;
@@ -113,6 +112,14 @@ public class LoginHelper {
             }
         }
     }
+
+    private void tryToGradeStudent(Course course, Student student) {
+        if(student.getCourseCodes().contains(course.getCourseCode()))
+            gradeStudent(student, course);
+        else
+            System.out.println("Specified student with number " + student.getStudentNo() + "  is no taking "+ course.getCourseCode());
+    }
+
     public void gradeStudent(Student student, Course course) {
 
         System.out.println("Enter a grade for student between 0 and 100");

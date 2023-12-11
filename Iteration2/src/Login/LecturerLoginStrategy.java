@@ -49,7 +49,6 @@ public class LecturerLoginStrategy implements ILoginStrategy{
         while (choice != 0) {
             System.out.println("0 to exit");
             System.out.println("1 to list teaching courses");
-            System.out.println("");
             Scanner input2 = new Scanner(System.in);
             choice = input2.nextShort();
             switch (choice) {
