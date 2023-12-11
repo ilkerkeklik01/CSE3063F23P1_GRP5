@@ -45,11 +45,33 @@ public class Student extends Person {
         }
     }
 
-    private void cannotTakeMoreThanFiveCourses(Course course) throws Exception{
+    private void cannotTakeMoreThanFiveCourses() throws Exception{
         if(studentHas5OrMoreCourses()){
             throw new Exception("You can not take more than 5 courses.\nEither you selected more than 5 courses or the number of active registrations and your courses count is more than 5.");
         }
     }
+
+    private void cannotTakeMoreThan36Credits(Course course) throws Exception{
+        int totalCredit = calculateTotalCreditTaken() + course.getCredit();
+        if(totalCredit>36){
+            throw new Exception("You cannot take more than 36 credits in one semester.");
+        }
+    }
+
+    private int calculateTotalCreditTaken(){
+        Department department = Department.getInstance();
+
+        int totalCreditTaken =0;
+        for (String each:getCourseCodes()) {
+        Course course =department.getCourseByCourseCode(each);
+        totalCreditTaken+=course.getCredit();
+        }
+        return totalCreditTaken;
+    }
+
+
+
+
 
     public void registerToNewCourse(String courseCode,String newRegistrationNo){
         Course course = Department.getInstance().getCourseByCourseCode(courseCode);
@@ -58,7 +80,8 @@ public class Student extends Person {
         try{
             courseNullCheck(course,courseCode);
             prerequisitesControl(course);
-            studentHas5OrMoreCourses();
+            cannotTakeMoreThanFiveCourses();
+            cannotTakeMoreThan36Credits(course);
         }catch (Exception e){
             System.out.println(e.getMessage());
         }
@@ -75,7 +98,20 @@ public class Student extends Person {
     public Transcript getTranscript() {
         return transcript;
     }
-    
+
+    public ArrayList<Course> getAvailableCourses(){
+
+        Department department = Department.getInstance();
+        Collection<Course> allCourses = department.getAllCourses();
+        Collection<Course> availableCourses = new ArrayList<>();
+        for (Course course : allCourses){
+            if(!this.getTranscript().getCompletedCourses().contains(course)){
+                availableCourses.add(course);
+            }
+        }
+        return (ArrayList<Course>)availableCourses;
+    }
+
 
     public Collection<String> getRegistrationNumbers() {
         return registrationNumbers;
