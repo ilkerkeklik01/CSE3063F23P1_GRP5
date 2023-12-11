@@ -17,9 +17,6 @@ public class CourseRegistrationSystem {
 
         dataManager.loadData();
 
-        //testMethod(department);
-        //getEverything(department);
-
 
         System.out.println();
 
