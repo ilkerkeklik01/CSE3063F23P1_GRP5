@@ -7,6 +7,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Student extends Person {
@@ -99,6 +100,7 @@ public class Student extends Person {
         return transcript;
     }
 
+    @JsonIgnore
     public ArrayList<Course> getAvailableCourses(){
 
         Department department = Department.getInstance();

@@ -98,12 +98,25 @@ public class Course implements Searchable{
         this.prerequisitesIds = prerequisitesIds;
     }
 
+    public int getSemester() {
+        return semester;
+    }
+
+    public void setSemester(int semester) {
+        this.semester = semester;
+    }
+
     @Override
     public String toString() {
         return "Course{" +
                 "courseName='" + courseName + '\'' +
                 ", courseCode='" + courseCode + '\'' +
-                ", prerequisiteCourseCodes='" + prerequisitesIds +'\'' +
+                ", lecturersNumbers=" + lecturersNumbers +
+                ", courseSectionNo='" + courseSectionNo + '\'' +
+                ", studentNumbers=" + studentNumbers +
+                ", prerequisitesIds=" + prerequisitesIds +
+                ", credit=" + credit +
+                ", semester=" + semester +
                 '}';
     }
 }
