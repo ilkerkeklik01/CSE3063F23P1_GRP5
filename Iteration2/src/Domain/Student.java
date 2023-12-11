@@ -31,27 +31,40 @@ public class Student extends Person {
 
     };
 
+    private void courseNullCheck(Course course,String courseCode) throws Exception{
+        if(course==null){
+        throw  new Exception("There is no such a course: "+courseCode);
+        }
+    }
+
+    private void prerequisitesControl(Course course) throws Exception{
+        if(!this.transcript.getPassedCourseCodes().containsAll(course.getPrerequisitesIds())){
+            throw new Exception("You have to pass the prerequisites of the course: "+course.getCourseCode()
+            +"\nPrerequisites: " + course.getPrerequisitesIds()
+            );
+        }
+    }
+
+    private void cannotTakeMoreThanFiveCourses(Course course) throws Exception{
+        if(studentHas5OrMoreCourses()){
+            throw new Exception("You can not take more than 5 courses.\nEither you selected more than 5 courses or the number of active registrations and your courses count is more than 5.");
+        }
+    }
+
     public void registerToNewCourse(String courseCode,String newRegistrationNo){
         Course course = Department.getInstance().getCourseByCourseCode(courseCode);
-        if(course==null){
-            System.out.println("There is no such a course: "+courseCode);
-            return;
+
+
+        try{
+            courseNullCheck(course,courseCode);
+            prerequisitesControl(course);
+            studentHas5OrMoreCourses();
+        }catch (Exception e){
+            System.out.println(e.getMessage());
         }
 
-          if(!this.transcript.getPassedCourseCodes().containsAll(course.getPrerequisitesIds())){
-            System.out.println("You have to pass the prerequisites of the course: "+courseCode);
-            return;
-          }
-
-          if(studentHas5OrMoreCourses()){
-              System.out.println("You can not take more than 5 courses.\nEither you selected more than 5 courses or the number of active registrations and your courses count is more than 5.");
-              return;
-
-          }
-        
 
 
-        
         Registration registration = new Registration(newRegistrationNo,this.getStudentNo(),this.getAdvisorNo(),courseCode,RegistrationStatus.Active);
         this.getRegistrationNumbers().add(registration.getRegistrationNo());
         Advisor advisor = Department.getInstance().getAdvisorByStaffNo(getAdvisorNo());
