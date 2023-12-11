@@ -1,7 +1,181 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="e79c9d6c-c6d3-413b-8b69-b2a5d182eef3" name="Changes" comment="" />
+    <list default="true" id="e79c9d6c-c6d3-413b-8b69-b2a5d182eef3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Iteration1/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/12001093.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/12001511.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/12005607.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/12006250.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/12017743.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/12032260.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/12053560.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/12054550.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/12058287.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/12060574.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/CourseRegistrationSystem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/Documents/CSE3063F23P1_DCD_GRP5_iteration1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/Documents/CSE3063F23P1_DSD_GRP5_iteration1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/Documents/CSE3063F23P1_RAD_GRP5_iteration1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/advisors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/courses.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/lecturers.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/lib/hamcrest-core-1.3-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/lib/hamcrest-core-1.3-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/lib/hamcrest-core-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/lib/jackson-annotations-2.15.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/lib/jackson-core-2.15.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/lib/jackson-databind-2.15.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/lib/junit-4.13.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/lib/junit-4.13.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/lib/junit-4.13.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/registrations.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/CourseRegistrationSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Data/DataManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Data/GradeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Data/TranscriptDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Advisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/CourseSection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Grade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Helper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/IDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/IDType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Lecturer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/PersonIDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Registration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/RegistrationIDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/RegistrationStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Searchable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Staff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/StaffIDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/StudentIDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Domain/Transcript.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Tests/AdvisorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Tests/StudentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/src/Tests/TranscriptTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration1/students.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/.classpath" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/12001093.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/12001511.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/12005607.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/12006250.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/12017743.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/12032260.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/12053560.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/12054550.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/12058287.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/12060574.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/CourseRegistrationSystem.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/Documents/CSE3063F23P1_DCD_GRP5_iteration1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/Documents/CSE3063F23P1_DSD_GRP5_iteration1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/Documents/CSE3063F23P1_RAD_GRP5_iteration1.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/advisors.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/courses.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/lecturers.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/lib/hamcrest-core-1.3-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/lib/hamcrest-core-1.3-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/lib/hamcrest-core-1.3.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/lib/jackson-annotations-2.15.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/lib/jackson-core-2.15.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/lib/jackson-databind-2.15.0.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/lib/junit-4.13.2-javadoc.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/lib/junit-4.13.2-sources.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/lib/junit-4.13.2.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/registrations.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/CourseRegistrationSystem.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Data/DataManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Data/GradeDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Data/TranscriptDto.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Advisor.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Course.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/CourseSection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Department.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Grade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Helper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/IDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/IDType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Lecturer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/PersonIDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Registration.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/RegistrationIDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/RegistrationStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Searchable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Staff.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/StaffIDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Student.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/StudentIDGenerator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Domain/Transcript.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Tests/AdvisorTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Tests/StudentTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/src/Tests/TranscriptTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration2/students.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/.classpath" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/12001093.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/12001511.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/12005607.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/12006250.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/12017743.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/12032260.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/12053560.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/12054550.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/12058287.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/12060574.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/CourseRegistrationSystem.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/Documents/CSE3063F23P1_DCD_GRP5_iteration1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/Documents/CSE3063F23P1_DSD_GRP5_iteration1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/Documents/CSE3063F23P1_RAD_GRP5_iteration1.pdf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/advisors.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/courses.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/lecturers.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/lib/hamcrest-core-1.3-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/lib/hamcrest-core-1.3-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/lib/hamcrest-core-1.3.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/lib/jackson-annotations-2.15.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/lib/jackson-core-2.15.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/lib/jackson-databind-2.15.0.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/lib/junit-4.13.2-javadoc.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/lib/junit-4.13.2-sources.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/lib/junit-4.13.2.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/registrations.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/CourseRegistrationSystem.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Data/DataManager.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Data/GradeDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Data/TranscriptDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Advisor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Course.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/CourseSection.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Department.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Grade.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Helper.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/IDGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/IDType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Lecturer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/PersonIDGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Registration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/RegistrationIDGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/RegistrationStatus.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Searchable.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Staff.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/StaffIDGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Student.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/StudentIDGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Domain/Transcript.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Tests/AdvisorTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Tests/StudentTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/src/Tests/TranscriptTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/CourseRegistrationSystem/students.json" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,9 +187,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 4
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 4
+}</component>
   <component name="ProjectId" id="2YIrmHyqWxaHWsnH92qLeOtOWvV" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -25,12 +199,18 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/ilker/IdeaProjects/CSE3063F23P1_GRP5/CourseRegistrationSystem",
+    "last_opened_file_path": "C:/Users/ilker/IdeaProjects/CSE3063F23P1_GRP5/Iteration2",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ilker\IdeaProjects\CSE3063F23P1_GRP5\Iteration2" />
+    </key>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -40,6 +220,7 @@
       <option name="presentableId" value="Default" />
       <updated>1700224091464</updated>
       <workItem from="1700224092623" duration="24000" />
+      <workItem from="1702305172494" duration="106000" />
     </task>
     <servers />
   </component>
