@@ -1,0 +1,168 @@
+{
+  "studentNo": "12001093",
+  "completedCredits": 120,
+  "grades": [
+    {
+      "courseCode": "ATA121",
+      "numGrade": 71.0,
+      "letterGrade": "CB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "MBG1201",
+      "numGrade": 93.0,
+      "letterGrade": "AA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "CSE1200",
+      "numGrade": 69.0,
+      "letterGrade": "CB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "CSE1241",
+      "numGrade": 86.0,
+      "letterGrade": "BA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "MATH1001",
+      "numGrade": 75.0,
+      "letterGrade": "BB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "PHYS1101",
+      "numGrade": 80.0,
+      "letterGrade": "BB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "PHYS1103",
+      "numGrade": 79.0,
+      "letterGrade": "BB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "TRD121",
+      "numGrade": 97.0,
+      "letterGrade": "AA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "ATA122",
+      "numGrade": 74.0,
+      "letterGrade": "BB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "CSE1242",
+      "numGrade": 85.0,
+      "letterGrade": "BA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "MATH1002",
+      "numGrade": 70.0,
+      "letterGrade": "CB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "MATH2256",
+      "numGrade": 89.0,
+      "letterGrade": "AA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "PHYS1102",
+      "numGrade": 68.0,
+      "letterGrade": "CB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "PHYS1104",
+      "numGrade": 82.0,
+      "letterGrade": "BA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "TRD122",
+      "numGrade": 84.0,
+      "letterGrade": "BA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "NTE",
+      "numGrade": 79.0,
+      "letterGrade": "BB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "CSE2023",
+      "numGrade": 67.0,
+      "letterGrade": "CB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "CSE2225",
+      "numGrade": 86.0,
+      "letterGrade": "BA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "ECON2004",
+      "numGrade": 72.0,
+      "letterGrade": "CB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "EE2031",
+      "numGrade": 91.0,
+      "letterGrade": "AA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "MATH2055",
+      "numGrade": 78.0,
+      "letterGrade": "BB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "MATH2059",
+      "numGrade": 97.0,
+      "letterGrade": "AA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "CSE2246",
+      "numGrade": 70.0,
+      "letterGrade": "CB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "CSE2138",
+      "numGrade": 84.0,
+      "letterGrade": "BA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "CSE2260",
+      "numGrade": 95.0,
+      "letterGrade": "AA",
+      "isPassed": true
+    },
+    {
+      "courseCode": "EE2032",
+      "numGrade": 69.0,
+      "letterGrade": "CB",
+      "isPassed": true
+    },
+    {
+      "courseCode": "STAT2253",
+      "numGrade": 77.0,
+      "letterGrade": "BB",
+      "isPassed": true
+    }
+  ]
+}
