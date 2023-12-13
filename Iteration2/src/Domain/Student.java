@@ -62,6 +62,22 @@ public class Student extends Person {
         }
     }
 
+    private void checkEligibilityForGraduationProject(Course askedCourse) throws Exception{
+        if(askedCourse.getCourseCode().equals("CSE4297" )){
+            int totalCredit = 0;
+            int minCreditForGraduationProject = 165;
+
+            for(Course course: this.getTranscript().getCompletedCourses()){
+                if(course.getSemester() < 4){
+                    totalCredit += course.getCredit();
+                }
+            }
+            if(totalCredit < minCreditForGraduationProject ){
+                throw new Exception("You cannot take graduation project. Your credits for first 6 semesters are below " + minCreditForGraduationProject);
+            }
+        }
+    }
+
     private int calculateTotalCreditTaken(){
         Department department = Department.getInstance();
 
@@ -94,6 +110,7 @@ public class Student extends Person {
         cannotTakeMoreThan36Credits(course);
         checkIfEligibileForUpperClass(course);
         prerequisitesControl(course);
+        checkEligibilityForGraduationProject(course);
     }
 
 
