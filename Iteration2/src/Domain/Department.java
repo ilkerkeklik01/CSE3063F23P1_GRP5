@@ -61,7 +61,7 @@ public class Department {
             }
         }
         if(lecturer==null){
-            System.out.println(StaffNo+" is not found");
+            System.out.println("Staff with staff no " + StaffNo+" is not found");
         }
         return lecturer;
     }
