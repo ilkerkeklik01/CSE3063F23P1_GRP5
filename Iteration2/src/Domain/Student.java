@@ -17,8 +17,9 @@ public class Student extends Person {
     private String advisorNo;
     private Collection<String> registrationNumbers;
     private Transcript transcript;
+    private int semester;
 
-    public Student(String FName, String LName, Date birthdate, String studentNo, Collection<String> courseCodes, String advisorNo,Collection<String> registrationNumbers) {
+    public Student(String FName, String LName, Date birthdate, String studentNo, Collection<String> courseCodes, String advisorNo,Collection<String> registrationNumbers, int semester) {
         super(FName, LName, birthdate);
         setStudentNo(studentNo);
         setCourseCodes(courseCodes);
@@ -26,6 +27,7 @@ public class Student extends Person {
         setRegistrationNumbers(registrationNumbers);
         Department.getInstance().getAdvisorByStaffNo(advisorNo).getStudentNumbers().add(studentNo);
         this.transcript = new Transcript();
+        setSemester(semester);
     }
 
     public Student(){
@@ -52,6 +54,7 @@ public class Student extends Person {
         }
     }
 
+
     private void cannotTakeMoreThan36Credits(Course course) throws Exception{
         int totalCredit = calculateTotalCreditTaken() + course.getCredit();
         if(totalCredit>36){
@@ -70,30 +73,52 @@ public class Student extends Person {
         return totalCreditTaken;
     }
 
+    private void courseAlreadyCompletedCheck(Course course) throws Exception{
+        if(this.getTranscript().getSuccessfullyCompletedCourseCodes().contains(course.getCourseCode())){
+            throw new Exception("You have already completed this course: " +course.getCourseCode());
+        }
+    }
 
+    private void checkIfEligibileForUpperClass(Course course) throws Exception{
+        int minGanoForUpperClass = 3;
 
+        if(course.getSemester() > this.getSemester() && this.getTranscript().getGano() < minGanoForUpperClass){
+            throw new Exception("You are not eligible for upper class. Your GANO is less than " + minGanoForUpperClass);
+        }
+    }
+
+    private void checkCourseEligibility(Course course, String courseCode) throws Exception{
+        courseNullCheck(course,courseCode);
+        courseAlreadyCompletedCheck(course);
+        cannotTakeMoreThanFiveCourses();
+        cannotTakeMoreThan36Credits(course);
+        checkIfEligibileForUpperClass(course);
+        prerequisitesControl(course);
+    }
 
 
     public void registerToNewCourse(String courseCode,String newRegistrationNo){
         Course course = Department.getInstance().getCourseByCourseCode(courseCode);
 
-
         try{
-            courseNullCheck(course,courseCode);
-            prerequisitesControl(course);
-            cannotTakeMoreThanFiveCourses();
-            cannotTakeMoreThan36Credits(course);
+            checkCourseEligibility(course, courseCode);
+            Registration registration = new Registration(newRegistrationNo,this.getStudentNo(),this.getAdvisorNo(),courseCode,RegistrationStatus.Active);
+            this.getRegistrationNumbers().add(registration.getRegistrationNo());
+            Advisor advisor = Department.getInstance().getAdvisorByStaffNo(getAdvisorNo());
+            advisor.getRegistrationNumbers().add(registration.getRegistrationNo());
+            Department.getInstance().getAllRegistrations().add(registration);
+
         }catch (Exception e){
             System.out.println(e.getMessage());
-        }
+        }       
+    }
 
+    public void setSemester(int semester) {
+        this.semester = semester;
+    }
 
-
-        Registration registration = new Registration(newRegistrationNo,this.getStudentNo(),this.getAdvisorNo(),courseCode,RegistrationStatus.Active);
-        this.getRegistrationNumbers().add(registration.getRegistrationNo());
-        Advisor advisor = Department.getInstance().getAdvisorByStaffNo(getAdvisorNo());
-        advisor.getRegistrationNumbers().add(registration.getRegistrationNo());
-        Department.getInstance().getAllRegistrations().add(registration);
+    public int getSemester() {
+        return semester;
     }
 
     public Transcript getTranscript() {
@@ -107,7 +132,7 @@ public class Student extends Person {
         Collection<Course> allCourses = department.getAllCourses();
         Collection<Course> availableCourses = new ArrayList<>();
         for (Course course : allCourses){
-            if(!this.getTranscript().getCompletedCourses().contains(course)){
+            if(!this.getTranscript().getSuccessfullyCompletedCourseCodes().contains(course.getCourseCode())){
                 availableCourses.add(course);
             }
         }
