@@ -15,6 +15,9 @@ public class StudentLoginStrategy implements ILoginStrategy{
 
 
     private void loginAsAStudent(Department department) {
+
+        IDGenerator regisIdGenerator = new RegistrationIDGenerator();
+
         short var = -1;
         boolean flag = false;
         Student student = null;
@@ -80,7 +83,7 @@ public class StudentLoginStrategy implements ILoginStrategy{
                         System.out.println(e);
                         break;
                     }
-                    student.registerToNewCourse(courseCode, new IDGenerator().generateNewID(IDType.RegistrationID));
+                    student.registerToNewCourse(courseCode, regisIdGenerator.generateID());
                     break;
                 case 4:
                     System.out.println("Available courses:");
