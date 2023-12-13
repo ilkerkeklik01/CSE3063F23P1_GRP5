@@ -1,45 +1,35 @@
 package Domain;
 
-
 import java.util.ArrayList;
-import java.util.Collection;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-@JsonIgnoreProperties(ignoreUnknown = true)
 
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Transcript {
     private List<Grade> grades;
     private int completedCredits;
+    private float gano;
 
     public Transcript() {
         this.grades = new ArrayList<>();
     }
 
-    public int getCompletedCredits() {
-        return completedCredits;
-    }
 
-    public ArrayList<Course> getCompletedCourses() {
-        ArrayList<Course> completedCourses = new ArrayList<>();
-        for(Grade grade : grades){
-            completedCourses.add(grade.getCourse());
+    private void updateGano() {
+        float totalNumericalGrade = 0;
+        for (Grade grade : grades) {
+            totalNumericalGrade += grade.getNumericGradeForGano();
         }
-
-        return completedCourses;
+        float updatedGano = (totalNumericalGrade / completedCredits);
+        setGano(updatedGano);
     }
-
-    private void setCompletedCredits(int completedCredits) {
-        this.completedCredits = completedCredits;
-    }
-
 
 
 
     public void addGrade(String courseCode, float numericGrade) {
         Course course = Department.getInstance().getCourseByCourseCode(courseCode);
-
 
         for (Grade grade : grades){
             if(grade.getCourse().getCourseCode() == courseCode){
@@ -49,20 +39,25 @@ public class Transcript {
         }
         Grade newGrade = new Grade(course, numericGrade);
         grades.add(newGrade);
-        updateTotalCredits();
-    }
-
-    @JsonIgnore
-    public List<Grade> getGrades() {
-        return grades;
+        updateTotalCreditsandGano();
     }
 
 
+    public void updateTotalCreditsandGano(){
+        int totalCredits = 0;
+        for(Grade grade: grades){
+            totalCredits += grade.getCourse().getCredit();
+        }
+        setCompletedCredits(totalCredits);
+        updateGano();
+    }
 
 
+
+//#region print methods
     public void printTakenCoursesStatus() {
         System.out.println("Completed Credits: " + getCompletedCredits() + "\n");
-        System.out.println("Taken Courses" + "\n");
+        System.out.println("Completed Courses" + "\n");
         printPassedCourses();
         printFailedCourses();
     }
@@ -94,18 +89,66 @@ public class Transcript {
     }
 
 
+//#endregion
 
-
-    public void updateTotalCredits(){
-        int totalCredits = 0;
-        for(Grade grade: grades){
-            totalCredits += grade.getCourse().getCredit();
-        }
-        setCompletedCredits(totalCredits);
+    public float getGano() {
+        updateTotalCreditsandGano();
+        return gano;
     }
 
+    private void setGano(float gano) {
+        this.gano = gano;
+    }
 
+    @JsonIgnore
+    public List<Grade> getGrades() {
+        return grades;
+    }
+
+    private void setCompletedCredits(int completedCredits) {
+        this.completedCredits = completedCredits;
+    }
+
+    public int getCompletedCredits() {
+        return completedCredits;
+    }
+
+    public ArrayList<Course> getCompletedCourses() {
+        ArrayList<Course> completedCourses = new ArrayList<>();
+        for(Grade grade : grades){
+            completedCourses.add(grade.getCourse());
+        }
+        return completedCourses;
+    }
+    
+    @JsonIgnore
+    public ArrayList<String> getSuccessfullyCompletedCourseCodes() {
+        ArrayList<String> completedCourseCodes = new ArrayList<>();
+        for(Grade grade : grades){
+            if(grade.isPassed())
+                completedCourseCodes.add(grade.getCourse().getCourseCode());
+        }
+        return completedCourseCodes;
+    }
+
+    @JsonIgnore
+    public ArrayList<String> getFailedCourseCodes() {
+        ArrayList<String> failedCourseCodes = new ArrayList<>();
+        for(Grade grade : grades){
+            if(!grade.isPassed())
+                failedCourseCodes.add(grade.getCourse().getCourseCode());
+        }
+        return failedCourseCodes;
+    }
+
+    @JsonIgnore
+    public ArrayList<String> getAllCompletedCourseCodes(){
+        ArrayList<String> allCompletedCourseCodes = new ArrayList<>();
+        for(Grade grade : grades){
+            allCompletedCourseCodes.add(grade.getCourse().getCourseCode());
+        }
+        return allCompletedCourseCodes;
+    }
+
+    
 }
-
-
-

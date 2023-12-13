@@ -63,7 +63,7 @@ public class IDGenerator {
     }
     //#endregion Properties
 
-    private String generateID(){
+    public String generateID(){
         Random random = new Random();
         StringBuilder sb = new StringBuilder();
         sb.append(idPrefix);
@@ -79,32 +79,6 @@ public class IDGenerator {
         id = sb.toString();       
         return id;
     }
-
-    public String generateNewID(IDType idType){
-        IDGenerator idGenerator = null;
-
-        switch(idType){
-            case StudentID:
-                idGenerator = new StudentIDGenerator();
-                break;
-            case StaffID:
-                idGenerator = new StaffIDGenerator();
-                break;
-            case PersonID:
-                idGenerator = new PersonIDGenerator();
-                break;
-            case RegistrationID:
-                idGenerator = new RegistrationIDGenerator();
-                break;
-            default:
-                throw new IllegalArgumentException("Invalid ID type");
-        }
-        
-        String generatedID = idGenerator.generateID();
-        return generatedID;        
-    }
-
-
     
     
 }
