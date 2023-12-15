@@ -13,7 +13,6 @@ public class StudentLoginStrategy implements ILoginStrategy{
     }
 
 
-
     private void loginAsAStudent(Department department) {
 
         IDGenerator regisIdGenerator = new RegistrationIDGenerator();
@@ -79,12 +78,17 @@ public class StudentLoginStrategy implements ILoginStrategy{
                     try{
                         Scanner scanner = new Scanner(System.in);
                         courseCode = scanner.next();
+                        student.checkCourseEligibility(courseCode); // THROWS ERROR IF NOT ELIGIBLE
+                        String selectedCourseSectionNo = displaycourseSelection(courseCode);
+                        student.registerToNewCourse(courseCode, regisIdGenerator.generateID(), selectedCourseSectionNo);
+                        
+                        System.out.println("Registration is successfully sent to advisor");
+                        break;
                     }catch (Exception e){
                         System.out.println(e);
                         break;
                     }
-                    student.registerToNewCourse(courseCode, regisIdGenerator.generateID());
-                    break;
+                    
                 case 4:
                     System.out.println("Available courses:");
                     loginHelper.printAvailableCourses(student);
@@ -94,6 +98,18 @@ public class StudentLoginStrategy implements ILoginStrategy{
 
         }//While loop end
     }//Login as a student end
+
+
+    private String displaycourseSelection(String courseCode){        
+        Course course = Department.getInstance().getCourseByCourseCode(courseCode);
+        course.printCourseSections();
+
+        System.out.println("Enter the section number:");
+        Scanner input = new Scanner(System.in);
+        String chosenSectionNo = input.next();
+        
+        return chosenSectionNo;
+    }
 
 
 }

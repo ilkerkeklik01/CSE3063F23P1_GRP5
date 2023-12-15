@@ -59,6 +59,14 @@ public class Advisor extends Lecturer  {
             student.getCourseCodes().add(registration.getCourseCode());
             Course course = Department.getInstance().getCourseByCourseCode(registration.getCourseCode());
             course.getStudentNumbers().add(student.getStudentNo());
+            student.addCourseSection(registration.getCourseSection());
+            
+            CourseSection courseSection = registration.getCourseSection();
+            courseSection.addStudent();
+            Department department = Department.getInstance();
+            department.getCourseSectionBySectionNo(registration.getCourseSection().getCourseSectionNo()).addStudent();
+            
+            
         }else{
             System.out.println("Registration is not confirmed");
         }

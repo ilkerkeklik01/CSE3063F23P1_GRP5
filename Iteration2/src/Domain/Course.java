@@ -11,7 +11,7 @@ public class Course implements Searchable{
     private String courseName;
     private String courseCode;
     private Collection<String> lecturersNumbers;
-    private ArrayList<CourseSection> courseSections;
+    private ArrayList<CourseSection> courseSection;
     private Collection<String> studentNumbers;
     private Collection<String> prerequisitesIds;
     private int credit;
@@ -22,7 +22,7 @@ public class Course implements Searchable{
         this.courseName = courseName;
         this.courseCode = courseCode;
         this.lecturersNumbers = lecturersNumbers;
-        this.courseSections = courseSection;
+        this.courseSection = courseSection;
         this.studentNumbers = studentNumbers;
         this.prerequisitesIds = prerequisitesIds;
     }
@@ -30,10 +30,19 @@ public class Course implements Searchable{
     public Course(){};
 
     public void AddSection(CourseSection section){
-        if(courseSections == null)
-            courseSections = new ArrayList<CourseSection>();
-        courseSections.add(section);
+        if(courseSection == null)
+            courseSection = new ArrayList<CourseSection>();
+        courseSection.add(section);
     }
+
+    public void printCourseSections(){
+        for(CourseSection each : courseSection){
+            each.printSections();
+        }
+    }
+
+
+
 
 
 
@@ -67,12 +76,12 @@ public class Course implements Searchable{
         this.lecturersNumbers = lecturersIds;
     }
 
-    public ArrayList<CourseSection> getCourseSections() {
-        return courseSections;
+    public ArrayList<CourseSection> getCourseSection() {
+        return courseSection;
     }
 
-    public void setCourseSections(ArrayList<CourseSection> courseSectionNo) {
-        this.courseSections = courseSectionNo;
+    public void setCourseSection(ArrayList<CourseSection> courseSection) {
+        this.courseSection = courseSection;
     }
 
     public Collection<String> getStudentNumbers() {
@@ -118,7 +127,6 @@ public class Course implements Searchable{
                 "courseName='" + courseName + '\'' +
                 ", courseCode='" + courseCode + '\'' +
                 ", lecturersNumbers=" + lecturersNumbers +
-                ", courseSectionNo='" + courseSections.get(0) + courseSections.get(1)+ '\'' +
                 ", studentNumbers=" + studentNumbers +
                 ", prerequisitesIds=" + prerequisitesIds +
                 ", credit=" + credit +
