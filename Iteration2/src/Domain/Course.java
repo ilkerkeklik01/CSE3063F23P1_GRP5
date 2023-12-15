@@ -11,23 +11,29 @@ public class Course implements Searchable{
     private String courseName;
     private String courseCode;
     private Collection<String> lecturersNumbers;
-    private String courseSectionNo;
+    private ArrayList<CourseSection> courseSections;
     private Collection<String> studentNumbers;
     private Collection<String> prerequisitesIds;
     private int credit;
     private int semester;
 
-    public Course(String courseName, String courseCode, Collection<String> lecturersNumbers, String courseSectionNo, Collection<String> studentNumbers, Collection<String> prerequisitesIds, int credit) {
+    public Course(String courseName, String courseCode, Collection<String> lecturersNumbers, ArrayList<CourseSection> courseSection, Collection<String> studentNumbers, Collection<String> prerequisitesIds, int credit) {
         this.credit = credit;
         this.courseName = courseName;
         this.courseCode = courseCode;
         this.lecturersNumbers = lecturersNumbers;
-        this.courseSectionNo = courseSectionNo;
+        this.courseSections = courseSection;
         this.studentNumbers = studentNumbers;
         this.prerequisitesIds = prerequisitesIds;
     }
 
     public Course(){};
+
+    public void AddSection(CourseSection section){
+        if(courseSections == null)
+            courseSections = new ArrayList<CourseSection>();
+        courseSections.add(section);
+    }
 
 
 
@@ -61,12 +67,12 @@ public class Course implements Searchable{
         this.lecturersNumbers = lecturersIds;
     }
 
-    public String getCourseSectionNo() {
-        return courseSectionNo;
+    public ArrayList<CourseSection> getCourseSections() {
+        return courseSections;
     }
 
-    public void setCourseSectionNo(String courseSectionNo) {
-        this.courseSectionNo = courseSectionNo;
+    public void setCourseSections(ArrayList<CourseSection> courseSectionNo) {
+        this.courseSections = courseSectionNo;
     }
 
     public Collection<String> getStudentNumbers() {
@@ -112,7 +118,7 @@ public class Course implements Searchable{
                 "courseName='" + courseName + '\'' +
                 ", courseCode='" + courseCode + '\'' +
                 ", lecturersNumbers=" + lecturersNumbers +
-                ", courseSectionNo='" + courseSectionNo + '\'' +
+                ", courseSectionNo='" + courseSections.get(0) + courseSections.get(1)+ '\'' +
                 ", studentNumbers=" + studentNumbers +
                 ", prerequisitesIds=" + prerequisitesIds +
                 ", credit=" + credit +

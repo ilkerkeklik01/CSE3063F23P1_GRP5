@@ -1,12 +1,35 @@
 package Domain;
-class CourseSection{
-    private String courseCode;
+import java.util.ArrayList;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class CourseSection{
+
     private String courseSectionNo;
-    private String[] days;
-    public CourseSection(String courseCode, String courseSectionNo, String[] days){
+    private int noOfStudents;
+    private int Quota;
+    private ArrayList<String> sectionTimes;
+    private String courseCode;
+
+
+    public CourseSection(String courseCode, String courseSectionNo, int Quota, ArrayList<String> sectionTimes){
+        this.noOfStudents = 0;
         this.courseCode = courseCode;
         this.courseSectionNo = courseSectionNo;
-        this.days = days;
+        this.Quota = Quota;
+        this.sectionTimes = sectionTimes;
+    }
+    public CourseSection(){};
+
+
+    public void addStudent(){
+        noOfStudents++;
+    }
+
+    @JsonIgnore
+    public boolean isFull(){
+        return noOfStudents == Quota;
     }
 
     public String getcourseCode() {
@@ -18,18 +41,36 @@ class CourseSection{
     }
 
     public String getCourseSectionNo() {
-        return courseCode;
+        return courseSectionNo;
     }
 
     public void setCourseSectionNo(String courseSectionNo) {
         this.courseSectionNo = courseSectionNo;
     }
 
-    public String[] getDays(){
-        return days;
+    public int getNoOfStudents() {
+        return noOfStudents;
+    }
+    
+    public void setNoOfStudents(int noOfStudents) {
+        this.noOfStudents = noOfStudents;
     }
 
-    public void setDays(String[] days) {
-        this.days = days;
+    public int getQuota() {
+        return Quota;
     }
+
+    public void setQuota(int Quota) {
+        this.Quota = Quota;
+    }
+
+    public ArrayList<String> getSectionTimes() {
+        return sectionTimes;
+    }
+
+    public void setSectionTimes(ArrayList<String> sectionTime) {
+        this.sectionTimes = sectionTime;
+    }
+
+
 }
