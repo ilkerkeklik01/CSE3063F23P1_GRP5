@@ -1,5 +1,8 @@
 import Domain.*;
 
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Random;
 import java.util.Scanner;
 import Data.*;
 import Login.AdvisorLoginStrategy;
@@ -12,10 +15,99 @@ public class CourseRegistrationSystem {
         Department department = Department.getInstance();
 
         DataManager dataManager = new DataManager();
-
+        
 
         dataManager.loadData();
 
+        /* COURSE SECTION ADDITION TO SPECIFIC SEMESTER COURSES
+        ArrayList<String> times = new ArrayList<String>();
+        times.add("109");
+        times.add("110");
+        times.add("111");
+        times.add("112");
+        times.add("113");
+        times.add("114");
+        times.add("115");
+        times.add("116");
+        times.add("117");
+        times.add("209");
+        times.add("210");
+        times.add("211");
+        times.add("212");
+        times.add("213");
+        times.add("214");
+        times.add("215");
+        times.add("216");
+        times.add("217");
+        times.add("309");
+        times.add("310");
+        times.add("311");
+        times.add("312");
+        times.add("313");
+        times.add("314");
+        times.add("315");
+        times.add("316");
+        times.add("317");
+        times.add("409");
+        times.add("410");
+        times.add("411");
+        times.add("412");
+        times.add("413");
+        times.add("414");
+        times.add("415");
+        times.add("416");
+        times.add("417");
+        times.add("509");
+        times.add("510");
+        times.add("511");
+        times.add("512");
+        times.add("513");
+        times.add("514");
+        times.add("515");
+        times.add("516");
+        times.add("517");
+        int sectionNo = 79;
+        int quota = 40;
+        int a = 45;
+
+        for(Course course: department.getAllCourses()){
+
+            if(course.getSemester()==7){
+
+
+                for(int j = 0; j <2 ; j++){
+                // create random int 0 40 numbers
+                    Random rand = new Random();
+                    int random = rand.nextInt(a);
+                    ArrayList<String> time = new ArrayList<String>();
+                    for(int i = 0 ; i < 2 ; i++){
+                        time.add(times.get(random));
+                        times.remove(times.get(random));
+                        random = rand.nextInt(--a);
+                    }
+                    
+                    CourseSection courseSection = new CourseSection(course.getCourseCode(), String.valueOf(sectionNo), quota, time);
+                    sectionNo++;
+                    course.AddSection(courseSection);
+                }
+            }   
+        }*/
+
+
+        /* Add all courses' course sections to the allCourseSections collection
+        for(Course course: department.getAllCourses()){
+
+            if(course.getCourseSection()!=null){
+                for(CourseSection courseSection: course.getCourseSection()){
+
+                    System.out.println(courseSection.getCourseSectionNo());
+                    System.out.println(courseSection.getcourseCode());
+                    System.out.println(courseSection.getSectionTime());
+                    department.addAnObject(courseSection);
+                }
+            
+            }
+        }*/
 
         System.out.println();
 
