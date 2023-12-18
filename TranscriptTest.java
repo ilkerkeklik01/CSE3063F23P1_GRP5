@@ -29,20 +29,14 @@ class TranscriptTest {
     }
 
     @Test
-    void testPrintTakenCoursesStatus() {
-
+    public void testPrintTakenCoursesStatus() {
         Transcript transcript = new Transcript();
-
-        transcript.addGrade();
-
-        transcript.addGrade();
-
-        // Need something to read the inputs
-
+        Course course1 = new Course("Course 1", "CSE1142", new ArrayList<>(), null, new ArrayList<>(), new ArrayList<>(), 3);
+        Course course2 = new Course("Course 2", "CSE1143", new ArrayList<>(), null, new ArrayList<>(), new ArrayList<>(), 4);
+        Department.getInstance().getAllCourses().add(course1);
+        Department.getInstance().getAllCourses().add(course2);
+        transcript.addGrade(course1.getCourseCode(), 90);
+        transcript.addGrade(course2.getCourseCode(), 85);
         transcript.printTakenCoursesStatus();
-
-        // Need something for system to reset itself for the next student
-
-        // Need something to compare expected vs given output
     }
 }
