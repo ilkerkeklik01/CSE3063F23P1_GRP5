@@ -22,19 +22,18 @@ public class DataManager {
     private String STUDENTS_JSON_FILE = "students.json";
     private String LECTURERS_JSON_FILE = "lecturers.json";
     private String ADVISORS_JSON_FILE = "advisors.json";
-   // private String COURSE_SECTION_JSON_FILE = "courseSections.json";
+    private String COURSE_SECTION_JSON_FILE = "courseSections.json";
     
 
     public  void saveData() {
         try {
             Department department = Department.getInstance();
-            //  objectMapper.writeValue(new File(COURSE_SECTION_JSON_FILE), Department.getAllCourseSections());
             objectMapper.writeValue(new File(ADVISORS_JSON_FILE), department.getAllAdvisors());
             objectMapper.writeValue(new File(COURSES_JSON_FILE), department.getAllCourses());
             objectMapper.writeValue(new File(REGISTRATIONS_JSON_FILE), department.getAllRegistrations());
             objectMapper.writeValue(new File(STUDENTS_JSON_FILE), department.getAllStudents());
             objectMapper.writeValue(new File(LECTURERS_JSON_FILE), department.getAllLecturers());
-
+            objectMapper.writeValue(new File(COURSE_SECTION_JSON_FILE), department.getAllCourseSections());
             writeTranscriptFiles();
 
         } catch (IOException e) {
@@ -44,14 +43,14 @@ public class DataManager {
 
     public void loadData() {
          try {
-             Department department = Department.getInstance();
+            Department department = Department.getInstance();
 
-            //  Department.setAllCourseSections(objectMapper.readValue(new File(COURSE_SECTION_JSON_FILE), new TypeReference<Collection<CourseSection>>() {}));
             department.setAllAdvisors(objectMapper.readValue(new File(ADVISORS_JSON_FILE), new TypeReference<Collection<Advisor>>() {}));
             department.setAllCourses(objectMapper.readValue(new File(COURSES_JSON_FILE), new TypeReference<Collection<Course>>() {}));
             department.setAllRegistrations(objectMapper.readValue(new File(REGISTRATIONS_JSON_FILE), new TypeReference<Collection<Registration>>() {}));
             department.setAllStudents(objectMapper.readValue(new File(STUDENTS_JSON_FILE), new TypeReference<Collection<Student>>() {}));
             department.setAllLecturers(objectMapper.readValue(new File(LECTURERS_JSON_FILE), new TypeReference<Collection<Lecturer>>() {}));
+            department.setAllCourseSections(objectMapper.readValue(new File(COURSE_SECTION_JSON_FILE), new TypeReference<Collection<CourseSection>>() {}));
 
             readTranscriptFiles();
 

@@ -11,6 +11,7 @@ public class Department {
     private Collection<Student> allStudents = new ArrayList<Student>();
     private Collection<Lecturer> allLecturers = new ArrayList<Lecturer>();
     private Collection<Advisor> allAdvisors = new ArrayList<Advisor>();
+    private Collection<CourseSection> allCourseSections = new ArrayList<CourseSection>();
 
     protected static Department department = null;
 
@@ -18,6 +19,22 @@ public class Department {
     private Department() {
     }
 
+    public CourseSection getCourseSectionBySectionNo(String courseSectionNo){
+        ArrayList<CourseSection> all =(ArrayList<CourseSection>)getAllCourseSections();
+
+        CourseSection courseSections=null;
+        for(CourseSection each :all){
+            if(each.getCourseSectionNo().equals(courseSectionNo)){
+                courseSections=each;
+                break;
+            }
+        }
+        if(courseSections==null){
+            System.out.println(courseSectionNo+" is not found");
+
+        }
+        return courseSections;
+    }
 
     public Advisor getAdvisorByStaffNo(String StaffNo){
         ArrayList<Advisor> all =(ArrayList<Advisor>)getAllAdvisors();
@@ -114,6 +131,10 @@ public class Department {
             allPeople.add((Person)object);
             instanceCheck=true;
         }
+        if(object instanceof CourseSection){
+            allCourseSections.add((CourseSection)object);
+            instanceCheck=true;
+        }
         if(object instanceof Course){
             allCourses.add((Course)object);
             instanceCheck=true;
@@ -196,5 +217,13 @@ public class Department {
 
     public void setAllAdvisors(Collection<Advisor> allAdvisors) {
         this.allAdvisors = allAdvisors;
+    }
+
+    public Collection<CourseSection> getAllCourseSections() {
+        return allCourseSections;
+    }
+
+    public void setAllCourseSections(Collection<CourseSection> allCourseSections) {
+        this.allCourseSections = allCourseSections;
     }
 }

@@ -18,6 +18,7 @@ public class Student extends Person {
     private Collection<String> registrationNumbers;
     private Transcript transcript;
     private int semester;
+    private Collection<CourseSection> activeCourseSections;
 
     public Student(String FName, String LName, Date birthdate, String studentNo, Collection<String> courseCodes, String advisorNo,Collection<String> registrationNumbers, int semester) {
         super(FName, LName, birthdate);
@@ -33,6 +34,13 @@ public class Student extends Person {
     public Student(){
 
     };
+
+
+    public void addCourseSection(CourseSection courseSection){
+        if(activeCourseSections == null)
+            activeCourseSections = new ArrayList<CourseSection>();
+        activeCourseSections.add(courseSection);
+    }
 
     private void courseNullCheck(Course course,String courseCode) throws Exception{
         if(course==null){
@@ -103,8 +111,17 @@ public class Student extends Person {
         }
     }
 
-    private void checkCourseEligibility(Course course, String courseCode) throws Exception{
+    private void courseCurrentlyTakenCheck(Course course) throws Exception{
+        if(this.getCourseCodes().contains(course.getCourseCode())){
+            throw new Exception("You are currently taking this course: " + course.getCourseCode());
+        }
+    }
+
+    public void checkCourseEligibility(String courseCode) throws Exception{
+        Course course = Department.getInstance().getCourseByCourseCode(courseCode);
+
         courseNullCheck(course,courseCode);
+        courseCurrentlyTakenCheck(course);
         courseAlreadyCompletedCheck(course);
         cannotTakeMoreThanFiveCourses();
         cannotTakeMoreThan36Credits(course);
@@ -113,20 +130,55 @@ public class Student extends Person {
         checkEligibilityForGraduationProject(course);
     }
 
+    
 
-    public void registerToNewCourse(String courseCode,String newRegistrationNo){
-        Course course = Department.getInstance().getCourseByCourseCode(courseCode);
+    private void checkOverlapSections(Course course, String sectionNo) throws Exception{
+        CourseSection courseSection = Department.getInstance().getCourseSectionBySectionNo(sectionNo);
+        if(this.getActiveCourseSections() == null){
+            return;
+        }
+        for (CourseSection each : this.getActiveCourseSections()) {
+            for(String eachTime : each.getSectionTime()){
+                if(courseSection.getSectionTime().contains(eachTime)){
+                    throw new Exception("You have an overlap with the course: " + course.getCourseCode() + " and the course: " + each.getcourseCode());
+                }
+            }
+                
+        }
+    }    
+
+    private void checkQuota(Course course, String sectionNo) throws Exception{
+        CourseSection courseSection = Department.getInstance().getCourseSectionBySectionNo(sectionNo);
+        if(courseSection.isFull()){
+            throw new Exception("The course section is full: " + course.getCourseCode() + " " + courseSection.getCourseSectionNo());
+        }
+    }
+
+    private void checkCourseSectionEligibility(Course course, String sectionNo) throws Exception{
+        checkOverlapSections(course, sectionNo);
+        checkQuota(course, sectionNo);
+    }
+
+
+
+    public void registerToNewCourse(String courseCode,String newRegistrationNo, String sectionNo){
+        Department department = Department.getInstance();  
+        Course course = department.getCourseByCourseCode(courseCode);
 
         try{
-            checkCourseEligibility(course, courseCode);
-            Registration registration = new Registration(newRegistrationNo,this.getStudentNo(),this.getAdvisorNo(),courseCode,RegistrationStatus.Active);
+            CourseSection courseSection = department.getCourseSectionBySectionNo(sectionNo);
+            checkCourseSectionEligibility(course, sectionNo);
+
+            Registration registration = new Registration(newRegistrationNo,this.getStudentNo(),this.getAdvisorNo(),courseCode,RegistrationStatus.Active, courseSection);
             this.getRegistrationNumbers().add(registration.getRegistrationNo());
             Advisor advisor = Department.getInstance().getAdvisorByStaffNo(getAdvisorNo());
             advisor.getRegistrationNumbers().add(registration.getRegistrationNo());
             Department.getInstance().getAllRegistrations().add(registration);
 
+            System.out.println("Registration is successfully sent to the advisor");
+
         }catch (Exception e){
-            System.out.println(e.getMessage());
+            System.out.println(e);
         }       
     }
 
@@ -199,6 +251,14 @@ public class Student extends Person {
             return true;
         }
         return false;
+    }
+
+    public Collection<CourseSection> getActiveCourseSections() {
+        return activeCourseSections;
+    }
+
+    public void setActiveCourseSections(Collection<CourseSection> activeCourseSections) {
+        this.activeCourseSections = activeCourseSections;
     }
 
     @Override
