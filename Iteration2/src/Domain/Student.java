@@ -111,10 +111,17 @@ public class Student extends Person {
         }
     }
 
+    private void courseCurrentlyTakenCheck(Course course) throws Exception{
+        if(this.getCourseCodes().contains(course.getCourseCode())){
+            throw new Exception("You are currently taking this course: " + course.getCourseCode());
+        }
+    }
+
     public void checkCourseEligibility(String courseCode) throws Exception{
         Course course = Department.getInstance().getCourseByCourseCode(courseCode);
 
         courseNullCheck(course,courseCode);
+        courseCurrentlyTakenCheck(course);
         courseAlreadyCompletedCheck(course);
         cannotTakeMoreThanFiveCourses();
         cannotTakeMoreThan36Credits(course);
@@ -152,6 +159,8 @@ public class Student extends Person {
         checkQuota(course, sectionNo);
     }
 
+
+
     public void registerToNewCourse(String courseCode,String newRegistrationNo, String sectionNo){
         Department department = Department.getInstance();  
         Course course = department.getCourseByCourseCode(courseCode);
@@ -166,8 +175,10 @@ public class Student extends Person {
             advisor.getRegistrationNumbers().add(registration.getRegistrationNo());
             Department.getInstance().getAllRegistrations().add(registration);
 
+            System.out.println("Registration is successfully sent to the advisor");
+
         }catch (Exception e){
-            e.printStackTrace();
+            System.out.println(e);
         }       
     }
 

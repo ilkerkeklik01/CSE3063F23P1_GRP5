@@ -58,13 +58,23 @@ public class Advisor extends Lecturer  {
             Student student = Department.getInstance().getStudentByStudentNo(registration.getStudentNo());
             student.getCourseCodes().add(registration.getCourseCode());
             Course course = Department.getInstance().getCourseByCourseCode(registration.getCourseCode());
+            
             course.getStudentNumbers().add(student.getStudentNo());
             student.addCourseSection(registration.getCourseSection());
             
             CourseSection courseSection = registration.getCourseSection();
             courseSection.addStudent();
+
             Department department = Department.getInstance();
             department.getCourseSectionBySectionNo(registration.getCourseSection().getCourseSectionNo()).addStudent();
+            
+            ArrayList<CourseSection> sectionsOfCourse = department.getCourseByCourseCode(registration.getCourseCode()).getCourseSection();
+            for(CourseSection section : sectionsOfCourse)
+            {
+                if(section.getCourseSectionNo().equals(registration.getCourseSection().getCourseSectionNo())){
+                    section.addStudent();
+                }
+            }           
             
             
         }else{

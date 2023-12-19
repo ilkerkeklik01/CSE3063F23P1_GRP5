@@ -81,8 +81,6 @@ public class StudentLoginStrategy implements ILoginStrategy{
                         student.checkCourseEligibility(courseCode); // THROWS ERROR IF NOT ELIGIBLE
                         String selectedCourseSectionNo = displaycourseSelection(courseCode);
                         student.registerToNewCourse(courseCode, regisIdGenerator.generateID(), selectedCourseSectionNo);
-                        
-                        System.out.println("Registration is successfully sent to advisor");
                         break;
                     }catch (Exception e){
                         System.out.println(e);
