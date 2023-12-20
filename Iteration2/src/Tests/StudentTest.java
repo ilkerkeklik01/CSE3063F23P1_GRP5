@@ -38,10 +38,10 @@ public class StudentTest {
 
 
         Advisor advisor = new Advisor("","",null,"2",coursesNos
-                ,new ArrayList<>(),new ArrayList<>());
+                ,new ArrayList<>(),registrationNos);
         Department.getInstance().addAnObject(advisor);
 
-        Student student = new Student("abc","def",null,"123",courses,"2",registrationNos);
+        Student student = new Student("abc","def",null,"123",courses,"2",registrationNos,1);
 
         Course course = new Course("course","CSE1000",lecturerNos,null,studentNos,null,2);
 
@@ -52,7 +52,7 @@ public class StudentTest {
 
         Department.getInstance().getAllAdvisors().add(advisor);
 
-        student.registerToNewCourse(course.getCourseCode(),"200");
+        student.registerToNewCourse(course.getCourseCode(),"200","S23");
 
         assertTrue(student.getRegistrationNumbers().contains("200"));
 

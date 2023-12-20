@@ -1,4 +1,4 @@
-package Domain;
+package Tests;
 
 
 import java.util.ArrayList;
@@ -8,6 +8,11 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
+
+import Domain.Course;
+import Domain.Department;
+import Domain.Grade;
+import Domain.Transcript;
 import org.junit.Before;
 import org.junit.Test;
 
