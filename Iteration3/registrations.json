@@ -1,100 +1,86 @@
 [
   {
-    "registrationNo": "R4889",
-    "studentNo": "12058287",
-    "advisorNo": "10063850",
-    "courseCode": "CSE3063",
-    "status": "Confirmed"
-  },
-  {
-    "registrationNo": "R7794",
-    "studentNo": "12058287",
-    "advisorNo": "10063850",
-    "courseCode": "CSE3055",
-    "status": "Rejected"
-  },
-  {
-    "registrationNo": "R6003",
-    "studentNo": "12058287",
-    "advisorNo": "10063850",
-    "courseCode": "IE3235",
+    "registration_no": "R6003",
+    "student_no": "12058287",
+    "advisor_no": "10063850",
+    "course_code": "IE3235",
     "status": "Confirmed",
-    "courseSection": {
-      "courseSectionNo": "75",
-      "noOfStudents": 0,
-      "sectionTime": [
+    "course_section": {
+      "course_section_no": "75",
+      "no_of_students": 0,
+      "section_times": [
         "316",
         "310"
       ],
-      "courseCode": "IE3235",
+      "course_code": "IE3235",
       "quota": 40
     }
   },
   {
-    "registrationNo": "R9637",
-    "studentNo": "12058287",
-    "advisorNo": "10063850",
-    "courseCode": "CSE3055",
+    "registration_no": "R9637",
+    "student_no": "12058287",
+    "advisor_no": "10063850",
+    "course_code": "CSE3055",
     "status": "Confirmed",
-    "courseSection": {
-      "courseSectionNo": "62",
-      "noOfStudents": 1,
-      "sectionTime": [
+    "course_section": {
+      "course_section_no": "62",
+      "no_of_students": 1,
+      "section_times": [
         "112",
         "111"
       ],
-      "courseCode": "CSE3055",
+      "course_code": "CSE3055",
       "quota": 40
     }
   },
   {
-    "registrationNo": "R2424",
-    "studentNo": "12058287",
-    "advisorNo": "10063850",
-    "courseCode": "CSE3038",
+    "registration_no": "R2424",
+    "student_no": "12058287",
+    "advisor_no": "10063850",
+    "course_code": "CSE3038",
     "status": "Confirmed",
-    "courseSection": {
-      "courseSectionNo": "67",
-      "noOfStudents": 1,
-      "sectionTime": [
+    "course_section": {
+      "course_section_no": "67",
+      "no_of_students": 1,
+      "section_times": [
         "411",
         "210"
       ],
-      "courseCode": "CSE3038",
+      "course_code": "CSE3038",
       "quota": 40
     }
   },
   {
-    "registrationNo": "R5651",
-    "studentNo": "12058287",
-    "advisorNo": "10063850",
-    "courseCode": "CSE3063",
+    "registration_no": "R5651",
+    "student_no": "12058287",
+    "advisor_no": "10063850",
+    "course_code": "CSE3063",
     "status": "Active",
-    "courseSection": {
-      "courseSectionNo": "64",
-      "noOfStudents": 0,
-      "sectionTime": [
+    "course_section": {
+      "course_section_no": "64",
+      "no_of_students": 0,
+      "section_times": [
         "116",
         "315"
       ],
-      "courseCode": "CSE3063",
+      "course_code": "CSE3063",
       "quota": 40
     }
   },
   {
-    "registrationNo": "R7687",
-    "studentNo": "12058287",
-    "advisorNo": "10063850",
-    "courseCode": "CSE3063",
+    "registration_no": "R7687",
+    "student_no": "12058287",
+    "advisor_no": "10063850",
+    "course_code": "CSE3063",
     "status": "Active",
-    "courseSection": {
-      "courseSectionNo": "64",
-      "noOfStudents": 0,
-      "sectionTime": [
+    "course_section": {
+      "course_section_no": "64",
+      "no_of_students": 0,
+      "section_times": [
         "116",
         "315"
       ],
-      "courseCode": "CSE3063",
+      "course_code": "CSE3063",
       "quota": 40
     }
   }

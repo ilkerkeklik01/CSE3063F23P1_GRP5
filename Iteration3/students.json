@@ -891,8 +891,8 @@
     "semester": 5,
     "activeCourseSections": null,
     "registrations": [],
-    "fname": "Kerim",
-    "lname": "Hasan"
+    "FName": "Kerim",
+    "LName": "Hasan"
   },
   {
     "personId": null,
@@ -1786,8 +1786,8 @@
     "semester": 7,
     "activeCourseSections": null,
     "registrations": [],
-    "fname": "Yusuf",
-    "lname": "Duman"
+    "FName": "Yusuf",
+    "LName": "Duman"
   },
   {
     "personId": null,
@@ -2681,8 +2681,8 @@
     "semester": 6,
     "activeCourseSections": null,
     "registrations": [],
-    "fname": "Metehan",
-    "lname": "Çelik"
+    "FName": "Metehan",
+    "LName": "Çelik"
   },
   {
     "personId": null,
@@ -3631,8 +3631,8 @@
         }
       }
     ],
-    "fname": "Havva",
-    "lname": "Özen"
+    "FName": "Havva",
+    "LName": "Özen"
   },
   {
     "personId": null,
@@ -4526,8 +4526,8 @@
     "semester": 6,
     "activeCourseSections": null,
     "registrations": [],
-    "fname": "Yasin",
-    "lname": "Küçük"
+    "FName": "Yasin",
+    "LName": "Küçük"
   },
   {
     "personId": null,
@@ -5421,8 +5421,8 @@
     "semester": 4,
     "activeCourseSections": null,
     "registrations": [],
-    "fname": "Sarp",
-    "lname": "Müftüler"
+    "FName": "Sarp",
+    "LName": "Müftüler"
   },
   {
     "personId": null,
@@ -6316,8 +6316,8 @@
     "semester": 3,
     "activeCourseSections": null,
     "registrations": [],
-    "fname": "Ahmet",
-    "lname": "Yıldız"
+    "FName": "Ahmet",
+    "LName": "Yıldız"
   },
   {
     "personId": null,
@@ -7211,8 +7211,8 @@
     "semester": 7,
     "activeCourseSections": null,
     "registrations": [],
-    "fname": "Hatice",
-    "lname": "Keskin"
+    "FName": "Hatice",
+    "LName": "Keskin"
   },
   {
     "personId": null,
@@ -8106,8 +8106,8 @@
     "semester": 5,
     "activeCourseSections": null,
     "registrations": [],
-    "fname": "Musa",
-    "lname": "Erişmiş"
+    "FName": "Musa",
+    "LName": "Erişmiş"
   },
   {
     "personId": null,
@@ -9001,7 +9001,7 @@
     "semester": 6,
     "activeCourseSections": null,
     "registrations": [],
-    "fname": "Şentürk",
-    "lname": "Ilıcalı"
+    "FName": "Şentürk",
+    "LName": "Ilıcalı"
   }
 ]

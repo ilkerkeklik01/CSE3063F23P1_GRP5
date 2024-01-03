@@ -1,8 +1,8 @@
 from typing import List
 
 class CourseSection:
-    def __init__(self, course_code, course_section_no, quota, section_times):
-        self.no_of_students = 0
+    def __init__(self, course_code, course_section_no, quota, section_times, no_of_students):
+        self.no_of_students = no_of_students
         self.course_code = course_code
         self.course_section_no = course_section_no
         self.quota = quota

@@ -3,9 +3,11 @@ from typing import Collection
 from Domain.Staff import Staff
 
 class Lecturer(Staff):
-    def __init__(self, first_name, last_name, staff_no):
+    def __init__(self, first_name, last_name, staff_no, course_ids):
         super().__init__(first_name, last_name, staff_no)
-        self.course_ids = []  # Initialize an empty list for course_ids
+        self.course_ids = course_ids
+        from Domain.Department import Department
+
 
     def search(self, query):
         # Placeholder implementation for the abstract search method

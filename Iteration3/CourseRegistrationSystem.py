@@ -1,3 +1,4 @@
+from Data.DataManager import DataManager
 from Domain.Course import Course
 from Domain.Student import Student
 from Domain.CourseSection import CourseSection
@@ -12,49 +13,24 @@ from Login.LoginContext import LoginContext
 from Login.StudentLoginStrategy import StudentLoginStrategy
 from Login.AdvisorLoginStrategy import AdvisorLoginStrategy
 from Login.LecturerLoginStrategy import LecturerLoginStrategy
+from Domain.Department import Department
 
 studentIDGenerator = StudentIDGenerator()
 staffIDGenerator = StaffIDGenerator()
 registrationIDGenerator = RegistrationIDGenerator()
 
-corut = Advisor("Fatma", "Corut", staffIDGenerator.generate_id(), [], [], [])
-omer = Advisor("Ömer", "Korçak", staffIDGenerator.generate_id(), [], [], [])
-
-mustafa = Lecturer("Mustafa" , "Ağaoğlu", staffIDGenerator.generate_id())
-
-yusuf = Student("Yusuf", "Duman", studentIDGenerator.generate_id(), [], corut.get_staff_no(), [], 8)
-kerim = Student("Kerim Hasan", "Yıldırım", studentIDGenerator.generate_id(), [], corut.get_staff_no(), [], 6)
-ilker = Student("İlker", "Keklik", studentIDGenerator.generate_id(), [], omer.get_staff_no(), [], 7)
-
-section1 = CourseSection("CSE3200", "1", 40, ["111"])
-database = Course("Database", "CSE3200", [], [], [], [], 6)
-database.add_section(section1)
-database.get_lecturers_numbers().append(mustafa.get_staff_no())
-
-section2 = CourseSection("CSE3000", "2", 40, ["111"])
-digital = Course("Digital Logic Design", "CSE3000", [], [], [], [], 6)
-digital.add_section(section2)
-digital.get_lecturers_numbers().append(corut.get_staff_no())
-
-
-corut.set_courses([database.get_course_code()])
-
 def main():
-    department = Department.get_instance()
 
-    yusuf.register_to_new_course(database.get_course_code(), "R1", section1.get_course_section_no())
-    corut.proceed_the_registration("R1", RegistrationStatus.Confirmed)
-    yusuf.get_transcript().add_grade("CSE3200", 86)
-    yusuf.get_transcript().print_passed_courses()
-   # data_manager = DataManager()
-    #data_manager.load_data()
+    data_manager = DataManager()
+    data_manager.load_data()
 
-    print(yusuf.get_student_no())
-    print(yusuf.get_advisor_no())
 
-    display_console_ui(department)
+    display_console_ui(Department.get_instance())
+
 
    # data_manager.save_data()
+
+
 
 def display_console_ui(department):
   #  data_manager = DataManager()

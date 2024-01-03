@@ -2,7 +2,7 @@
 
 
 class Course:
-    def __init__(self, course_name, course_code, lecturers_numbers, course_sections, student_numbers, prerequisites_ids, credit):
+    def __init__(self, course_name, course_code, lecturers_numbers, course_sections, student_numbers, prerequisites_ids, credit, semester):
         self.credit = credit
         self.course_name = course_name
         self.course_code = course_code
@@ -10,7 +10,7 @@ class Course:
         self.course_sections = course_sections
         self.student_numbers = student_numbers
         self.prerequisites_ids = prerequisites_ids
-        self.semester = 0  # Assuming the default value for semester is 0
+        self.semester = semester  # Assuming the default value for semester is 0
 
     # region Methods
 

@@ -77,7 +77,7 @@ class Transcript:
         return [grade.get_course() for grade in self.grades]
 
     def get_successfully_completed_course_codes(self):
-        return [grade.get_course().get_course_code() for grade in self.grades if grade.is_passed()]
+        return [grade.course.course_code for grade in self.grades if grade.is_passed()]
 
     def get_failed_course_codes(self):
         return [grade.get_course().get_course_code() for grade in self.grades if not grade.is_passed()]

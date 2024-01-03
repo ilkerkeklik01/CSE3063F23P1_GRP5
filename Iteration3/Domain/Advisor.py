@@ -4,7 +4,7 @@ from Domain.RegistrationStatus import RegistrationStatus
 
 class Advisor(Lecturer):
     def __init__(self, FName, LName, staffNo, courseIds, studentNumbers, registrationNumbers):
-        super().__init__(FName, LName, staffNo)
+        super().__init__(FName, LName, staffNo, courseIds)
         self.course_ids = courseIds
         self.studentNumbers = studentNumbers
         self.registrationNumbers = registrationNumbers
