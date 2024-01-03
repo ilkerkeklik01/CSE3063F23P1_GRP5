@@ -2,6 +2,7 @@ from Domain.Department import Department
 from Login.ILoginStrategy import ILoginStrategy
 from IDGenerators.RegistrationIDGenerator import RegistrationIDGenerator
 from Login.LoginHelper import LoginHelper
+import logging
 
 class StudentLoginStrategy(ILoginStrategy):
     def login(self, department):
@@ -9,6 +10,7 @@ class StudentLoginStrategy(ILoginStrategy):
 
     def login_as_a_student(self, department):
         regis_id_generator = RegistrationIDGenerator()
+        logger = logging.getLogger()
         var = -1
         flag = False
         student = None
@@ -25,9 +27,17 @@ class StudentLoginStrategy(ILoginStrategy):
 
             student = department.get_student_by_student_no(entered_no)
             if student is None:
+                logger.info(f"Student login attempt unsuccesfull. Student not found with {entered_no}")
                 continue
+            else:
+                print("Enter your password:")
+                entered_password = input()
+                if entered_password != student.get_password():
+                    print("Wrong password try again")
+                    logger.info(f"Student login attempt unsuccesfull. Student with number no {entered_no} entered invalid password.")
+                    continue
             flag = True
-
+        logger.info(f"Student with mnumber {entered_no} loginned.");
         choice = -1
         while choice != 0:
             print("0 to exit")
@@ -61,6 +71,7 @@ class StudentLoginStrategy(ILoginStrategy):
 
                 except Exception as e:
                     print(e)
+                    logger.info(f"{e} for student with number {entered_no}")
 
             elif choice == 4:
                 print("Available courses:")

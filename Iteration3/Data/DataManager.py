@@ -76,7 +76,7 @@ class DataManager:
                 department.set_all_advisors([Advisor(advisor_data['FName'], advisor_data['LName'],
                                                      advisor_data['staffNo'], advisor_data['courseIds'],
                                                      advisor_data['studentNumbers'],
-                                                     advisor_data['registrationNumbers']) for advisor_data in
+                                                     advisor_data['registrationNumbers'], "12345") for advisor_data in
                                              json.load(file)])
             with open(self.COURSES_JSON_FILE, 'r', encoding='utf8') as file:
                 department.set_all_courses([Course(course_data['course_name'], course_data['course_code'],
@@ -95,10 +95,10 @@ class DataManager:
                 department.set_all_students([Student(student_data['FName'], student_data['LName'],
                                                      student_data['studentNo'], student_data['courseCodes'],
                                                      student_data['advisorNo'], student_data['registrationNumbers'],
-                                                     student_data['semester']) for student_data in json.load(file)])
+                                                     student_data['semester'],"12345") for student_data in json.load(file)])
             with open(self.LECTURERS_JSON_FILE, 'r', encoding='utf8') as file:
                 department.set_all_lecturers([Lecturer(lecturer_data['first_name'], lecturer_data['last_name'],
-                                                       lecturer_data['staff_no'], lecturer_data['course_ids']) for
+                                                       lecturer_data['staff_no'], lecturer_data['course_ids'],"12345") for
                                               lecturer_data in json.load(file)])
             with open(self.COURSE_SECTION_JSON_FILE, 'r', encoding='utf8') as file:
                 department.set_all_course_sections([CourseSection(course_section_data['course_code'],

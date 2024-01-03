@@ -3,8 +3,8 @@ from Domain.Student import Student
 from Domain.RegistrationStatus import RegistrationStatus
 
 class Advisor(Lecturer):
-    def __init__(self, FName, LName, staffNo, courseIds, studentNumbers, registrationNumbers):
-        super().__init__(FName, LName, staffNo, courseIds)
+    def __init__(self, FName, LName, staffNo, courseIds, studentNumbers, registrationNumbers, password):
+        super().__init__(FName, LName, staffNo, courseIds, password)
         self.course_ids = courseIds
         self.studentNumbers = studentNumbers
         self.registrationNumbers = registrationNumbers

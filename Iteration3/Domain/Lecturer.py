@@ -3,8 +3,8 @@ from typing import Collection
 from Domain.Staff import Staff
 
 class Lecturer(Staff):
-    def __init__(self, first_name, last_name, staff_no, course_ids):
-        super().__init__(first_name, last_name, staff_no)
+    def __init__(self, first_name, last_name, staff_no, course_ids,password):
+        super().__init__(first_name, last_name, staff_no, password)
         self.course_ids = course_ids
         from Domain.Department import Department
 

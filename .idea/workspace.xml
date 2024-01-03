@@ -5,17 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e79c9d6c-c6d3-413b-8b69-b2a5d182eef3" name="Changes" comment="Separating iterations">
+      <change afterPath="$PROJECT_DIR$/Iteration3/Logging/LogFormatter.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CSE3063F23P1_GRP5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CSE3063F23P1_GRP5.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/CourseRegistrationSystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/CourseRegistrationSystem.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Data/DataManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Data/DataManager.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Advisor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Advisor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Grade.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Department.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Department.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Lecturer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Lecturer.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Person.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Person.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/RegistrationStatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/RegistrationStatus.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Staff.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Staff.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Student.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Iteration3/Login/AdvisorLoginStrategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Login/AdvisorLoginStrategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Login/LecturerLoginStrategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Login/LecturerLoginStrategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Login/LoginHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Login/LoginHelper.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Login/StudentLoginStrategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Login/StudentLoginStrategy.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -38,7 +56,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Python.CourseRegistrationSystem.executor": "Debug",
+    "Python.CourseRegistrationSystem.executor": "Run",
     "Python.Grade.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
@@ -50,6 +68,7 @@
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -108,6 +127,13 @@
       <method v="2" />
     </configuration>
   </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-python-sdk-50da183f06c8-2887949eec09-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.13135.95" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
@@ -119,6 +145,7 @@
       <workItem from="1700224092623" duration="24000" />
       <workItem from="1702305172494" duration="106000" />
       <workItem from="1702305336590" duration="371000" />
+      <workItem from="1704318250285" duration="4758000" />
     </task>
     <task id="LOCAL-00001" summary="Separating iterations">
       <option name="closed" value="true" />
@@ -146,11 +173,25 @@
           <line>54</line>
           <option name="timeStamp" value="19" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Iteration3/Data/DataManager.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Iteration3/CourseRegistrationSystem.py</url>
+          <line>41</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Iteration3/Login/StudentLoginStrategy.py</url>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSE3063F23P1_GRP5$Grade.coverage" NAME="Grade Coverage Results" MODIFIED="1704316803728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iteration3/Domain" />
-    <SUITE FILE_PATH="coverage/CSE3063F23P1_GRP5$CourseRegistrationSystem.coverage" NAME="CourseRegistrationSystem Coverage Results" MODIFIED="1704317639413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iteration3" />
+    <SUITE FILE_PATH="coverage/CSE3063F23P1_GRP5$CourseRegistrationSystem.coverage" NAME="CourseRegistrationSystem Coverage Results" MODIFIED="1704323796517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iteration3" />
   </component>
 </project>

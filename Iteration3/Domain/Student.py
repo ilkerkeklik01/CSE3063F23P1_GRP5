@@ -4,8 +4,8 @@ from Domain.Transcript import Transcript
 from Domain.RegistrationStatus import RegistrationStatus
 
 class Student(Person):
-    def __init__(self, FName, LName, studentNo, courseCodes, advisorNo, registrationNumbers, semester):
-        super().__init__(FName, LName)
+    def __init__(self, FName, LName, studentNo, courseCodes, advisorNo, registrationNumbers, semester, password):
+        super().__init__(FName, LName, password)
         self.studentNo = studentNo
         self.courseCodes = courseCodes
         self.advisorNo = advisorNo
@@ -207,7 +207,12 @@ class Student(Person):
                ", advisorNo='" + self.advisorNo + '\'' + \
                ", registrationNumbers=" + str(self.get_registration_numbers()) + \
                "} "
-
+    def listStudents(self):
+        return "Student{" + \
+            "studentNo='" + self.studentNo + '\'' + \
+            ", fName=" + self.get_first_name() + \
+            ", lName='" + self.get_last_name() + '\'' + \
+            "} "
     def search(self, query):
         # Your implementation for the search method in the Student class...
         pass

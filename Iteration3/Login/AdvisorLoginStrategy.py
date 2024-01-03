@@ -1,12 +1,14 @@
 from Domain.RegistrationStatus import RegistrationStatus
 from Login.ILoginStrategy import ILoginStrategy
 from Login.LoginHelper import LoginHelper
+import logging
 
 class AdvisorLoginStrategy(ILoginStrategy):
     def login(self, department):
         self.login_as_an_advisor(department)
 
     def login_as_an_advisor(self, department):
+        logger = logging.getLogger()
         var = -1
         flag = False
         advisor = None
@@ -23,8 +25,18 @@ class AdvisorLoginStrategy(ILoginStrategy):
 
             advisor = department.get_advisor_by_staff_no(entered_no)
             if advisor is None:
+                logger.info(f"Advisor login attempt unsuccesfull. Advisor not found with {entered_no}")
+
                 continue
+            else:
+                print("Enter your password:")
+                entered_password = input()
+                if entered_password != advisor.get_password():
+                    logger.info(f"Advisor login attempt unsuccesfull. Advisor with {entered_no} entered wrong password")
+                    print("Wrong password try again")
+                    continue
             flag = True
+        logger.info(f"Advisor login attempt successfull. Advisor with {entered_no} loginned")
 
         choice = -1
         while choice != 0:
@@ -54,18 +66,24 @@ class AdvisorLoginStrategy(ILoginStrategy):
                     registration_status_str = input("Enter status (Active-Rejected-Confirmed): ")
                 except Exception as e:
                     print(e)
+                    logger.info(f"{e} for advisor {entered_no}")
                     break
 
                 status = None
                 if registration_status_str.lower() == "confirmed":
                     status = RegistrationStatus.Confirmed
+                    logger.info(f"Advisor {entered_no} confirmed registration: {registration}")
                 elif registration_status_str.lower() == "active":
                     status = RegistrationStatus.Active
+                    logger.info(f"Advisor {entered_no} did not change the status of registration: {registration}")
                 elif registration_status_str.lower() == "rejected":
+                    logger.info(f"Advisor {entered_no} rejected registration: {registration}")
+
                     status = RegistrationStatus.Rejected
                 else:
                     print("Invalid registration status!")
-                    break
+                    logger.info(f"Advisor {entered_no} entered invalid registration status")
+                    continue
 
                 advisor.proceed_the_registration(registration_no, status)
             elif choice == 4:
