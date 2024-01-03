@@ -1,0 +1,101 @@
+[
+  {
+    "registrationNo": "R4889",
+    "studentNo": "12058287",
+    "advisorNo": "10063850",
+    "courseCode": "CSE3063",
+    "status": "Confirmed"
+  },
+  {
+    "registrationNo": "R7794",
+    "studentNo": "12058287",
+    "advisorNo": "10063850",
+    "courseCode": "CSE3055",
+    "status": "Rejected"
+  },
+  {
+    "registrationNo": "R6003",
+    "studentNo": "12058287",
+    "advisorNo": "10063850",
+    "courseCode": "IE3235",
+    "status": "Confirmed",
+    "courseSection": {
+      "courseSectionNo": "75",
+      "noOfStudents": 0,
+      "sectionTime": [
+        "316",
+        "310"
+      ],
+      "courseCode": "IE3235",
+      "quota": 40
+    }
+  },
+  {
+    "registrationNo": "R9637",
+    "studentNo": "12058287",
+    "advisorNo": "10063850",
+    "courseCode": "CSE3055",
+    "status": "Confirmed",
+    "courseSection": {
+      "courseSectionNo": "62",
+      "noOfStudents": 1,
+      "sectionTime": [
+        "112",
+        "111"
+      ],
+      "courseCode": "CSE3055",
+      "quota": 40
+    }
+  },
+  {
+    "registrationNo": "R2424",
+    "studentNo": "12058287",
+    "advisorNo": "10063850",
+    "courseCode": "CSE3038",
+    "status": "Confirmed",
+    "courseSection": {
+      "courseSectionNo": "67",
+      "noOfStudents": 1,
+      "sectionTime": [
+        "411",
+        "210"
+      ],
+      "courseCode": "CSE3038",
+      "quota": 40
+    }
+  },
+  {
+    "registrationNo": "R5651",
+    "studentNo": "12058287",
+    "advisorNo": "10063850",
+    "courseCode": "CSE3063",
+    "status": "Active",
+    "courseSection": {
+      "courseSectionNo": "64",
+      "noOfStudents": 0,
+      "sectionTime": [
+        "116",
+        "315"
+      ],
+      "courseCode": "CSE3063",
+      "quota": 40
+    }
+  },
+  {
+    "registrationNo": "R7687",
+    "studentNo": "12058287",
+    "advisorNo": "10063850",
+    "courseCode": "CSE3063",
+    "status": "Active",
+    "courseSection": {
+      "courseSectionNo": "64",
+      "noOfStudents": 0,
+      "sectionTime": [
+        "116",
+        "315"
+      ],
+      "courseCode": "CSE3063",
+      "quota": 40
+    }
+  }
+]
