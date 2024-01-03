@@ -223,14 +223,14 @@ class StudentEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, Student):
             return {
-                'first_name': obj.get_first_name(),
-                'last_name': obj.get_last_name(),
-                'student_no': obj.get_student_no(),
-                'course_codes': obj.get_course_codes(),
-                'advisor_no': obj.get_advisor_no(),
-                'registration_numbers': obj.get_registration_numbers(),
+                'FName': obj.get_first_name(),
+                'LName': obj.get_last_name(),
+                'studentNo': obj.get_student_no(),
+                'courseCodes': obj.get_course_codes(),
+                'advisorNo': obj.get_advisor_no(),
+                'registrationNumbers': obj.get_registration_numbers(),
                 'semester': obj.get_semester(),
                 'transcript': TranscriptEncoder().default(obj.get_transcript()),
-                'active_course_sections': [CourseSectionEncoder().default(section) for section in obj.get_active_course_sections()]
+                'activeCourseSections': [CourseSectionEncoder().default(section) for section in obj.get_active_course_sections()]
             }
         return super().default(obj)

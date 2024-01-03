@@ -43,7 +43,8 @@ class AdvisorLoginStrategy(ILoginStrategy):
             if choice == 0:
                 break
             elif choice == 1:  # get active registrations
-                print(advisor.get_active_registrations())
+                for registration in advisor.get_active_registrations():
+                    print(registration)
             elif choice == 2:  # list students you advise
                 for code in advisor.get_student_numbers():
                     print(department.get_student_by_student_no(code))

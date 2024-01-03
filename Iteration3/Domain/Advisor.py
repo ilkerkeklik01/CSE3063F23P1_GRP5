@@ -77,6 +77,8 @@ class Advisor(Lecturer):
         return json.dumps(self, cls=AdvisorEncoder)
 
 
+
+
 import json
 from Domain.Advisor import Advisor
 
@@ -92,3 +94,5 @@ class AdvisorEncoder(json.JSONEncoder):
                 'registrationNumbers': obj.get_registration_numbers()
             }
         return super().default(obj)
+
+

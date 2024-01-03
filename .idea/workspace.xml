@@ -6,6 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="e79c9d6c-c6d3-413b-8b69-b2a5d182eef3" name="Changes" comment="Separating iterations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Advisor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Advisor.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Grade.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Grade.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Registration.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Registration.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Student.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/Login/AdvisorLoginStrategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Login/AdvisorLoginStrategy.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,12 +38,14 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.CourseRegistrationSystem.executor": "Debug",
+    "Python.Grade.executor": "Debug",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "C:/Users/ilker/IdeaProjects/CSE3063F23P1_GRP5/Iteration2",
+    "git-widget-placeholder": "json",
+    "last_opened_file_path": "C:/Users/Kerim/Desktop/CSE3063F23P1_GRP5/Iteration3/CourseRegistrationSystem.py",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -50,6 +57,56 @@
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\ilker\IdeaProjects\CSE3063F23P1_GRP5\Iteration2" />
     </key>
+  </component>
+  <component name="RunManager" selected="Python.CourseRegistrationSystem">
+    <configuration name="CourseRegistrationSystem" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="CSE3063F23P1_GRP5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.8" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Iteration3" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Iteration3/CourseRegistrationSystem.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Grade" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="CSE3063F23P1_GRP5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="SDK_NAME" value="Python 3.8" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Iteration3/Domain" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Iteration3/CourseRegistrationSystem.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -80,5 +137,20 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Separating iterations" />
     <option name="LAST_COMMIT_MESSAGE" value="Separating iterations" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Iteration3/Domain/Grade.py</url>
+          <line>54</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/CSE3063F23P1_GRP5$Grade.coverage" NAME="Grade Coverage Results" MODIFIED="1704316803728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iteration3/Domain" />
+    <SUITE FILE_PATH="coverage/CSE3063F23P1_GRP5$CourseRegistrationSystem.coverage" NAME="CourseRegistrationSystem Coverage Results" MODIFIED="1704317639413" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iteration3" />
   </component>
 </project>

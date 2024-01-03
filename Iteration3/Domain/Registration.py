@@ -47,7 +47,7 @@ class Registration:
     # endregion Properties
 
     def __str__(self):
-        return f"Registration{{registration_no='{self.registration_no}', student_no='{self.student_no}', " \
+        return f"Registration{{registration_no='{self.registration_no}', student_no='{self.student_no}'\n" \
                f"advisor_no='{self.advisor_no}', course_code='{self.course_code}', status={self.status}}}"
 
 
