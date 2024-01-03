@@ -31,24 +31,29 @@ section2 = CourseSection("CSE3000", "2", 40, ["111"])
 digital = Course("Digital Logic Design", "CSE3000", [], [], [], [], 6)
 digital.add_section(section2)
 digital.get_lecturers_numbers().append(corut.get_staff_no())
+
 ''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''''
+from Domain.Registration import Registration
 
-yusuf.register_to_new_course(database.get_course_code(), registrationIDGenerator.generate_id(), section1.get_course_section_no())
-corut.proceed_the_registration(Department.get_instance().get_all_registrations()[0].get_registration_no(), RegistrationStatus.Confirmed)
+from Data.DataManager import DataManager
 
-try:
-    yusuf.check_course_eligibility(database.get_course_code())
-    yusuf.register_to_new_course(database.get_course_code(), registrationIDGenerator.generate_id(),
-                                 section1.get_course_section_no())
-    #yusuf.register_to_new_course(digital.get_course_code(), registrationIDGenerator.generate_id(), section2.get_course_section_no())
-    corut.proceed_the_registration(Department.get_instance().get_all_registrations()[1].get_registration_no(),
-                                   RegistrationStatus.Confirmed)
+dataManager = DataManager()
 
-except Exception as e:
-    print(e)
+reg = Registration("R1", yusuf.get_student_no(), corut.get_staff_no(), database.get_course_code(), RegistrationStatus.Active, section1)
+Department.get_instance().add_an_object(reg)
+
+Department.get_instance().get_all_courses().append(database)
+Department.get_instance().get_all_courses().append(digital)
+Department.get_instance().get_all_course_sections().append(section1)
+Department.get_instance().get_all_course_sections().append(section2)
+Department.get_instance().get_all_advisors().append(corut)
+Department.get_instance().get_all_advisors().append(omer)
+Department.get_instance().get_all_students().append(yusuf)
+Department.get_instance().get_all_staffs().append(corut)
+Department.get_instance().get_all_registrations()
+Department.get_instance().get_all_lecturers().append(corut)
+
+dataManager.save_data()
 
 
-print(' ')
-
-#yusuf.get_transcript().add_grade("CSE3200", 84)
-
+department = Department.get_instance()

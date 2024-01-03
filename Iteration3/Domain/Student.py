@@ -15,9 +15,6 @@ class Student(Person):
         self.activeCourseSections = []
 
 
-        # Add student number to advisor
-        from Domain.Department import Department
-        Department.get_instance().get_advisor_by_staff_no(advisorNo).get_student_numbers().append(studentNo)
 
     def add_course_section(self, course_section):
         if self.activeCourseSections is None:
@@ -217,3 +214,23 @@ class Student(Person):
 
 
 # You can add other classes and methods here as needed.
+import json
+from Domain.Student import Student  # Add this import statement
+from Domain.CourseSection import CourseSectionEncoder
+from Domain.Transcript import TranscriptEncoder
+
+class StudentEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Student):
+            return {
+                'first_name': obj.get_first_name(),
+                'last_name': obj.get_last_name(),
+                'student_no': obj.get_student_no(),
+                'course_codes': obj.get_course_codes(),
+                'advisor_no': obj.get_advisor_no(),
+                'registration_numbers': obj.get_registration_numbers(),
+                'semester': obj.get_semester(),
+                'transcript': TranscriptEncoder().default(obj.get_transcript()),
+                'active_course_sections': [CourseSectionEncoder().default(section) for section in obj.get_active_course_sections()]
+            }
+        return super().default(obj)

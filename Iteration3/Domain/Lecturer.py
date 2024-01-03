@@ -34,3 +34,17 @@ class Lecturer(Staff):
 
     def __str__(self):
         return f"Lecturer{{}} {super().__str__()}"
+
+
+import json
+
+class LecturerEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Lecturer):
+            return {
+                'first_name': obj.get_first_name(),
+                'last_name': obj.get_last_name(),
+                'staff_no': obj.get_staff_no(),
+                'course_ids': obj.get_course_ids()
+            }
+        return super().default(obj)

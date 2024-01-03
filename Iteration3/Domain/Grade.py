@@ -64,3 +64,19 @@ class Grade:
 
     def get_numeric_grade_for_gano(self):
         return self.numeric_grade_for_gano
+
+
+
+import json
+
+class GradeEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Grade):
+            return {
+                'course': obj.get_course(),
+                'numeric_grade': obj.get_numeric_grade(),
+                'letter_grade': obj.get_letter_grade(),
+                'is_passed': obj.is_passed(),
+                'numeric_grade_for_gano': obj.get_numeric_grade_for_gano()
+            }
+        return super().default(obj)

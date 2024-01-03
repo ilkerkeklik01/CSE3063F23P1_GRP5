@@ -64,3 +64,18 @@ class CourseSection:
             "5": "Friday"
         }
         return days.get(day_no, "Free Day")
+
+
+import json
+from Domain.CourseSection import CourseSection
+
+class CourseSectionEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, CourseSection):
+            return {
+                'course_code': obj.get_course_code(),
+                'course_section_no': obj.get_course_section_no(),
+                'quota': obj.get_quota(),
+                'section_times': obj.get_section_times()
+            }
+        return super().default(obj)

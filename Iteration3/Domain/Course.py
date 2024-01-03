@@ -1,5 +1,6 @@
  # Assuming you have a Department class in your project
 
+
 class Course:
     def __init__(self, course_name, course_code, lecturers_numbers, course_sections, student_numbers, prerequisites_ids, credit):
         self.credit = credit
@@ -90,3 +91,24 @@ class Course:
         return f"Course{{course_name='{self.course_name}', course_code='{self.course_code}', " \
                f"lecturers_numbers={self.lecturers_numbers}, student_numbers={self.student_numbers}, " \
                f"prerequisites_ids={self.prerequisites_ids}, credit={self.credit}, semester={self.semester}}}"
+
+
+import json
+from Domain.Course import Course
+from Domain.CourseSection import CourseSectionEncoder
+
+class CourseEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Course):
+            return {
+                'credit': obj.get_credit(),
+                'course_name': obj.get_course_name(),
+                'course_code': obj.get_course_code(),
+                'lecturers_numbers': obj.get_lecturers_numbers(),
+                'course_sections': [CourseSectionEncoder().default(section) for section in obj.get_course_sections()],
+                'student_numbers': obj.get_student_numbers(),
+                'prerequisites_ids': obj.get_prerequisites_ids(),
+                'semester': obj.get_semester()
+            }
+        return super().default(obj)
+

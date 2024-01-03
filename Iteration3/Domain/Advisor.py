@@ -72,3 +72,23 @@ class Advisor(Lecturer):
 
     def set_registration_numbers(self, registration_numbers):
         self.registrationNumbers = registration_numbers
+    def to_json(self):
+        # Convert the Advisor object to a JSON-formatted string
+        return json.dumps(self, cls=AdvisorEncoder)
+
+
+import json
+from Domain.Advisor import Advisor
+
+class AdvisorEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Advisor):
+            return {
+                'FName': obj.get_first_name(),
+                'LName': obj.get_last_name(),
+                'staffNo': obj.get_staff_no(),
+                'courseIds': obj.get_course_ids(),
+                'studentNumbers': obj.get_student_numbers(),
+                'registrationNumbers': obj.get_registration_numbers()
+            }
+        return super().default(obj)
