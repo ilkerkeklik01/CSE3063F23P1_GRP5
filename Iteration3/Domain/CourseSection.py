@@ -8,8 +8,6 @@ class CourseSection:
         self.quota = quota
         self.section_times = section_times
 
-        from Department import Department
-        Department.get_instance().add_an_object(self)
 
     def add_student(self):
         self.no_of_students += 1

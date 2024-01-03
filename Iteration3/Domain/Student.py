@@ -1,8 +1,7 @@
-from Person import Person
-from Registration import Registration
-from Transcript import Transcript
-from RegistrationStatus import RegistrationStatus
-
+from Domain.Person import Person
+from Domain.Registration import Registration
+from Domain.Transcript import Transcript
+from Domain.RegistrationStatus import RegistrationStatus
 
 class Student(Person):
     def __init__(self, FName, LName, studentNo, courseCodes, advisorNo, registrationNumbers, semester):
@@ -15,11 +14,9 @@ class Student(Person):
         self.semester = semester
         self.activeCourseSections = []
 
-        from Department import Department
-        Department.get_instance().add_an_object(self)
 
         # Add student number to advisor
-        from Department import Department
+        from Domain.Department import Department
         Department.get_instance().get_advisor_by_staff_no(advisorNo).get_student_numbers().append(studentNo)
 
     def add_course_section(self, course_section):
@@ -62,7 +59,7 @@ class Student(Person):
                                 + str(min_credit_for_graduation_project))
 
     def calculate_total_credit_taken(self):
-        from Department import Department
+        from Domain.Department import Department
         department = Department.get_instance()
         total_credit_taken = 0
         for course_code in self.courseCodes:
@@ -84,7 +81,7 @@ class Student(Person):
             raise Exception("You are currently taking this course: " + course.get_course_code())
 
     def check_course_eligibility(self, course_code):
-        from Department import Department
+        from Domain.Department import Department
 
         course = Department.get_instance().get_course_by_course_code(course_code)
         self.course_null_check(course, course_code)
@@ -97,7 +94,7 @@ class Student(Person):
         self.check_eligibility_for_graduation_project(course)
 
     def check_overlap_sections(self, course, section_no):
-        from Department import Department
+        from Domain.Department import Department
 
         course_section = Department.get_instance().get_course_section_by_section_no(section_no)
         if self.activeCourseSections is None:
@@ -109,19 +106,20 @@ class Student(Person):
                                     " and the course: " + each.get_course_code())
 
     def check_quota(self, course, section_no):
-        from Department import Department
+        from Domain.Department import Department
 
         course_section = Department.get_instance().get_course_section_by_section_no(section_no)
         if course_section.is_full():
             raise Exception("The course section is full: " + course.get_course_code() + " " +
                             course_section.get_course_section_no())
 
+
     def check_course_section_eligibility(self, course, sectionNo):
         self.check_overlap_sections(course, sectionNo)
         self.check_quota(course, sectionNo)
 
     def register_to_new_course(self, courseCode, new_registration_no, sectionNo):
-        from Department import Department
+        from Domain.Department import Department
 
         department = Department.get_instance()
         course = department.get_course_by_course_code(courseCode)
@@ -152,7 +150,7 @@ class Student(Person):
         return self.transcript
 
     def get_available_courses(self):
-        from Department import Department
+        from Domain.Department import Department
 
         department = Department.get_instance()
         all_courses = department.get_all_courses()
@@ -191,7 +189,7 @@ class Student(Person):
         self.advisorNo = advisor_no
 
     def get_registrations(self):
-        from Department import Department
+        from Domain.Department import Department
 
         return [r for r in Department.get_instance().get_all_registrations() if r.get_student_no() == self.studentNo]
 
