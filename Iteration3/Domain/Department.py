@@ -1,11 +1,11 @@
-from Person import Person
-from Course import Course
-from Staff import Staff
-from Student import Student
-from CourseSection import CourseSection
-from Lecturer import Lecturer
-from Registration import Registration
-from Advisor import Advisor
+from Domain.Person import Person
+from Domain.Course import Course
+from Domain.Staff import Staff
+from Domain.Student import Student
+from Domain.CourseSection import CourseSection
+from Domain.Lecturer import Lecturer
+from Domain.Registration import Registration
+from Domain.Advisor import Advisor
 
 
 class Department:
@@ -78,9 +78,9 @@ class Department:
             self.all_courses.append(obj)
         if isinstance(obj, Student):
             self.all_students.append(obj)
-        if isinstance(obj, Lecturer):
-            self.all_lecturers.append(obj)
         if isinstance(obj, Advisor):
+            self.all_lecturers.append(obj)
+        if isinstance(obj, Lecturer):
             self.all_advisors.append(obj)
         if isinstance(obj, Registration):
             self.all_registrations.append(obj)

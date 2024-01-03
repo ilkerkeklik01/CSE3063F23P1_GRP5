@@ -7,9 +7,6 @@ class Registration:
         self.status = status
         self.course_section = course_section
 
-        from Department import Department
-        Department.get_instance().add_an_object(self)
-
     # region Properties
 
     def get_registration_no(self):

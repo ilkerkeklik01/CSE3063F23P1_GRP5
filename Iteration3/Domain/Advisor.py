@@ -1,6 +1,6 @@
-from Lecturer import Lecturer
-from Student import Student
-from RegistrationStatus import RegistrationStatus
+from Domain.Lecturer import Lecturer
+from Domain.Student import Student
+from Domain.RegistrationStatus import RegistrationStatus
 
 class Advisor(Lecturer):
     def __init__(self, FName, LName, staffNo, courseIds, studentNumbers, registrationNumbers):
@@ -8,11 +8,9 @@ class Advisor(Lecturer):
         self.course_ids = courseIds
         self.studentNumbers = studentNumbers
         self.registrationNumbers = registrationNumbers
-        from Department import Department
-        Department.get_instance().add_an_object(self)
 
     def get_active_registrations(self):
-        from Department import Department
+        from Domain.Department import Department
         registrations = []
         all_registrations = Department.get_instance().get_all_registrations()
 
@@ -32,7 +30,7 @@ class Advisor(Lecturer):
         return None
 
     def proceed_the_registration(self, registration_no, status):
-        from Department import Department
+        from Domain.Department import Department
 
         registration = self.is_active_registration(registration_no)
 

@@ -1,9 +1,9 @@
-from Grade import Grade  # Assuming you have a Grade class in your project
+from Domain.Grade import Grade  # Assuming you have a Grade class in your project
  # Assuming you have a Department class in your project
 
 class Transcript:
     def __init__(self):
-
+        self.completed_credits = 0
         self.grades = []
 
     def update_gano(self):
@@ -12,7 +12,7 @@ class Transcript:
         self.set_gano(updated_gano)
 
     def add_grade(self, course_code, numeric_grade):
-        from Department import Department
+        from Domain.Department import Department
         course = Department.get_instance().get_course_by_course_code(course_code)
 
         for grade in self.grades:
@@ -39,7 +39,7 @@ class Transcript:
 
     def print_passed_courses(self):
         for grade in self.grades:
-            if grade.is_passed():
+            if grade.is_passed:
                 print(f"{grade.get_course().get_course_name()} {grade.get_course().get_course_code()} "
                       f"{grade.get_course().get_credit()} credits {grade.get_letter_grade()}")
 
@@ -48,7 +48,7 @@ class Transcript:
 
     def print_failed_courses(self):
         for grade in self.grades:
-            if not grade.is_passed():
+            if not grade.is_passed:
                 print(f"{grade.get_course().get_course_name()} {grade.get_course().get_course_code()} "
                       f"{grade.get_course().get_credit()} credits {grade.get_letter_grade()}")
 
@@ -62,6 +62,7 @@ class Transcript:
 
     def set_gano(self, gano):
         self.gano = gano
+
 
     def get_grades(self):
         return self.grades

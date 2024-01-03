@@ -1,15 +1,11 @@
 from typing import Collection
 
-from Staff import Staff
+from Domain.Staff import Staff
 
 class Lecturer(Staff):
     def __init__(self, first_name, last_name, staff_no):
         super().__init__(first_name, last_name, staff_no)
         self.course_ids = []  # Initialize an empty list for course_ids
-
-        from Department import Department
-        Department.get_instance().add_an_object(self)
-
 
     def search(self, query):
         # Placeholder implementation for the abstract search method

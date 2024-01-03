@@ -3,7 +3,7 @@ from Student import Student
 from CourseSection import CourseSection
 from Lecturer import Lecturer
 from Advisor import Advisor
-from Department import Department
+from Domain.Department import Department
 from RegistrationStatus import RegistrationStatus
 from IDGenerators.StudentIDGenerator import StudentIDGenerator
 from IDGenerators.StaffIDGenerator import StaffIDGenerator
@@ -50,6 +50,5 @@ except Exception as e:
 
 print(' ')
 
-Department.get_instance().get_all_course_sections()[0].print_sections()
-Department.get_instance().get_all_course_sections()[1].print_sections()
+#yusuf.get_transcript().add_grade("CSE3200", 84)
 

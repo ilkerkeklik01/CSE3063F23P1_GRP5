@@ -1,5 +1,5 @@
 from abc import ABC
-from Person import Person
+from Domain.Person import Person
 
 class Staff(Person, ABC):
     def __init__(self, first_name, last_name, staff_no):

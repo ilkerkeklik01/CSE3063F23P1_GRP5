@@ -11,9 +11,6 @@ class Course:
         self.prerequisites_ids = prerequisites_ids
         self.semester = 0  # Assuming the default value for semester is 0
 
-        from Department import Department
-        Department.get_instance().add_an_object(self)
-
     # region Methods
 
     def add_section(self, section):
@@ -26,7 +23,7 @@ class Course:
             each.print_sections()
 
     def get_students(self):
-        from Department import Department
+        from Domain.Department import Department
         students = []
         all_students = Department.get_instance().get_all_students()
 
