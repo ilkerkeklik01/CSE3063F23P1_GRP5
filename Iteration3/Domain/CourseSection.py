@@ -76,6 +76,7 @@ class CourseSectionEncoder(json.JSONEncoder):
                 'course_code': obj.get_course_code(),
                 'course_section_no': obj.get_course_section_no(),
                 'quota': obj.get_quota(),
-                'section_times': obj.get_section_times()
+                'section_times': obj.get_section_times(),
+                'no_of_students': obj.get_no_of_students()
             }
         return super().default(obj)

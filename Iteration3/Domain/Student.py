@@ -236,6 +236,7 @@ class StudentEncoder(json.JSONEncoder):
                 'registrationNumbers': obj.get_registration_numbers(),
                 'semester': obj.get_semester(),
                 'transcript': TranscriptEncoder().default(obj.get_transcript()),
-                'activeCourseSections': [CourseSectionEncoder().default(section) for section in obj.get_active_course_sections()]
+                'activeCourseSections': [CourseSectionEncoder().default(section) for section in obj.get_active_course_sections()],
+                'password': obj.get_password()
             }
         return super().default(obj)

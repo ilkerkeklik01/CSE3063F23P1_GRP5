@@ -105,7 +105,7 @@ class CourseEncoder(json.JSONEncoder):
                 'course_name': obj.get_course_name(),
                 'course_code': obj.get_course_code(),
                 'lecturers_numbers': obj.get_lecturers_numbers(),
-                'course_sections': [CourseSectionEncoder().default(section) for section in obj.get_course_sections()],
+                'course_section': [CourseSectionEncoder().default(section) for section in obj.get_course_sections()],
                 'student_numbers': obj.get_student_numbers(),
                 'prerequisites_ids': obj.get_prerequisites_ids(),
                 'semester': obj.get_semester()

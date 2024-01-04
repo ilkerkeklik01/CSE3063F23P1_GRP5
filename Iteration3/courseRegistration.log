@@ -49,3 +49,26 @@ Student with mnumber 12058287 loginned. at 2024-01-04 11:29:37
 Student with number12058287 tried to take course CSE3033  at 2024-01-04 11:29:55
 Unsuccessful registration of new course for student with number 12058287: You have an overlap with the course: CSE3033 and the course: CSE3048  at 2024-01-04 11:30:01
 Student with mnumber 12001093 loginned. at 2024-01-04 13:48:58
+Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 16:58:27
+Student with mnumber 12001093 loginned. at 2024-01-04 17:01:39
+Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 17:01:56
+Student with mnumber 12001093 loginned. at 2024-01-04 17:02:59
+Student with number12001093 tried to take course CSE3000  at 2024-01-04 17:03:04
+Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 17:03:17
+Advisor 10063850 confirmed registration: Registration{registration_no='R1117', student_no='12001093'
+advisor_no='10063850', course_code='CSE3000', status=RegistrationStatus.Active} at 2024-01-04 17:03:43
+Student with mnumber 12001093 loginned. at 2024-01-04 17:08:56
+Student with mnumber 12001093 loginned. at 2024-01-04 17:33:28
+Student with number12001093 tried to take course CSE3000  at 2024-01-04 17:33:38
+Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 17:33:50
+Advisor 10063850 confirmed registration: Registration{registration_no='R7770', student_no='12001093'
+advisor_no='10063850', course_code='CSE3000', status=RegistrationStatus.Active} at 2024-01-04 17:34:01
+Student with mnumber 12001093 loginned. at 2024-01-04 17:34:15
+Student with mnumber 12001093 loginned. at 2024-01-04 17:35:05
+Student with number12001093 tried to take course CSE3000  at 2024-01-04 17:35:13
+Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 17:35:25
+Advisor 10063850 confirmed registration: Registration{registration_no='R7284', student_no='12001093'
+advisor_no='10063850', course_code='CSE3000', status=RegistrationStatus.Active} at 2024-01-04 17:35:35
+Student with mnumber 12001093 loginned. at 2024-01-04 17:36:33
+Student with mnumber 12001093 loginned. at 2024-01-04 17:36:54
+Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 17:37:10

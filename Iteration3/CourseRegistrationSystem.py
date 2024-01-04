@@ -60,7 +60,7 @@ def display_console_ui(department):
             print(e)
 
         if choice == 0:
-            #data_manager.save_data()
+            data_manager.save_data()
             exit(0)
         elif choice == 1:
             login_context.set_strategy(StudentLoginStrategy())

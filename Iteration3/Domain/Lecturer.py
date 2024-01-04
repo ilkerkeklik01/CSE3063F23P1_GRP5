@@ -47,6 +47,7 @@ class LecturerEncoder(json.JSONEncoder):
                 'first_name': obj.get_first_name(),
                 'last_name': obj.get_last_name(),
                 'staff_no': obj.get_staff_no(),
-                'course_ids': obj.get_course_ids()
+                'course_ids': obj.get_course_ids(),
+                'password': obj.get_password()
             }
         return super().default(obj)

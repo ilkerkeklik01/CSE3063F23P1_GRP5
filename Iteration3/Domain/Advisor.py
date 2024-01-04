@@ -91,7 +91,8 @@ class AdvisorEncoder(json.JSONEncoder):
                 'staffNo': obj.get_staff_no(),
                 'courseIds': obj.get_course_ids(),
                 'studentNumbers': obj.get_student_numbers(),
-                'registrationNumbers': obj.get_registration_numbers()
+                'registrationNumbers': obj.get_registration_numbers(),
+                'password': obj.get_password()
             }
         return super().default(obj)
 

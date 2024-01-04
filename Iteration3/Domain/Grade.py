@@ -1,4 +1,6 @@
 # Domain/Grade.py
+from Domain.Course import CourseEncoder
+
 
 class Grade:
     def __init__(self, course, numeric_grade):
@@ -73,7 +75,7 @@ class GradeEncoder(json.JSONEncoder):
     def default(self, obj):
         if isinstance(obj, Grade):
             return {
-                'course': obj.get_course(),
+                'course': CourseEncoder().default(obj.course),
                 'numeric_grade': obj.get_numeric_grade(),
                 'letter_grade': obj.get_letter_grade(),
                 'is_passed': obj.is_passed(),
