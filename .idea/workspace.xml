@@ -5,23 +5,22 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e79c9d6c-c6d3-413b-8b69-b2a5d182eef3" name="Changes" comment="Separating iterations">
-      <change afterPath="$PROJECT_DIR$/Iteration3/Logging/LogFormatter.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/CSE3063F23P1_GRP5.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CSE3063F23P1_GRP5.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration3/Tests/AdvisorTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration3/Tests/CourseSectionTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration3/Tests/LecturerTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration3/Tests/StudentTest.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Iteration3/Tests/TranscriptTest.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Iteration3/CourseRegistrationSystem.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/CourseRegistrationSystem.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Iteration3/Data/DataManager.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Data/DataManager.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Advisor.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Advisor.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Department.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Department.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Lecturer.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Lecturer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Person.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Person.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/RegistrationStatus.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/RegistrationStatus.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Staff.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Staff.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Iteration3/Domain/Student.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Domain/Student.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iteration3/Login/AdvisorLoginStrategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Login/AdvisorLoginStrategy.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Iteration3/Login/LecturerLoginStrategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Login/LecturerLoginStrategy.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Iteration3/Login/LoginHelper.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Login/LoginHelper.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Iteration3/Login/StudentLoginStrategy.py" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/Login/StudentLoginStrategy.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/advisors.json" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/advisors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/courseRegistration.log" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/courseRegistration.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/lecturers.json" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/lecturers.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Iteration3/students.json" beforeDir="false" afterPath="$PROJECT_DIR$/Iteration3/students.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -32,6 +31,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Python Script" />
+        <option value="Python Unit Test" />
       </list>
     </option>
   </component>
@@ -56,8 +56,38 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python tests.Python tests for AdvisorTest.MyTestCase.executor": "Run",
+    "Python tests.Python tests for AdvisorTest.MyTestCase.test_active_registration.executor": "Run",
+    "Python tests.Python tests for AdvisorTest.MyTestCase.test_confirm_registration.executor": "Run",
+    "Python tests.Python tests for AdvisorTest.MyTestCase.test_reject_registration.executor": "Run",
+    "Python tests.Python tests for CourseSectionTest.MyTestCase.executor": "Run",
+    "Python tests.Python tests for CourseSectionTest.MyTestCase.test_course_section_day.executor": "Run",
+    "Python tests.Python tests for CourseSectionTest.MyTestCase.test_course_section_overlap.executor": "Run",
+    "Python tests.Python tests for CourseSectionTest.MyTestCase.test_course_section_qouta.executor": "Run",
+    "Python tests.Python tests for LecturerTest.MyTestCase.executor": "Run",
+    "Python tests.Python tests for LecturerTest.MyTestCase.test_get_course.executor": "Run",
+    "Python tests.Python tests for LecturerTest.MyTestCase.test_grading.executor": "Run",
+    "Python tests.Python tests for StudentTest.MyTestCase.executor": "Run",
+    "Python tests.Python tests for StudentTest.MyTestCase.test_completed_course.executor": "Run",
+    "Python tests.Python tests for StudentTest.MyTestCase.test_currently_taken.executor": "Run",
+    "Python tests.Python tests for StudentTest.MyTestCase.test_no_error.executor": "Run",
+    "Python tests.Python tests for StudentTest.MyTestCase.test_null_course_registration.executor": "Run",
+    "Python tests.Python tests for StudentTest.MyTestCase.test_prerequisites.executor": "Run",
+    "Python tests.Python tests for StudentTest.MyTestCase.test_something.executor": "Run",
+    "Python tests.Python tests for StudentTest.MyTestCase.test_upper_class.executor": "Run",
+    "Python tests.Python tests for StudentTest.MyTestCase.test_upper_class_allowed.executor": "Debug",
+    "Python tests.Python tests for StudentTest.MyTestCase.test_upper_class_not_allowed.executor": "Run",
+    "Python tests.Python tests for TranscriptTest.MyTestCase.executor": "Run",
+    "Python tests.Python tests for TranscriptTest.MyTestCase.test_transcript_add_grade.executor": "Run",
+    "Python tests.Python tests for TranscriptTest.MyTestCase.test_transcript_add_grade_to_change.executor": "Run",
+    "Python tests.Python tests for TranscriptTest.MyTestCase.test_transcript_not_pass_course.executor": "Run",
+    "Python tests.Python tests for TranscriptTest.MyTestCase.test_transcript_pass_course.executor": "Run",
+    "Python tests.Python tests in AdvisorTest.py.executor": "Run",
+    "Python tests.Python tests in StudentTest.py.executor": "Run",
+    "Python tests.Python tests in Tests.executor": "Run",
     "Python.CourseRegistrationSystem.executor": "Run",
     "Python.Grade.executor": "Debug",
+    "Python.__init__.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
@@ -77,7 +107,7 @@
       <recent name="C:\Users\ilker\IdeaProjects\CSE3063F23P1_GRP5\Iteration2" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.CourseRegistrationSystem">
+  <component name="RunManager" selected="Python tests.Python tests for AdvisorTest.MyTestCase">
     <configuration name="CourseRegistrationSystem" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="CSE3063F23P1_GRP5" />
       <option name="ENV_FILES" value="" />
@@ -126,6 +156,95 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="Python tests for AdvisorTest.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="CSE3063F23P1_GRP5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Iteration3/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;AdvisorTest.MyTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for CourseSectionTest.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="CSE3063F23P1_GRP5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Iteration3/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;CourseSectionTest.MyTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for LecturerTest.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="CSE3063F23P1_GRP5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Iteration3/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;LecturerTest.MyTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for StudentTest.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="CSE3063F23P1_GRP5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Iteration3/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;StudentTest.MyTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for TranscriptTest.MyTestCase" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="CSE3063F23P1_GRP5" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Iteration3/Tests" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;TranscriptTest.MyTestCase&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for AdvisorTest.MyTestCase" />
+        <item itemvalue="Python tests.Python tests for CourseSectionTest.MyTestCase" />
+        <item itemvalue="Python tests.Python tests for LecturerTest.MyTestCase" />
+        <item itemvalue="Python tests.Python tests for StudentTest.MyTestCase" />
+        <item itemvalue="Python tests.Python tests for TranscriptTest.MyTestCase" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -145,7 +264,7 @@
       <workItem from="1700224092623" duration="24000" />
       <workItem from="1702305172494" duration="106000" />
       <workItem from="1702305336590" duration="371000" />
-      <workItem from="1704318250285" duration="4758000" />
+      <workItem from="1704318250285" duration="18116000" />
     </task>
     <task id="LOCAL-00001" summary="Separating iterations">
       <option name="closed" value="true" />
@@ -180,18 +299,45 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Iteration3/CourseRegistrationSystem.py</url>
-          <line>41</line>
+          <line>40</line>
           <option name="timeStamp" value="22" />
         </line-breakpoint>
         <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
           <url>file://$PROJECT_DIR$/Iteration3/Login/StudentLoginStrategy.py</url>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Iteration3/Tests/StudentTest.py</url>
+          <line>24</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Iteration3/Tests/AdvisorTest.py</url>
+          <line>19</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Iteration3/Tests/LecturerTest.py</url>
+          <line>14</line>
+          <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Iteration3/Tests/CourseSectionTest.py</url>
+          <line>43</line>
+          <option name="timeStamp" value="52" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/Iteration3/Tests/CourseSectionTest.py</url>
+          <line>38</line>
+          <option name="timeStamp" value="53" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/CSE3063F23P1_GRP5$Grade.coverage" NAME="Grade Coverage Results" MODIFIED="1704316803728" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iteration3/Domain" />
-    <SUITE FILE_PATH="coverage/CSE3063F23P1_GRP5$CourseRegistrationSystem.coverage" NAME="CourseRegistrationSystem Coverage Results" MODIFIED="1704323796517" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iteration3" />
+    <SUITE FILE_PATH="coverage/CSE3063F23P1_GRP5$CourseRegistrationSystem.coverage" NAME="CourseRegistrationSystem Coverage Results" MODIFIED="1704365329606" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iteration3" />
+    <SUITE FILE_PATH="coverage/CSE3063F23P1_GRP5$__init__.coverage" NAME="__init__ Coverage Results" MODIFIED="1704363910689" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iteration3/Tests" />
+    <SUITE FILE_PATH="coverage/CSE3063F23P1_GRP5$.coverage" NAME=" Coverage Results" MODIFIED="1704369153878" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/Iteration3/Tests" />
   </component>
 </project>

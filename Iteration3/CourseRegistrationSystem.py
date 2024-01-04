@@ -32,8 +32,7 @@ def main():
 
     department = Department().get_instance();
 
-    for person in department.get_all_people():
-        person.set_password("12345")
+
 
 
     display_console_ui(Department.get_instance())

@@ -21,3 +21,31 @@ Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 
 Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 02:16:00
 Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 02:16:42
 Advisor 10063850 entered invalid registration status at 2024-01-04 02:17:25
+Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 11:12:52
+Student with mnumber 12058287 loginned. at 2024-01-04 11:23:07
+Unsuccessful registration of new course for student with number 12058287: local variable 'e' referenced before assignment  at 2024-01-04 11:23:20
+Student with mnumber 12058287 loginned. at 2024-01-04 11:24:08
+Student with number12058287 tried to take course CSE3038  at 2024-01-04 11:24:12
+Unsuccessful registration of new course for student with number 12058287: You are currently taking this course: CSE3038  at 2024-01-04 11:24:12
+Student with number12058287 tried to take course CSE3033  at 2024-01-04 11:24:28
+Student with mnumber 12058287 loginned. at 2024-01-04 11:25:05
+Student with number12058287 tried to take course CSE3033  at 2024-01-04 11:25:14
+Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 11:26:23
+Advisor 10063850 entered invalid registration status at 2024-01-04 11:26:29
+Advisor 10063850 did not change the status of registration: Registration{registration_no='R4998', student_no='12058287'
+advisor_no='10063850', course_code='CSE3033', status=RegistrationStatus.Active} at 2024-01-04 11:26:50
+Advisor 10063850 confirmed registration: Registration{registration_no='R4998', student_no='12058287'
+advisor_no='10063850', course_code='CSE3033', status=RegistrationStatus.Active} at 2024-01-04 11:27:04
+Student with mnumber 12058287 loginned. at 2024-01-04 11:27:17
+Student with number12058287 tried to take course 0  at 2024-01-04 11:27:28
+Unsuccessful registration of new course for student with number 12058287: There is no such a course: 0  at 2024-01-04 11:27:28
+Student with number12058287 tried to take course CSE3048  at 2024-01-04 11:28:16
+Student with mnumber 12058287 loginned. at 2024-01-04 11:28:52
+Student with number12058287 tried to take course CSE3048  at 2024-01-04 11:29:02
+Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 11:29:11
+Advisor 10063850 confirmed registration: Registration{registration_no='R2043', student_no='12058287'
+advisor_no='10063850', course_code='CSE3048', status=RegistrationStatus.Active} at 2024-01-04 11:29:23
+Student with mnumber 12058287 loginned. at 2024-01-04 11:29:37
+Student with number12058287 tried to take course CSE3033  at 2024-01-04 11:29:55
+Unsuccessful registration of new course for student with number 12058287: You have an overlap with the course: CSE3033 and the course: CSE3048  at 2024-01-04 11:30:01
+Student with mnumber 12001093 loginned. at 2024-01-04 13:48:58

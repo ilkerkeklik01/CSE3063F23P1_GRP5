@@ -60,7 +60,7 @@ class LoginHelper:
 
             if choice == 1:
                 for student in course.get_students():
-                    print(student.listStudents())
+                    print(student.listStudent())
             elif choice == 2:
                 print("Enter the student number to grade student for course:" + course.get_course_code())
                 student_number = input()

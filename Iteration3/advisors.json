@@ -1,5 +1,6 @@
 [
   {
+    "password":"12345",
     "personId": null,
     "birthdate": null,
     "staffNo": "10063850",
@@ -81,6 +82,7 @@
     "registrationNumbers": [],
     "activeRegistrations": [],
     "FName": "Burkay",
-    "LName": "Keklik"
+    "LName": "Keklik",
+    "password":"12345"
   }
 ]

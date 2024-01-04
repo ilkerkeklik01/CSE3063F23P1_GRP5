@@ -28,8 +28,8 @@ class Student(Person):
     def prerequisites_control(self, course):
         if not set(self.transcript.get_passed_course_codes()).issuperset(set(course.get_prerequisites_ids())):
             raise Exception(
-                "You have to pass the prerequisites of the course: " + course.get_course_code() +
-                "\nPrerequisites: " + course.get_prerequisites_ids()
+                "You have to pass the prerequisites of the course: " + course.get_course_code() + "\nPrerequisites: " + course.get_prerequisites_ids()
+
             )
 
     def cannot_take_more_than_five_courses(self):
@@ -79,11 +79,11 @@ class Student(Person):
 
     def check_course_eligibility(self, course_code):
         from Domain.Department import Department
-
+        department = Department.get_instance();
         course = Department.get_instance().get_course_by_course_code(course_code)
         self.course_null_check(course, course_code)
-        self.course_currently_taken_check(course)
         self.course_already_completed_check(course)
+        self.course_currently_taken_check(course)
         self.cannot_take_more_than_five_courses()
         self.cannot_take_more_than_36_credits(course)
         self.check_if_eligible_for_upper_class(course)
@@ -121,21 +121,21 @@ class Student(Person):
         department = Department.get_instance()
         course = department.get_course_by_course_code(courseCode)
 
-        try:
-            courseSection = department.get_course_section_by_section_no(sectionNo)
-            self.check_course_section_eligibility(course, sectionNo)
+        self.check_course_eligibility(courseCode);
 
-            registration = Registration(new_registration_no, self.studentNo, self.advisorNo, courseCode,
+        courseSection = department.get_course_section_by_section_no(sectionNo)
+        self.check_course_section_eligibility(course, sectionNo)
+
+        registration = Registration(new_registration_no, self.studentNo, self.advisorNo, courseCode,
                                         RegistrationStatus.Active, courseSection)
-            self.registrationNumbers.append(registration.get_registration_no())
-            advisor = Department.get_instance().get_advisor_by_staff_no(self.advisorNo)
-            advisor.get_registration_numbers().append(registration.get_registration_no())
-            department.get_all_registrations().append(registration)
+        self.registrationNumbers.append(registration.get_registration_no())
+        advisor = Department.get_instance().get_advisor_by_staff_no(self.advisorNo)
+        advisor.get_registration_numbers().append(registration.get_registration_no())
+        department.get_all_registrations().append(registration)
 
-            print("Registration is successfully sent to the advisor")
+        print("Registration is successfully sent to the advisor")
 
-        except Exception as e:
-            print(e)
+
 
     def set_semester(self, semester):
         self.semester = semester
@@ -207,7 +207,7 @@ class Student(Person):
                ", advisorNo='" + self.advisorNo + '\'' + \
                ", registrationNumbers=" + str(self.get_registration_numbers()) + \
                "} "
-    def listStudents(self):
+    def listStudent(self):
         return "Student{" + \
             "studentNo='" + self.studentNo + '\'' + \
             ", fName=" + self.get_first_name() + \

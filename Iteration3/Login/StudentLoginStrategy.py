@@ -65,13 +65,14 @@ class StudentLoginStrategy(ILoginStrategy):
                 print("Enter the course code")
                 course_code = input()
                 try:
+                    logger.info(f"Student with number{entered_no} tried to take course {course_code} ")
                     student.check_course_eligibility(course_code)  # THROWS ERROR IF NOT ELIGIBLE
                     selected_course_section_no = self.display_course_selection(course_code)
                     student.register_to_new_course(course_code, regis_id_generator.generate_id(), selected_course_section_no)
 
                 except Exception as e:
                     print(e)
-                    logger.info(f"{e} for student with number {entered_no}")
+                    logger.info(f"Unsuccessful registration of new course for student with number {entered_no}: {e} ")
 
             elif choice == 4:
                 print("Available courses:")
