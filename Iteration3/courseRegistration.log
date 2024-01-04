@@ -72,3 +72,5 @@ advisor_no='10063850', course_code='CSE3000', status=RegistrationStatus.Active} 
 Student with mnumber 12001093 loginned. at 2024-01-04 17:36:33
 Student with mnumber 12001093 loginned. at 2024-01-04 17:36:54
 Advisor login attempt successfull. Advisor with 10063850 loginned at 2024-01-04 17:37:10
+Student with mnumber 12001093 loginned. at 2024-01-04 18:59:19
+Student with mnumber 12001093 loginned. at 2024-01-04 18:59:47

@@ -136,7 +136,7 @@ class DataManager:
 
     def write_transcript_file_for_student(self, student):
         from Domain.Student import StudentEncoder
-        file_name = f"..\\{student.get_student_no()}.json"
+        file_name = f"{student.get_student_no()}.json"
         try:
             with open(file_name, 'w') as file:
                 # Use the StudentEncoder to serialize the student object
@@ -166,8 +166,8 @@ class DataManager:
 
     def create_transcript_for_student(self, student, transcript_dto):
         transcript = student.get_transcript()
-        for grade_dto in transcript_dto['grades']:
-            transcript.add_grade(grade_dto['courseCode'], grade_dto['numGrade'])
+        for grade_dto in transcript_dto['transcript']['grades']:
+            transcript.add_grade(grade_dto['course']['course_code'], grade_dto['numeric_grade'])
 
     def create_course_section(self, course_section_data):
         return CourseSection(course_section_data['course_code'], course_section_data['course_section_no'], course_section_data['quota'], course_section_data['section_times'], course_section_data['no_of_students'])
