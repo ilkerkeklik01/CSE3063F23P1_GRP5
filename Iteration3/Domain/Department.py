@@ -39,7 +39,6 @@ class Department:
         for course in self.all_courses:
             if course.get_course_code() == course_code:
                 return course
-        print(f"{course_code} is not found")
         return None
 
     def get_lecturer_by_staff_no(self, staff_no):

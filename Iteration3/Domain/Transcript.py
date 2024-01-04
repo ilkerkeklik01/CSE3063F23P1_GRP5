@@ -77,7 +77,7 @@ class Transcript:
         return [grade.get_course() for grade in self.grades]
 
     def get_successfully_completed_course_codes(self):
-        return [grade.get_course().get_course_code() for grade in self.grades if grade.is_passed()]
+        return [grade.course.course_code for grade in self.grades if grade.is_passed()]
 
     def get_failed_course_codes(self):
         return [grade.get_course().get_course_code() for grade in self.grades if not grade.is_passed()]
@@ -86,3 +86,16 @@ class Transcript:
         return [grade.get_course().get_course_code() for grade in self.grades]
 
     # endregion properties
+
+import json
+from Domain.Grade import GradeEncoder  # Assuming you have a Grade class in your project
+
+class TranscriptEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Transcript):
+            return {
+                'completed_credits': obj.get_completed_credits(),
+                'grades': [GradeEncoder().default(grade) for grade in obj.get_grades()],
+                'gano': obj.get_gano()
+            }
+        return super().default(obj)

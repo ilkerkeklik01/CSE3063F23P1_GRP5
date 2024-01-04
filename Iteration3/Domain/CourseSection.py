@@ -1,8 +1,8 @@
 from typing import List
 
 class CourseSection:
-    def __init__(self, course_code, course_section_no, quota, section_times):
-        self.no_of_students = 0
+    def __init__(self, course_code, course_section_no, quota, section_times, no_of_students):
+        self.no_of_students = no_of_students
         self.course_code = course_code
         self.course_section_no = course_section_no
         self.quota = quota
@@ -64,3 +64,19 @@ class CourseSection:
             "5": "Friday"
         }
         return days.get(day_no, "Free Day")
+
+
+import json
+from Domain.CourseSection import CourseSection
+
+class CourseSectionEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, CourseSection):
+            return {
+                'course_code': obj.get_course_code(),
+                'course_section_no': obj.get_course_section_no(),
+                'quota': obj.get_quota(),
+                'section_times': obj.get_section_times(),
+                'no_of_students': obj.get_no_of_students()
+            }
+        return super().default(obj)

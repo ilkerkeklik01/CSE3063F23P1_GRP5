@@ -47,5 +47,24 @@ class Registration:
     # endregion Properties
 
     def __str__(self):
-        return f"Registration{{registration_no='{self.registration_no}', student_no='{self.student_no}', " \
+        return f"Registration{{registration_no='{self.registration_no}', student_no='{self.student_no}'\n" \
                f"advisor_no='{self.advisor_no}', course_code='{self.course_code}', status={self.status}}}"
+
+
+
+import json
+from Domain.CourseSection import CourseSectionEncoder
+from Domain.RegistrationStatus import RegistrationStatusEncoder
+
+class RegistrationEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Registration):
+            return {
+                'registration_no': obj.get_registration_no(),
+                'student_no': obj.get_student_no(),
+                'advisor_no': obj.get_advisor_no(),
+                'course_code': obj.get_course_code(),
+                'status': RegistrationStatusEncoder().default(obj.get_status()),
+                'course_section': CourseSectionEncoder().default(obj.get_course_section()),
+            }
+        return super().default(obj)

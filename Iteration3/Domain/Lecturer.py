@@ -3,9 +3,11 @@ from typing import Collection
 from Domain.Staff import Staff
 
 class Lecturer(Staff):
-    def __init__(self, first_name, last_name, staff_no):
-        super().__init__(first_name, last_name, staff_no)
-        self.course_ids = []  # Initialize an empty list for course_ids
+    def __init__(self, first_name, last_name, staff_no, course_ids,password):
+        super().__init__(first_name, last_name, staff_no, password)
+        self.course_ids = course_ids
+        from Domain.Department import Department
+
 
     def search(self, query):
         # Placeholder implementation for the abstract search method
@@ -34,3 +36,18 @@ class Lecturer(Staff):
 
     def __str__(self):
         return f"Lecturer{{}} {super().__str__()}"
+
+
+import json
+
+class LecturerEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Lecturer):
+            return {
+                'first_name': obj.get_first_name(),
+                'last_name': obj.get_last_name(),
+                'staff_no': obj.get_staff_no(),
+                'course_ids': obj.get_course_ids(),
+                'password': obj.get_password()
+            }
+        return super().default(obj)

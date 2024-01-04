@@ -2,6 +2,7 @@ from Domain.Department import Department
 from Login.ILoginStrategy import ILoginStrategy
 from IDGenerators.RegistrationIDGenerator import RegistrationIDGenerator
 from Login.LoginHelper import LoginHelper
+import logging
 
 class StudentLoginStrategy(ILoginStrategy):
     def login(self, department):
@@ -9,6 +10,7 @@ class StudentLoginStrategy(ILoginStrategy):
 
     def login_as_a_student(self, department):
         regis_id_generator = RegistrationIDGenerator()
+        logger = logging.getLogger()
         var = -1
         flag = False
         student = None
@@ -25,9 +27,17 @@ class StudentLoginStrategy(ILoginStrategy):
 
             student = department.get_student_by_student_no(entered_no)
             if student is None:
+                logger.info(f"Student login attempt unsuccesfull. Student not found with {entered_no}")
                 continue
+            else:
+                print("Enter your password:")
+                entered_password = input()
+                if entered_password != student.get_password():
+                    print("Wrong password try again")
+                    logger.info(f"Student login attempt unsuccesfull. Student with number no {entered_no} entered invalid password.")
+                    continue
             flag = True
-
+        logger.info(f"Student with mnumber {entered_no} loginned.");
         choice = -1
         while choice != 0:
             print("0 to exit")
@@ -55,12 +65,14 @@ class StudentLoginStrategy(ILoginStrategy):
                 print("Enter the course code")
                 course_code = input()
                 try:
+                    logger.info(f"Student with number{entered_no} tried to take course {course_code} ")
                     student.check_course_eligibility(course_code)  # THROWS ERROR IF NOT ELIGIBLE
                     selected_course_section_no = self.display_course_selection(course_code)
                     student.register_to_new_course(course_code, regis_id_generator.generate_id(), selected_course_section_no)
 
                 except Exception as e:
                     print(e)
+                    logger.info(f"Unsuccessful registration of new course for student with number {entered_no}: {e} ")
 
             elif choice == 4:
                 print("Available courses:")

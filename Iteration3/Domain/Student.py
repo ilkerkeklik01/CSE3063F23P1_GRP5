@@ -4,8 +4,8 @@ from Domain.Transcript import Transcript
 from Domain.RegistrationStatus import RegistrationStatus
 
 class Student(Person):
-    def __init__(self, FName, LName, studentNo, courseCodes, advisorNo, registrationNumbers, semester):
-        super().__init__(FName, LName)
+    def __init__(self, FName, LName, studentNo, courseCodes, advisorNo, registrationNumbers, semester, password):
+        super().__init__(FName, LName, password)
         self.studentNo = studentNo
         self.courseCodes = courseCodes
         self.advisorNo = advisorNo
@@ -15,9 +15,6 @@ class Student(Person):
         self.activeCourseSections = []
 
 
-        # Add student number to advisor
-        from Domain.Department import Department
-        Department.get_instance().get_advisor_by_staff_no(advisorNo).get_student_numbers().append(studentNo)
 
     def add_course_section(self, course_section):
         if self.activeCourseSections is None:
@@ -31,8 +28,8 @@ class Student(Person):
     def prerequisites_control(self, course):
         if not set(self.transcript.get_passed_course_codes()).issuperset(set(course.get_prerequisites_ids())):
             raise Exception(
-                "You have to pass the prerequisites of the course: " + course.get_course_code() +
-                "\nPrerequisites: " + course.get_prerequisites_ids()
+                "You have to pass the prerequisites of the course: " + course.get_course_code() + "\nPrerequisites: " + course.get_prerequisites_ids()
+
             )
 
     def cannot_take_more_than_five_courses(self):
@@ -82,11 +79,11 @@ class Student(Person):
 
     def check_course_eligibility(self, course_code):
         from Domain.Department import Department
-
+        department = Department.get_instance();
         course = Department.get_instance().get_course_by_course_code(course_code)
         self.course_null_check(course, course_code)
-        self.course_currently_taken_check(course)
         self.course_already_completed_check(course)
+        self.course_currently_taken_check(course)
         self.cannot_take_more_than_five_courses()
         self.cannot_take_more_than_36_credits(course)
         self.check_if_eligible_for_upper_class(course)
@@ -124,21 +121,21 @@ class Student(Person):
         department = Department.get_instance()
         course = department.get_course_by_course_code(courseCode)
 
-        try:
-            courseSection = department.get_course_section_by_section_no(sectionNo)
-            self.check_course_section_eligibility(course, sectionNo)
+        self.check_course_eligibility(courseCode);
 
-            registration = Registration(new_registration_no, self.studentNo, self.advisorNo, courseCode,
+        courseSection = department.get_course_section_by_section_no(sectionNo)
+        self.check_course_section_eligibility(course, sectionNo)
+
+        registration = Registration(new_registration_no, self.studentNo, self.advisorNo, courseCode,
                                         RegistrationStatus.Active, courseSection)
-            self.registrationNumbers.append(registration.get_registration_no())
-            advisor = Department.get_instance().get_advisor_by_staff_no(self.advisorNo)
-            advisor.get_registration_numbers().append(registration.get_registration_no())
-            department.get_all_registrations().append(registration)
+        self.registrationNumbers.append(registration.get_registration_no())
+        advisor = Department.get_instance().get_advisor_by_staff_no(self.advisorNo)
+        advisor.get_registration_numbers().append(registration.get_registration_no())
+        department.get_all_registrations().append(registration)
 
-            print("Registration is successfully sent to the advisor")
+        print("Registration is successfully sent to the advisor")
 
-        except Exception as e:
-            print(e)
+
 
     def set_semester(self, semester):
         self.semester = semester
@@ -210,10 +207,36 @@ class Student(Person):
                ", advisorNo='" + self.advisorNo + '\'' + \
                ", registrationNumbers=" + str(self.get_registration_numbers()) + \
                "} "
-
+    def listStudent(self):
+        return "Student{" + \
+            "studentNo='" + self.studentNo + '\'' + \
+            ", fName=" + self.get_first_name() + \
+            ", lName='" + self.get_last_name() + '\'' + \
+            "} "
     def search(self, query):
         # Your implementation for the search method in the Student class...
         pass
 
 
 # You can add other classes and methods here as needed.
+import json
+from Domain.Student import Student  # Add this import statement
+from Domain.CourseSection import CourseSectionEncoder
+from Domain.Transcript import TranscriptEncoder
+
+class StudentEncoder(json.JSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Student):
+            return {
+                'FName': obj.get_first_name(),
+                'LName': obj.get_last_name(),
+                'studentNo': obj.get_student_no(),
+                'courseCodes': obj.get_course_codes(),
+                'advisorNo': obj.get_advisor_no(),
+                'registrationNumbers': obj.get_registration_numbers(),
+                'semester': obj.get_semester(),
+                'transcript': TranscriptEncoder().default(obj.get_transcript()),
+                'activeCourseSections': [CourseSectionEncoder().default(section) for section in obj.get_active_course_sections()],
+                'password': obj.get_password()
+            }
+        return super().default(obj)
