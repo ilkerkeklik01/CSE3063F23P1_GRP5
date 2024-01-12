@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0610106f-0b84-4d56-abf8-b1e9f715ee68" name="Changes" comment="Unit tests modified">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/advisors.json" beforeDir="false" afterPath="$PROJECT_DIR$/advisors.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courseSections.json" beforeDir="false" afterPath="$PROJECT_DIR$/courseSections.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/courses.json" beforeDir="false" afterPath="$PROJECT_DIR$/courses.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/registrations.json" beforeDir="false" afterPath="$PROJECT_DIR$/registrations.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/CourseRegistrationSystem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/CourseRegistrationSystem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/CourseSection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/CourseSection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Domain/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Domain/Student.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Login/LoginContext.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Login/LoginContext.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/students.json" beforeDir="false" afterPath="$PROJECT_DIR$/students.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$/.." value="main" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/12001511.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/courses.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/CourseRegistrationSystem.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/Course.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/CourseSection.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/Helper.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/Lecturer.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/Searchable.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/Student.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/Domain/StudentIDGenerator.java" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2YId1BaRQ2rua4o74rVeR16v52q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Downloaded.Files.Path.Enabled": "false",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "C:/Users/ilker/IdeaProjects/CSE3063F23P1_GRP5/Iteration2",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ilker\IdeaProjects\CSE3063F23P1_GRP5\CourseRegistrationSystem\lib" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.CourseRegistrationSystem">
+    <configuration name="CourseRegistrationSystem" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="CourseRegistrationSystem" />
+      <module name="CourseRegistrationSystem" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CourseTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseRegistrationSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.CourseTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GradeTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseRegistrationSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.GradeTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StudentTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseRegistrationSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.StudentTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TranscriptTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="CourseRegistrationSystem" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Tests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Tests" />
+      <option name="MAIN_CLASS_NAME" value="Tests.TranscriptTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.CourseRegistrationSystem" />
+        <item itemvalue="JUnit.TranscriptTest (1)" />
+        <item itemvalue="JUnit.StudentTest" />
+        <item itemvalue="JUnit.GradeTest" />
+        <item itemvalue="JUnit.CourseTest" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0610106f-0b84-4d56-abf8-b1e9f715ee68" name="Changes" comment="" />
+      <created>1700216809571</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1700216809571</updated>
+      <workItem from="1700216810575" duration="1845000" />
+      <workItem from="1700223169089" duration="912000" />
+      <workItem from="1700224117245" duration="496000" />
+      <workItem from="1700224633252" duration="2048000" />
+      <workItem from="1700686867287" duration="647000" />
+      <workItem from="1701262033973" duration="56000" />
+      <workItem from="1701346732023" duration="1001000" />
+      <workItem from="1701711099943" duration="246000" />
+      <workItem from="1701951393551" duration="446000" />
+      <workItem from="1702038668750" duration="5692000" />
+      <workItem from="1702303356382" duration="1797000" />
+      <workItem from="1702305280692" duration="54000" />
+      <workItem from="1702305712449" duration="9455000" />
+      <workItem from="1702408190201" duration="35000" />
+      <workItem from="1703078592632" duration="4543000" />
+      <workItem from="1703453781873" duration="989000" />
+      <workItem from="1703503479993" duration="3250000" />
+      <workItem from="1705052807163" duration="1001000" />
+      <workItem from="1705071503981" duration="235000" />
+    </task>
+    <task id="LOCAL-00001" summary="try-catch blocks are added on UI">
+      <option name="closed" value="true" />
+      <created>1700218659853</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1700218659853</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Unit tests made by Sarp Siraç Müftüler are added.">
+      <option name="closed" value="true" />
+      <created>1700225990428</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1700225990428</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Unit tests made by Sarp Siraç Müftüler are added.">
+      <option name="closed" value="true" />
+      <created>1700226379546</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1700226379546</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Unit tests made by Sarp Siraç Müftüler are added.">
+      <option name="closed" value="true" />
+      <created>1700226426388</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1700226426388</updated>
+    </task>
+    <task id="LOCAL-00005" summary="_">
+      <option name="closed" value="true" />
+      <created>1702310294011</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1702310294011</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Business Rules are separated into private methods and called in try-catch blocks.">
+      <option name="closed" value="true" />
+      <created>1702312317605</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702312317605</updated>
+    </task>
+    <task id="LOCAL-00007" summary="courseNullCheck&#10;prerequisitesControl&#10;cannotTakeMoreThanFiveCourses&#10;cannotTakeMoreThan36Credits&#10;semester infos are added to the courses.json">
+      <option name="closed" value="true" />
+      <created>1702315418262</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1702315418262</updated>
+    </task>
+    <task id="LOCAL-00008" summary="courseNullCheck&#10;prerequisitesControl&#10;cannotTakeMoreThanFiveCourses&#10;cannotTakeMoreThan36Credits&#10;semester infos are added to the courses.json">
+      <option name="closed" value="true" />
+      <created>1702316075468</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1702316075468</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Unit tests modified">
+      <option name="closed" value="true" />
+      <created>1703080699368</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1703080699368</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="try-catch blocks are added on UI" />
+    <MESSAGE value="Unit tests made by Sarp Siraç Müftüler are added." />
+    <MESSAGE value="_" />
+    <MESSAGE value="Business Rules are separated into private methods and called in try-catch blocks." />
+    <MESSAGE value="courseNullCheck&#10;prerequisitesControl&#10;cannotTakeMoreThanFiveCourses&#10;cannotTakeMoreThan36Credits&#10;semester infos are added to the courses.json" />
+    <MESSAGE value="Unit tests modified" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unit tests modified" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/Domain/Student.java</url>
+          <line>149</line>
+          <properties class="Domain.Student" method="checkQuota">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
